@@ -112,7 +112,11 @@
           </button>
         </div>
 
-        <a href="#waitlist-section" id="nav-cta-btn" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+        <a href="#/support" onclick="navigateTo('support'); return false;" id="nav-support-btn" class="hidden sm:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
+          Підтримка
+        </a>
+
+        <a href="#waitlist-section" onclick="navigateTo('home'); document.getElementById('waitlist-section')?.scrollIntoView({behavior: 'smooth'}); return false;" id="nav-cta-btn" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
           Список очікування
         </a>
       </div>
@@ -120,7 +124,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <section class="pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32 overflow-hidden border-b border-app-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -495,31 +499,43 @@
           </div>
 
         </div>
-
       </div>
     </section>
   </main>
 
-  <footer class="py-8 sm:py-10 border-t border-app-border bg-app-bg text-app-muted text-xs">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
-      
+  <!-- Dedicated Subpage Container (Hidden by default, shown for /privacy, /terms, /support) -->
+  <div id="subpage-container" class="hidden min-h-[75vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <div>
+        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 text-xs font-medium text-app-muted hover:text-app-espresso transition-colors mb-6 cursor-pointer">
+          <span>←</span>
+          <span id="subpage-back-label">На головну</span>
+        </button>
+        <h1 id="subpage-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight"></h1>
+      </div>
+      <div id="subpage-body" class="prose text-sm text-app-brown leading-relaxed space-y-6"></div>
+    </div>
+  </div>
+
+  <footer class="border-t border-app-border py-8 bg-app-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
       <div class="flex items-center gap-3">
-        <span class="font-bold text-app-espresso text-sm">22:22</span>
-        <span>•</span>
+        <span class="font-bold text-app-espresso tracking-tight">22:22</span>
+        <span class="text-app-muted">•</span>
         <span id="foot-slogan">знайомства, з яких може вийти дружба.</span>
       </div>
 
-      <div class="flex items-center justify-center gap-6">
-        <a href="javascript:void(0)" onclick="openModal('privacy')" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
-        <a href="javascript:void(0)" onclick="openModal('terms')" id="btn-terms" class="hover:text-app-espresso transition-colors">Правила спільноти</a>
-        <a href="#waitlist-section" id="btn-foot-join" class="text-app-espresso hover:underline font-medium">Список очікування</a>
+      <div class="flex items-center gap-5 flex-wrap justify-center">
+        <a href="#/privacy" onclick="navigateTo('privacy'); return false;" id="btn-privacy" class="hover:text-app-espresso transition-colors cursor-pointer">Конфіденційність</a>
+        <a href="#/terms" onclick="navigateTo('terms'); return false;" id="btn-terms" class="hover:text-app-espresso transition-colors cursor-pointer">Умови користування</a>
+        <a href="#/support" onclick="navigateTo('support'); return false;" id="btn-support-foot" class="hover:text-app-espresso transition-colors cursor-pointer">Підтримка</a>
+        <a href="#waitlist-section" onclick="navigateTo('home'); document.getElementById('waitlist-section')?.scrollIntoView({behavior: 'smooth'}); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування</a>
       </div>
 
-      <div class="text-[11px] sm:text-xs">
+      <div class="text-[11px] sm:text-xs text-app-muted">
         <span>Київ: </span>
         <span id="footer-time" class="font-mono text-app-espresso font-medium">16:16</span>
       </div>
-
     </div>
   </footer>
 
@@ -840,7 +856,7 @@
 
         footSlogan: "знайомства, з яких може вийти дружба.",
         btnPrivacy: "Конфіденційність",
-        btnTerms: "Правила спільноти",
+        btnTerms: "Умови користування",
         btnFootJoin: "Список очікування",
         modalClose: "Зрозуміло"
       },
@@ -909,13 +925,383 @@
 
         footSlogan: "introductions that can turn into friendship.",
         btnPrivacy: "Privacy Policy",
-        btnTerms: "Community Guidelines",
+        btnTerms: "Terms of Service",
         btnFootJoin: "Waitlist",
         modalClose: "Got it"
       }
     };
 
     let currentLang = 'ua';
+    let currentPage = 'home';
+
+    const subpageContent = {
+      privacy: {
+        ua: {
+          title: "Політика конфіденційності",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
+
+              <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє, зберігає та захищає персональні дані користувачок під час відвідування сайту, реєстрації у списку очікування (waitlist) та використання мобільного додатку.</p>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">1. Дані, які ми збираємо</h3>
+                <p>Ми збираємо лише ту інформацію, яка є критично необхідною для організації знайомств та надання доступу до сервісу:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися) та контактний канал (адреса електронної пошти або логін у Telegram).</li>
+                  <li><strong>Дані профілю для знайомств:</strong> вік, місто/район проживання, рід діяльності, фотографія профілю, а також відповіді на запитання анкети (погляди на дружбу, темп спілкування, спосіб проведення вільного часу, особисті межі).</li>
+                  <li><strong>Повідомлення та активність:</strong> факт взаємної згоди («так») між двома користувачками, факт відкриття чату та технічні метадані повідомлень.</li>
+                  <li><strong>Технічні дані:</strong> мовні налаштування браузера, базова діагностична інформація та відмітки часу взаємодії.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">2. Мета та правові підстави обробки даних</h3>
+                <p>Ваші персональні дані обробляються виключно для таких цілей:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Надсилання індивідуального запрошення до закритого тестування сервісу;</li>
+                  <li>Підбір однієї щоденної кандидатки для знайомства на основі збігу ваших відповідей про цінності й стиль комунікації;</li>
+                  <li>Забезпечення роботи приватного чату після обопільного погодження знайомства;</li>
+                  <li>Захист спільноти від спаму, фальшивих профілів, ботів і порушень безпеки.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">3. Принцип мінімізації та нерозголошення</h3>
+                <p>Ми дотримуємося суворого принципу приватності:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Жодного продажу даних:</strong> ми ніколи не продаємо, не здаємо в оренду та не монетизуємо ваші персональні дані або відповіді з анкет третім сторонам чи рекламодавцям.</li>
+                  <li><strong>Відсутність відкритого каталогу:</strong> ваші дані не індексуються пошуковими системами та не виставляються у публічний відкритий доступ або загальну стрічку. Ваш профіль демонструється лише одній людині на добу в межах механіки знайомства.</li>
+                  <li><strong>Конфіденційність діалогів:</strong> особисте листування в чаті є приватним простором учасниць і не використовується для тренування публічних моделей або сторонніх аналітичних систем.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">4. Зберігання та безпека інформації</h3>
+                <p>Ми впроваджуємо сучасні технічні й організаційні заходи для захисту ваших даних від несанкціонованого доступу, зміни, втрати чи розкриття. Доступ до списку очікування та адміністративних інструментів обмежено відповідальними особами проєкту з обов'язковою двофакторною автентифікацією.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">5. Ваші права</h3>
+                <p>Відповідно до законодавства про захист персональних даних ви маєте повне право:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Дізнатися, які саме ваші дані зберігаються в сервісі;</li>
+                  <li>Вимагати виправлення неточних або застарілих даних;</li>
+                  <li>Вимагати повного й безповоротного видалення вашого запису зі списку очікування або акаунту в додатку (право на забуття);</li>
+                  <li>Відкликати згоду на обробку персональних даних у будь-який момент.</li>
+                </ul>
+                <p>Для реалізації будь-якого з цих прав достатньо написати нашій службі підтримки за контактами, наведеними нижче або на сторінці <a href="#/support" class="text-app-espresso underline font-medium">Підтримка</a>.</p>
+              </section>
+            </div>
+          `
+        },
+        en: {
+          title: "Privacy Policy",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p class="text-xs text-app-muted">Last updated: September 2026</p>
+
+              <p>This Privacy Policy describes how <strong>22:22</strong> ("we", "our", or "the platform") collects, uses, stores, and protects personal information obtained from visitors, waitlist participants, and app users.</p>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">1. Information We Collect</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Waitlist Contact Information:</strong> your preferred first name and primary contact handle (email address or Telegram handle).</li>
+                  <li><strong>Matching & Profile Data:</strong> age, city/neighborhood, occupation, profile photo, and your responses to lifestyle and friendship preference questions (values, pace of communication, social energy, and personal boundaries).</li>
+                  <li><strong>Interaction & Chat Metadata:</strong> mutual opt-in confirmations ("yes" choices), session timestamps, and technical delivery confirmation of messages.</li>
+                  <li><strong>Technical Logs:</strong> language preferences, device operating characteristics, and crash diagnostics.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">2. Purpose of Data Processing</h3>
+                <p>We process your personal information strictly for the following purposes:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Distributing personal invitations to the closed beta release;</li>
+                  <li>Calculating daily candidate compatibility based on reciprocal answers to communication questions;</li>
+                  <li>Powering mutual-consent private chats when both individuals agree to connect;</li>
+                  <li>Preventing abuse, commercial solicitation, identity impersonation, and fraudulent registrations.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">3. Non-Disclosure & Anti-Commercialization</h3>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Zero Data Selling:</strong> we do not rent, sell, or commercialize your personal information or questionnaire responses to advertisers or third-party brokers.</li>
+                  <li><strong>No Public Catalog:</strong> profiles are never indexed in public search engines or browsable in an open card stack. Your details are viewed solely by one matched individual per day.</li>
+                  <li><strong>Chat Confidentiality:</strong> conversations remain strictly between matched participants and are not mined for advertising or external analytics.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">4. Storage and Security</h3>
+                <p>We maintain organizational and technical safeguards designed to protect personal data from unauthorized disclosure, loss, or manipulation. Access to production systems is restricted under least-privilege protocols with mandatory two-factor authentication.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">5. Your Legal Rights</h3>
+                <p>You maintain the right to inspect, rectify, or request complete deletion of your waitlist record or user profile at any time. To exercise these rights, submit your request via the <a href="#/support" class="text-app-espresso underline font-medium">Support</a> channel.</p>
+              </section>
+            </div>
+          `
+        }
+      },
+      terms: {
+        ua: {
+          title: "Умови користування сервісом (Terms of Service)",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
+
+              <p>Ці Умови користування (надалі — «Умови») є обов'язковим юридичним договором між вами (користувачкою) та платформою <strong>22:22</strong>. Отримуючи доступ до вебсайту, реєструючись у списку очікування або використовуючи мобільний додаток, ви беззастережно погоджуєтеся з цими Умовами.</p>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">1. Призначення сервісу та критерії доступу</h3>
+                <p>22:22 — це закрита платформа, створена виключно для пошуку та побудови платонічної жіночої дружби у місті Києві. Для реєстрації та використання сервісу ви підтверджуєте, що:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>Вам виповнилося не менше 18 років;</li>
+                  <li>Ви реєструєтеся від власного імені, надаєте достовірні дані про себе та власні актуальні фотографії;</li>
+                  <li>Ви розумієте та погоджуєтеся, що сервіс призначений винятково для дружнього, ненасильницького спілкування між жінками.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">2. Правила поведінки та неприпустима діяльність</h3>
+                <p>У сервісі 22:22 діє політика нульової толерантності до токсичної та маніпулятивної поведінки. Користувачкам суворо забороняється:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Комерційна діяльність та нетворкінг:</strong> використовувати сервіс для прямих продажів товарів, просування послуг, мережевого маркетингу (MLM), фінансових пропозицій або рекрутингу під виглядом дружби;</li>
+                  <li><strong>Фальсифікація та шахрайство:</strong> створювати акаунти від імені інших осіб, видавати себе за іншу людину, використовувати чужі світлини чи вводити в оману щодо свого віку або намірів;</li>
+                  <li><strong>Токсичність та агресія:</strong> надсилати образливі, принизливі, дискримінаційні, залякуючі або відверто нав'язливі повідомлення;</li>
+                  <li><strong>Порушення конфіденційності (доксинг):</strong> робити публічними особисті листування, фотографії чи контактні дані інших учасниць без їхньої прямої письмової згоди.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">3. Механіка підбору та модерація</h3>
+                <p>Сервіс працює за принципом надання одного знайомства на день. Ми не гарантуємо, що запропонований контакт обов'язково переросте в довготривалу дружбу або що інша сторона обов'язково надасть позитивну відповідь. Кожна користувачка має право самостійно вирішувати, чи починати діалог. У разі скарги на порушення цих Умов адміністрація залишає за собою право тимчасово призупинити або безповоротно заблокувати обліковий запис без права відновлення.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">4. Інтелектуальна власність</h3>
+                <p>Усі елементи дизайну, програмний код, логотипи, фірмовий стиль, тексти та графічні матеріали сервісу 22:22 є об'єктами інтелектуальної власності проєкту. Будь-яке копіювання, модифікація або комерційне використання матеріалів без попереднього дозволу заборонено.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">5. Обмеження відповідальності</h3>
+                <p>Сервіс надається на умовах «як є» (as is). Ми не несемо цивільної чи фінансової відповідальності за поведінку учасниць під час їхньої особистої взаємодії в чаті або під час зустрічей офлайн. Ми наполегливо закликаємо дотримуватися базових правил особистої безпеки під час знайомств.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">6. Зміни до Умов</h3>
+                <p>Ми можемо періодично оновлювати ці Умови. Продовжуючи користуватися сервісом після внесення змін, ви засвідчуєте свою згоду з новою редакцією документа.</p>
+              </section>
+            </div>
+          `
+        },
+        en: {
+          title: "Terms of Service",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p class="text-xs text-app-muted">Last updated: September 2026</p>
+
+              <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and the operators of <strong>22:22</strong> ("we", "us", or "our"). By registering for the waitlist or accessing our platform, you agree to comply with and be bound by these Terms.</p>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">1. Eligibility and Service Scope</h3>
+                <p>22:22 is a private, intentional mobile platform created specifically for adult women in Kyiv seeking genuine, non-commercial friendships. By using the platform, you represent and warrant that:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li>You are at least 18 years of age;</li>
+                  <li>You register using your genuine identity, authentic photo, and accurate personal information;</li>
+                  <li>You are joining exclusively for platonic social companionship and reciprocal connection.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">2. Prohibited Conduct and Community Safety</h3>
+                <p>Maintaining an emotionally safe and respectful environment is the core operating premise of 22:22. You explicitly agree not to:</p>
+                <ul class="list-disc pl-5 space-y-1">
+                  <li><strong>Commercial Pitching & Networking:</strong> solicit other users for multi-level marketing (MLM), product sales, financial ventures, business consulting, or employment recruitment;</li>
+                  <li><strong>Impersonation & Dishonesty:</strong> create accounts on behalf of other individuals, submit fraudulent photographs, or misrepresent identity;</li>
+                  <li><strong>Harassment & Toxicity:</strong> engage in hostile, abusive, stalking, derogatory, or unsolicited explicit behavior;</li>
+                  <li><strong>Privacy Breaches:</strong> publish, capture, or externally disseminate private chat communications, personal photographs, or contact details of matched users without consent.</li>
+                </ul>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">3. Matching Protocol and Moderation</h3>
+                <p>22:22 operates on a one-introduction-per-day cadence. We make no representations regarding the outcome, compatibility longevity, or response speed of any match. We reserve the absolute right to suspend or permanently ban accounts found to be in breach of these Terms without notice.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">4. Intellectual Property</h3>
+                <p>All brand assets, software architecture, user interface compositions, custom illustrations, and written copy are the exclusive intellectual property of 22:22. Unauthorized reproduction or commercial derivation is strictly prohibited.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">5. Disclaimers and Limitation of Liability</h3>
+                <p>The platform is provided on an "as-is" and "as-available" basis. We bear no liability for the independent conduct, offline encounters, or individual choices of users outside the platform. Users are urged to exercise standard personal precautions when meeting peers in public locations.</p>
+              </section>
+
+              <section class="space-y-2">
+                <h3 class="text-base font-semibold text-app-espresso">6. Amendments</h3>
+                <p>We may revise these Terms as the beta program develops. Continued use of the platform following published changes constitutes your full acceptance of the updated Terms.</p>
+              </section>
+            </div>
+          `
+        }
+      },
+      support: {
+        ua: {
+          title: "Підтримка та турбота",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p>Маєте запитання щодо закритої Beta, хочете оновити свій контакт у списку очікування або повідомити про технічну помилку? Ми завжди на зв'язку.</p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
+                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Швидкий зв'язок</div>
+                  <div class="font-semibold text-base text-app-espresso">Telegram</div>
+                  <p class="text-xs text-app-brown">Прямий контакт із авторкою та координаторкою проєкту для будь-яких оперативних запитань:</p>
+                  <div class="pt-2">
+                    <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
+                      <span>@AnastasiaChaikovska</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
+                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Офіційна пошта</div>
+                  <div class="font-semibold text-base text-app-espresso">Email</div>
+                  <p class="text-xs text-app-brown">Для запитань конфіденційності, юридичних запитів та видалення даних зі списку:</p>
+                  <div class="pt-2">
+                    <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
+                      <span>chaikovska.anastasia@gmail.com</span>
+                      <span>✉</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-3">
+                <h3 class="font-semibold text-app-espresso text-sm">Часті запитання щодо Beta:</h3>
+                <div class="space-y-3 text-xs leading-relaxed text-app-brown">
+                  <div>
+                    <strong class="text-app-espresso block mb-0.5">Коли відкриється доступ?</strong>
+                    Ми відкриваємо доступ поступово невеликими групами у Києві, щоб перші діалоги відбувалися в затишному й живому середовищі. Ви отримаєте персональне повідомлення, щойно ваша черга настане.
+                  </div>
+                  <div>
+                    <strong class="text-app-espresso block mb-0.5">Як змінити контактні дані або вийти зі списку?</strong>
+                    Напишіть у Telegram або на пошту, вказавши початковий контакт — ми оперативно оновимо або повністю видалимо ваш запис.
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        },
+        en: {
+          title: "Support & Assistance",
+          body: `
+            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
+              <p>Have questions about the private beta, need to update your waitlist contact information, or wish to report a technical issue? We are here to assist you.</p>
+
+              <div class="grid sm:grid-cols-2 gap-4 pt-2">
+                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
+                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Direct Channel</div>
+                  <div class="font-semibold text-base text-app-espresso">Telegram</div>
+                  <p class="text-xs text-app-brown">Reach out directly to the founder for quick questions and onboarding inquiries:</p>
+                  <div class="pt-2">
+                    <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
+                      <span>@AnastasiaChaikovska</span>
+                      <span>↗</span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
+                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Direct Inquiries</div>
+                  <div class="font-semibold text-base text-app-espresso">Email</div>
+                  <p class="text-xs text-app-brown">For privacy requests, data deletion, or formal feedback:</p>
+                  <div class="pt-2">
+                    <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
+                      <span>chaikovska.anastasia@gmail.com</span>
+                      <span>✉</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-3">
+                <h3 class="font-semibold text-app-espresso text-sm">Beta Frequently Asked Questions:</h3>
+                <div class="space-y-3 text-xs leading-relaxed text-app-brown">
+                  <div>
+                    <strong class="text-app-espresso block mb-0.5">When will beta access open?</strong>
+                    We are releasing access in staged cohorts in Kyiv to preserve the intimate and high-touch experience. You will receive an invitation directly as soon as your cohort opens.
+                  </div>
+                  <div>
+                    <strong class="text-app-espresso block mb-0.5">How do I update or remove my entry?</strong>
+                    Send a direct note via Telegram or email with your original contact handle, and we will update or permanently delete your record immediately.
+                  </div>
+                </div>
+              </div>
+            </div>
+          `
+        }
+      }
+    };
+
+    function renderSubpage(pageKey) {
+      const pageData = subpageContent[pageKey];
+      if (!pageData) return;
+
+      const langData = pageData[currentLang] || pageData['ua'];
+      const titleEl = document.getElementById('subpage-title');
+      const bodyEl = document.getElementById('subpage-body');
+      const backLabelEl = document.getElementById('subpage-back-label');
+
+      if (titleEl) titleEl.textContent = langData.title;
+      if (bodyEl) bodyEl.innerHTML = langData.body;
+      if (backLabelEl) backLabelEl.textContent = currentLang === 'ua' ? '← На головну' : '← Back to Home';
+    }
+
+    function navigateTo(target) {
+      currentPage = target;
+      const mainEl = document.getElementById('main-content');
+      const subpageContainer = document.getElementById('subpage-container');
+
+      if (target === 'home' || !subpageContent[target]) {
+        if (mainEl) mainEl.classList.remove('hidden');
+        if (subpageContainer) subpageContainer.classList.add('hidden');
+        try {
+          if (window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
+        } catch (e) {}
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        if (mainEl) mainEl.classList.add('hidden');
+        if (subpageContainer) subpageContainer.classList.remove('hidden');
+        renderSubpage(target);
+        try {
+          window.location.hash = '/' + target;
+        } catch (e) {}
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function handleHashChange() {
+      const hash = window.location.hash;
+      if (hash.startsWith('#/')) {
+        const page = hash.replace('#/', '');
+        if (subpageContent[page]) {
+          navigateTo(page);
+          return;
+        }
+      }
+      if (hash === '' || hash === '#') {
+        navigateTo('home');
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
 
     function renderMockups(lang) {
       const profileEl = document.getElementById('mockup-profile-container');
@@ -1021,6 +1407,20 @@
       updateText('btn-terms', t.btnTerms);
       updateText('btn-foot-join', t.btnFootJoin);
       updateText('modal-btn-close', t.modalClose);
+
+      const navSupport = document.getElementById('nav-support-btn');
+      if (navSupport) {
+        navSupport.textContent = lang === 'ua' ? 'Підтримка' : 'Support';
+      }
+
+      const btnSupport = document.getElementById('btn-support-foot');
+      if (btnSupport) {
+        btnSupport.textContent = lang === 'ua' ? 'Підтримка' : 'Support';
+      }
+
+      if (currentPage !== 'home') {
+        renderSubpage(currentPage);
+      }
 
       renderMockups(lang);
     }
@@ -1182,6 +1582,7 @@
       renderMockups('ua');
       updateCountdown();
       setInterval(updateCountdown, 1000);
+      handleHashChange();
     });
   </script>
 </body>
