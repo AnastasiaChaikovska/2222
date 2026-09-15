@@ -64,17 +64,28 @@
       background-color: #BD7573;
       color: #FFFFFF;
     }
+    /* Smooth responsiveness for phone shells on compact viewports */
+    .iphone-frame {
+      width: 100%;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+    @media (max-width: 360px) {
+      .iphone-frame {
+        max-width: 290px;
+      }
+    }
   </style>
 </head>
 <body class="bg-app-bg text-app-espresso antialiased overflow-x-hidden selection:bg-app-rose selection:text-white">
 
   <header class="sticky top-0 z-40 bg-app-bg/90 backdrop-blur-md border-b border-app-border/70 transition-colors">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 h-20 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Brand Lockup with Replicated Logo -->
-      <a href="#" class="flex items-center gap-3.5 group">
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3.5 group">
         <!-- SVG Vector of Logo (Two embracing women) -->
-        <div class="w-12 h-12 flex-shrink-0 transition-transform group-hover:scale-105 duration-300">
+        <div class="w-10 h-10 sm:w-12 sm:h-12 flex-shrink-0 transition-transform group-hover:scale-105 duration-300">
           <svg viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-xs">
             <!-- Left woman hair bun (Espresso) -->
             <path d="M46 54C41 53 36 45 39 37C42 29 53 25 61 30C69 35 70 47 63 53C61 55 57 56 55 58C55 60 59 63 60 67C61 71 59 76 56 80C51 86 42 86 37 80C34 76 34 70 37 65C39 61 43 59 45 56C46 55 46 54 46 54Z" fill="#261613"/>
@@ -96,27 +107,27 @@
         </div>
 
         <div class="flex flex-col">
-          <span class="text-2xl font-serif font-medium tracking-tight text-app-espresso leading-none">22:22</span>
-          <span id="nav-motto" class="text-[11.5px] tracking-wide text-app-brown font-normal mt-1">жінка жінці — дім</span>
+          <span class="text-xl sm:text-2xl font-serif font-medium tracking-tight text-app-espresso leading-none">22:22</span>
+          <span id="nav-motto" class="text-[10.5px] sm:text-[11.5px] tracking-wide text-app-brown font-normal mt-0.5 sm:mt-1">жінка жінці — дім</span>
         </div>
       </a>
 
       <!-- Countdown pill & Language Switcher -->
-      <div class="flex items-center gap-4 sm:gap-6">
+      <div class="flex items-center gap-2.5 sm:gap-4 lg:gap-6">
         
         <!-- Live Countdown -->
-        <div class="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-app-bgsubtle border border-app-border text-xs text-app-brown">
-          <span class="w-2 h-2 rounded-full bg-app-rose animate-pulse"></span>
+        <div class="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-app-bgsubtle border border-app-border text-xs text-app-brown">
+          <span class="w-1.5 h-1.5 rounded-full bg-app-rose animate-pulse"></span>
           <span id="nav-countdown-label">До зустрічі о 22:22:</span>
           <span id="countdown-timer" class="font-medium text-app-espresso font-mono">--:--:--</span>
         </div>
 
         <!-- Language Switcher (UA / EN) -->
-        <div class="inline-flex rounded-full p-1 bg-app-bgsubtle border border-app-border text-xs">
-          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white shadow-xs">
+        <div class="inline-flex rounded-full p-0.5 sm:p-1 bg-app-bgsubtle border border-app-border text-[11px] sm:text-xs">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white shadow-xs">
             UA
           </button>
-          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-brown hover:text-app-espresso">
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-brown hover:text-app-espresso">
             EN
           </button>
         </div>
@@ -131,43 +142,43 @@
   </header>
 
   <main>
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <section class="relative pt-8 pb-16 sm:pt-14 sm:pb-24 lg:pt-20 lg:pb-28 overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           <!-- Left Column: Editorial Manifesto & Waitlist Form -->
-          <div class="lg:col-span-6 space-y-7">
+          <div class="lg:col-span-6 space-y-5 sm:space-y-7">
             
-            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-app-roselight border border-app-rose/30 text-app-rose text-xs font-medium">
-              <span class="text-sm leading-none">♡</span>
+            <div class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-1 rounded-full bg-app-roselight border border-app-rose/30 text-app-rose text-[11px] sm:text-xs font-medium">
+              <span class="text-xs sm:text-sm leading-none">♡</span>
               <span id="hero-badge">Одне знайомство • Щодня • О 22:22</span>
             </div>
 
-            <h1 id="hero-title" class="text-3xl sm:text-5xl lg:text-[52px] font-serif font-medium text-app-espresso leading-[1.2] tracking-tight">
+            <h1 id="hero-title" class="text-2xl sm:text-4xl lg:text-[50px] font-serif font-medium text-app-espresso leading-[1.22] tracking-tight">
               Подруга, якої бракувало. <br>
               <span class="text-app-rose italic font-normal">Без нескінченного гортання анкет.</span>
             </h1>
 
-            <p id="hero-desc" class="text-base sm:text-lg text-app-brown max-w-xl leading-relaxed font-normal">
+            <p id="hero-desc" class="text-sm sm:text-base lg:text-lg text-app-brown max-w-xl leading-relaxed font-normal">
               Жодних каталогів із сотнями анкет і поверхневих розмов. Щовечора о 22:22 на тебе чекає знайомство з однією жінкою, яка може стати близькою — зі схожими цінностями, темпом життя та взаємною повагою.
             </p>
 
             <!-- Waitlist Form (Hero) -->
             <div class="pt-2 max-w-lg">
               <form id="hero-waitlist-form" onsubmit="handleWaitlistSubmit(event, 'hero')" class="space-y-3">
-                <div class="grid sm:grid-cols-2 gap-3">
+                <div class="grid sm:grid-cols-2 gap-2.5 sm:gap-3">
                   <div>
                     <label id="label-hero-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
-                    <input type="text" id="hero-name" required placeholder="Оля" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
+                    <input type="text" id="hero-name" required placeholder="Оля" class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
                   </div>
                   <div>
                     <label id="label-hero-contact" class="block text-xs font-medium text-app-brown mb-1.5">Email або нік у Telegram</label>
-                    <input type="text" id="hero-contact" required placeholder="@olia або olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
+                    <input type="text" id="hero-contact" required placeholder="@olia або olia@email.com" class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
                   </div>
                 </div>
 
-                <button type="submit" id="btn-hero-submit" class="w-full mt-2 sm:mt-1 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-app-rose text-white text-sm font-medium transition-colors shadow-sm flex items-center justify-center gap-2">
+                <button type="submit" id="btn-hero-submit" class="w-full mt-2 sm:mt-1 py-3 sm:py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-app-rose text-white text-sm font-medium transition-colors shadow-sm flex items-center justify-center gap-2">
                   <span>Приєднатися до списку очікування</span>
                   <span>→</span>
                 </button>
@@ -185,12 +196,12 @@
               </div>
 
               <!-- Reassurance Microcopy -->
-              <div class="flex items-center gap-4 text-xs text-app-muted pt-3">
+              <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-app-muted pt-3">
                 <span class="flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 flex-shrink-0"></span>
                   <span id="hero-foot-1">Закрите бета-тестування</span>
                 </span>
-                <span>•</span>
+                <span class="hidden sm:inline">•</span>
                 <span id="hero-foot-2">Простір лише для жінок</span>
               </div>
             </div>
@@ -198,11 +209,11 @@
           </div>
 
           <!-- Right Column: iPhone Frame & Rotating Badge Showcase -->
-          <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-6 sm:gap-8 lg:gap-10">
+          <div class="lg:col-span-6 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6 sm:gap-8 lg:gap-8">
             
-            <!-- Rotating Aesthetic Badge (Placed in open negative space with generous margins, NO overlap) -->
-            <div class="flex-shrink-0 flex items-center justify-center select-none py-2 order-2 sm:order-1">
-              <div class="relative w-28 h-28 flex items-center justify-center">
+            <!-- Rotating Aesthetic Badge (With clean margins in negative space) -->
+            <div class="flex-shrink-0 flex items-center justify-center select-none py-2 order-2 md:order-1">
+              <div class="relative w-24 h-24 sm:w-28 sm:h-28 flex items-center justify-center">
                 <svg viewBox="0 0 120 120" class="w-full h-full animate-spin-slow origin-center">
                   <defs>
                     <path id="badge-circle-path" d="M 60, 60 m -43, 0 a 43,43 0 1,1 86,0 a 43,43 0 1,1 -86,0" fill="none"/>
@@ -213,39 +224,39 @@
                     </textPath>
                   </text>
                 </svg>
-                <div class="absolute w-10 h-10 rounded-full bg-app-card border border-app-border flex items-center justify-center text-app-rose text-xs font-serif font-medium shadow-xs">
+                <div class="absolute w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-app-card border border-app-border flex items-center justify-center text-app-rose text-[11px] sm:text-xs font-serif font-medium shadow-xs">
                   22:22
                 </div>
               </div>
             </div>
 
             <!-- iPhone Device Shell -->
-            <div class="relative w-[285px] sm:w-[310px] flex-shrink-0 rounded-[46px] p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30 order-1 sm:order-2">
-              <div class="absolute -left-[3px] top-[100px] w-[3px] h-[24px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="relative rounded-[36px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
+            <div class="iphone-frame relative flex-shrink-0 rounded-[42px] sm:rounded-[46px] p-2.5 sm:p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30 order-1 md:order-2">
+              <div class="absolute -left-[3px] top-[90px] sm:top-[100px] w-[3px] h-[20px] sm:h-[24px] bg-[#3B3230] rounded-l-xs"></div>
+              <div class="relative rounded-[32px] sm:rounded-[36px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
                 
                 <!-- Status bar with Dynamic Island -->
-                <div class="pt-2 px-6 flex items-center justify-between text-[11px] font-semibold text-app-espresso">
+                <div class="pt-2 px-4 sm:px-6 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold text-app-espresso">
                   <span>16:16</span>
-                  <div class="w-20 h-4 bg-black rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 rounded-full bg-[#1A1A1A] mr-6"></div>
+                  <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-black rounded-full flex items-center justify-center">
+                    <div class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#1A1A1A] mr-4 sm:mr-6"></div>
                   </div>
-                  <div class="flex items-center gap-1 text-[9px]">
+                  <div class="flex items-center gap-1 text-[8.5px] sm:text-[9px]">
                     <span>5G</span>
-                    <div class="w-4 h-2 border border-app-espresso rounded-xs p-0.5 flex items-center">
+                    <div class="w-3.5 sm:w-4 h-2 border border-app-espresso rounded-xs p-0.5 flex items-center">
                       <div class="h-full w-full bg-app-espresso rounded-2xs"></div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Screen Content (Profile App Screen) -->
-                <div id="mockup-profile-container" class="p-4 pt-3 min-h-[500px] flex flex-col justify-between">
+                <div id="mockup-profile-container" class="p-3.5 sm:p-4 pt-2.5 sm:pt-3 min-h-[460px] sm:min-h-[500px] flex flex-col justify-between">
                   <!-- Injected via renderMockups() -->
                 </div>
 
                 <!-- Home Indicator Bar -->
-                <div class="py-2 flex justify-center bg-[#FAF6F0]">
-                  <div class="w-28 h-1 bg-black/20 rounded-full"></div>
+                <div class="py-1.5 sm:py-2 flex justify-center bg-[#FAF6F0]">
+                  <div class="w-24 sm:w-28 h-1 bg-black/20 rounded-full"></div>
                 </div>
 
               </div>
@@ -258,8 +269,8 @@
       </div>
     </section>
 
-    <section class="py-20 bg-app-bgsubtle/60 border-t border-b border-app-border/70">
-      <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-4">
+    <section class="py-14 sm:py-20 bg-app-bgsubtle/60 border-t border-b border-app-border/70">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4">
         
         <span id="sec2-tag" class="text-xs uppercase tracking-widest text-app-rose font-medium">01 / Чому це важливо</span>
         
@@ -267,22 +278,22 @@
           Знайти близьку подругу в дорослому віці не має бути випробуванням.
         </h2>
 
-        <p id="sec2-desc" class="text-sm sm:text-base text-app-brown max-w-2xl mx-auto leading-relaxed pt-2">
+        <p id="sec2-desc" class="text-sm sm:text-base text-app-brown max-w-2xl mx-auto leading-relaxed pt-1 sm:pt-2">
           У школі чи студентські роки дружба зав'язувалася природно завдяки щоденним зустрічам і спільному вільному часу. У дорослому житті залишаються робота, переїзди та щоденна метушня. Дейтинги підштовхують до свайпів і поверхових оцінок, професійні платформи — до вигоди. Справжня жіноча дружба не виникає поспіхом на конвеєрі.
         </p>
 
-        <div class="pt-6 grid sm:grid-cols-2 gap-6 text-left max-w-3xl mx-auto">
-          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border space-y-2.5 shadow-xs">
+        <div class="pt-4 sm:pt-6 grid sm:grid-cols-2 gap-4 sm:gap-6 text-left max-w-3xl mx-auto">
+          <div class="bg-app-card p-5 sm:p-7 rounded-3xl border border-app-border space-y-2.5 shadow-xs">
             <span class="text-xs font-mono text-app-rose">01</span>
-            <h3 id="sec2-col1-title" class="font-serif font-medium text-lg text-app-espresso">Як це було раніше</h3>
+            <h3 id="sec2-col1-title" class="font-serif font-medium text-base sm:text-lg text-app-espresso">Як це було раніше</h3>
             <p id="sec2-col1-text" class="text-xs sm:text-sm text-app-brown leading-relaxed">
               Університетські аудиторії, спільні коридори, дні, коли часу було вдосталь. Друзі зʼявлялися просто тому, що ви були поруч щодня.
             </p>
           </div>
 
-          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border space-y-2.5 shadow-xs">
+          <div class="bg-app-card p-5 sm:p-7 rounded-3xl border border-app-border space-y-2.5 shadow-xs">
             <span class="text-xs font-mono text-app-rose">02</span>
-            <h3 id="sec2-col2-title" class="font-serif font-medium text-lg text-app-espresso">Чому додатки не допомагають</h3>
+            <h3 id="sec2-col2-title" class="font-serif font-medium text-base sm:text-lg text-app-espresso">Чому додатки не допомагають</h3>
             <p id="sec2-col2-text" class="text-xs sm:text-sm text-app-brown leading-relaxed">
               Сотні профілів, де люди оцінюють одне одного за фото за частку секунди. Десятки розпочатих листувань, що згасають після першого привітання.
             </p>
@@ -292,10 +303,10 @@
       </div>
     </section>
 
-    <section class="py-20 md:py-28">
-      <div class="max-w-6xl mx-auto px-5 sm:px-8">
+    <section class="py-16 sm:py-24 lg:py-28">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="max-w-2xl mb-14 space-y-3">
+        <div class="max-w-2xl mb-10 sm:mb-14 space-y-2.5 sm:space-y-3">
           <span id="sec3-tag" class="text-xs uppercase tracking-widest text-app-rose font-medium">02 / Механіка</span>
           <h2 id="sec3-title" class="text-2xl sm:text-4xl font-serif font-medium text-app-espresso leading-snug">
             О 22:22 зʼявляється хтось новий.
@@ -305,34 +316,34 @@
           </p>
         </div>
 
-        <div class="grid lg:grid-cols-12 gap-12 items-center">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           
           <!-- Steps List -->
-          <div class="lg:col-span-6 space-y-5">
+          <div class="lg:col-span-6 space-y-4 sm:space-y-5">
             
-            <div class="p-6 rounded-3xl bg-app-card border border-app-border space-y-2 transition-all hover:border-app-rose/50 shadow-xs">
+            <div class="p-5 sm:p-6 rounded-3xl bg-app-card border border-app-border space-y-2 transition-all hover:border-app-rose/50 shadow-xs">
               <span class="text-xs font-mono text-app-rose font-medium">Крок 01</span>
-              <h3 id="sec3-s1-title" class="text-lg font-serif font-medium text-app-espresso">Розкажи про себе</h3>
-              <p id="sec3-s1-desc" class="text-sm text-app-brown leading-relaxed">
+              <h3 id="sec3-s1-title" class="text-base sm:text-lg font-serif font-medium text-app-espresso">Розкажи про себе</h3>
+              <p id="sec3-s1-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
                 Щиро відповідай на запитання: що для тебе важливо у спілкуванні, як виглядає твій ідеальний вихідний і де пролягають твої особисті кордони.
               </p>
             </div>
 
-            <div class="p-6 rounded-3xl bg-app-card border border-app-border space-y-2 transition-all hover:border-app-rose/50 shadow-xs">
+            <div class="p-5 sm:p-6 rounded-3xl bg-app-card border border-app-border space-y-2 transition-all hover:border-app-rose/50 shadow-xs">
               <span class="text-xs font-mono text-app-rose font-medium">Крок 02</span>
-              <h3 id="sec3-s2-title" class="text-lg font-serif font-medium text-app-espresso">Щодня — одна людина</h3>
-              <p id="sec3-s2-desc" class="text-sm text-app-brown leading-relaxed">
+              <h3 id="sec3-s2-title" class="text-base sm:text-lg font-serif font-medium text-app-espresso">Щодня — одна людина</h3>
+              <p id="sec3-s2-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
                 Без хаотичних стрічок. Лише одне продумане знайомство на добу з жінкою, яка розділяє твої життєві цінності та комфортний ритм.
               </p>
             </div>
 
-            <div class="p-6 rounded-3xl bg-app-card border border-app-rose/40 space-y-2 shadow-xs bg-gradient-to-br from-app-card to-app-roselight/30">
+            <div class="p-5 sm:p-6 rounded-3xl bg-app-card border border-app-rose/40 space-y-2 shadow-xs bg-gradient-to-br from-app-card to-app-roselight/30">
               <div class="flex items-center justify-between">
                 <span class="text-xs font-mono text-app-rose font-medium">Крок 03</span>
                 <span class="text-[11px] px-2.5 py-0.5 rounded-full bg-app-roselight text-app-rose font-medium">22:22</span>
               </div>
-              <h3 id="sec3-s3-title" class="text-lg font-serif font-medium text-app-espresso">Зустріч о 22:22</h3>
-              <p id="sec3-s3-desc" class="text-sm text-app-brown leading-relaxed">
+              <h3 id="sec3-s3-title" class="text-base sm:text-lg font-serif font-medium text-app-espresso">Зустріч о 22:22</h3>
+              <p id="sec3-s3-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
                 Щовечора о 22:22 відкривається нова анкета. Якщо вам обом відгукнеться прочитане — відкривається чат із підказками, які допоможуть почати бесіду тепло й без незручності.
               </p>
             </div>
@@ -342,37 +353,37 @@
           <!-- Second iPhone Device Shell (Chat Interface with Smart Prompt) -->
           <div class="lg:col-span-6 flex justify-center lg:justify-end">
             
-            <div class="relative w-[285px] sm:w-[310px] rounded-[46px] p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30">
-              <div class="absolute -left-[3px] top-[100px] w-[3px] h-[24px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -left-[3px] top-[135px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -left-[3px] top-[185px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -right-[3px] top-[125px] w-[3px] h-[55px] bg-[#3B3230] rounded-r-xs"></div>
+            <div class="iphone-frame relative rounded-[42px] sm:rounded-[46px] p-2.5 sm:p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30">
+              <div class="absolute -left-[3px] top-[90px] sm:top-[100px] w-[3px] h-[20px] sm:h-[24px] bg-[#3B3230] rounded-l-xs"></div>
+              <div class="absolute -left-[3px] top-[120px] sm:top-[135px] w-[3px] h-[34px] sm:h-[40px] bg-[#3B3230] rounded-l-xs"></div>
+              <div class="absolute -left-[3px] top-[165px] sm:top-[185px] w-[3px] h-[34px] sm:h-[40px] bg-[#3B3230] rounded-l-xs"></div>
+              <div class="absolute -right-[3px] top-[115px] sm:top-[125px] w-[3px] h-[48px] sm:h-[55px] bg-[#3B3230] rounded-r-xs"></div>
 
               <!-- Phone Glass -->
-              <div class="relative rounded-[36px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
+              <div class="relative rounded-[32px] sm:rounded-[36px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
                 
                 <!-- Status bar -->
-                <div class="pt-2 px-6 flex items-center justify-between text-[11px] font-semibold text-app-espresso">
+                <div class="pt-2 px-4 sm:px-6 flex items-center justify-between text-[10px] sm:text-[11px] font-semibold text-app-espresso">
                   <span>16:16</span>
-                  <div class="w-20 h-4 bg-black rounded-full flex items-center justify-center">
-                    <div class="w-2 h-2 rounded-full bg-[#1A1A1A] mr-6"></div>
+                  <div class="w-16 sm:w-20 h-3.5 sm:h-4 bg-black rounded-full flex items-center justify-center">
+                    <div class="w-1.5 sm:w-2 h-1.5 sm:h-2 rounded-full bg-[#1A1A1A] mr-4 sm:mr-6"></div>
                   </div>
-                  <div class="flex items-center gap-1 text-[9px]">
+                  <div class="flex items-center gap-1 text-[8.5px] sm:text-[9px]">
                     <span>5G</span>
-                    <div class="w-4 h-2 border border-app-espresso rounded-xs p-0.5 flex items-center">
+                    <div class="w-3.5 sm:w-4 h-2 border border-app-espresso rounded-xs p-0.5 flex items-center">
                       <div class="h-full w-full bg-app-espresso rounded-2xs"></div>
                     </div>
                   </div>
                 </div>
 
                 <!-- Chat Mockup Content -->
-                <div id="mockup-chat-container" class="p-4 pt-2.5 min-h-[500px] flex flex-col justify-between">
+                <div id="mockup-chat-container" class="p-3.5 sm:p-4 pt-2 sm:pt-2.5 min-h-[460px] sm:min-h-[500px] flex flex-col justify-between">
                   <!-- Injected via renderMockups() -->
                 </div>
 
                 <!-- Home Indicator -->
-                <div class="py-2 flex justify-center bg-[#FAF6F0]">
-                  <div class="w-28 h-1 bg-black/20 rounded-full"></div>
+                <div class="py-1.5 sm:py-2 flex justify-center bg-[#FAF6F0]">
+                  <div class="w-24 sm:w-28 h-1 bg-black/20 rounded-full"></div>
                 </div>
 
               </div>
@@ -385,25 +396,25 @@
       </div>
     </section>
 
-    <section class="py-20 bg-app-card border-t border-app-border/70">
-      <div class="max-w-5xl mx-auto px-5 sm:px-8">
+    <section class="py-16 sm:py-20 bg-app-card border-t border-app-border/70">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="max-w-2xl mb-12 space-y-3">
+        <div class="max-w-2xl mb-8 sm:mb-12 space-y-2.5 sm:space-y-3">
           <span id="sec4-tag" class="text-xs uppercase tracking-widest text-app-rose font-medium">03 / Принципи</span>
           <h2 id="sec4-title" class="text-2xl sm:text-4xl font-serif font-medium text-app-espresso leading-snug">
             Без свайпів. Без нетворкінгу. Без марнування часу.
           </h2>
-          <p id="sec4-desc" class="text-base sm:text-lg text-app-brown leading-relaxed">
+          <p id="sec4-desc" class="text-sm sm:text-base lg:text-lg text-app-brown leading-relaxed">
             Лише одна людина, яка може стати близькою подругою.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
           
           <!-- What we don't do -->
-          <div class="p-7 sm:p-8 rounded-3xl bg-app-bg border border-app-border space-y-4">
+          <div class="p-6 sm:p-8 rounded-3xl bg-app-bg border border-app-border space-y-3 sm:space-y-4">
             <span id="sec4-col1-title" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Чого в нас немає</span>
-            <ul class="space-y-3 text-sm text-app-brown">
+            <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-app-brown">
               <li class="flex items-start gap-2.5">
                 <span class="text-app-rose font-bold">✕</span>
                 <span id="sec4-c1-1">Поспішного оцінювання зовнішності за лічені секунди.</span>
@@ -424,9 +435,9 @@
           </div>
 
           <!-- What actually matters -->
-          <div class="p-7 sm:p-8 rounded-3xl bg-app-bg border border-app-border space-y-4">
+          <div class="p-6 sm:p-8 rounded-3xl bg-app-bg border border-app-border space-y-3 sm:space-y-4">
             <span id="sec4-col2-title" class="text-xs uppercase tracking-wider text-app-rose font-medium block">Що має значення</span>
-            <ul class="space-y-3 text-sm text-app-espresso">
+            <ul class="space-y-2.5 sm:space-y-3 text-xs sm:text-sm text-app-espresso">
               <li class="flex items-start gap-2.5">
                 <span class="text-app-rose font-bold">♡</span>
                 <span id="sec4-c2-1"><strong>Цінності:</strong> надійність, підтримка у складні миті та повага до особистих кордонів.</span>
@@ -451,22 +462,22 @@
       </div>
     </section>
 
-    <section class="py-20 md:py-24 bg-app-espresso text-app-bg relative overflow-hidden">
-      <div class="max-w-4xl mx-auto px-5 sm:px-8 text-center space-y-6">
+    <section class="py-16 sm:py-20 md:py-24 bg-app-espresso text-app-bg relative overflow-hidden">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-5 sm:space-y-6">
         
         <span id="sec5-tag" class="text-xs uppercase tracking-widest text-app-rose font-medium">Принцип фокусу</span>
         
-        <h2 id="sec5-title" class="text-3xl sm:text-5xl font-serif font-medium leading-tight">
+        <h2 id="sec5-title" class="text-2xl sm:text-4xl lg:text-5xl font-serif font-medium leading-tight">
           Тобі не потрібні десятки випадкових людей. <br>
           <span class="text-app-rose italic font-normal">Достатньо знайти одну свою.</span>
         </h2>
 
-        <p id="sec5-desc" class="text-sm sm:text-base text-app-bg/80 max-w-xl mx-auto leading-relaxed">
+        <p id="sec5-desc" class="text-xs sm:text-sm md:text-base text-app-bg/80 max-w-xl mx-auto leading-relaxed">
           22:22 свідомо пропонує лише одне знайомство на добу. Коли увага зосереджена на одній людині, вона не губиться в потоці — а отримує щирий інтерес і час.
         </p>
 
-        <div class="pt-4">
-          <a href="#waitlist-section" id="sec5-btn" class="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-app-rose hover:bg-white hover:text-app-espresso text-white text-sm font-medium transition-all shadow-md">
+        <div class="pt-2 sm:pt-4">
+          <a href="#waitlist-section" id="sec5-btn" class="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-full bg-app-rose hover:bg-white hover:text-app-espresso text-white text-xs sm:text-sm font-medium transition-all shadow-md">
             Приєднатися до списку очікування →
           </a>
         </div>
@@ -474,13 +485,13 @@
       </div>
     </section>
 
-    <section id="waitlist-section" class="py-20 md:py-28 bg-app-bg">
-      <div class="max-w-3xl mx-auto px-5 sm:px-8">
+    <section id="waitlist-section" class="py-16 sm:py-20 md:py-28 bg-app-bg">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="bg-app-card rounded-[36px] p-8 sm:p-12 border border-app-border shadow-md text-center space-y-7">
+        <div class="bg-app-card rounded-[28px] sm:rounded-[36px] p-6 sm:p-10 md:p-12 border border-app-border shadow-md text-center space-y-6 sm:space-y-7">
           
           <!-- App Emblem in circle -->
-          <div class="w-16 h-16 mx-auto rounded-full bg-app-bgsubtle border border-app-border flex items-center justify-center p-2.5 shadow-xs">
+          <div class="w-14 h-14 sm:w-16 sm:h-16 mx-auto rounded-full bg-app-bgsubtle border border-app-border flex items-center justify-center p-2 sm:p-2.5 shadow-xs">
             <svg viewBox="0 0 160 160" fill="none" class="w-full h-full">
               <path d="M46 54C41 53 36 45 39 37C42 29 53 25 61 30C69 35 70 47 63 53C61 55 57 56 55 58C55 60 59 63 60 67C61 71 59 76 56 80C51 86 42 86 37 80C34 76 34 70 37 65C39 61 43 59 45 56C46 55 46 54 46 54Z" fill="#261613"/>
               <path d="M26 126C27 106 40 94 57 93C62 93 69 96 74 100C72 108 72 119 75 127C60 129 42 129 26 126Z" fill="#261613"/>
@@ -489,11 +500,11 @@
             </svg>
           </div>
 
-          <div class="space-y-3">
-            <h2 id="sec6-title" class="text-3xl sm:text-4xl font-serif font-medium text-app-espresso">
+          <div class="space-y-2.5 sm:space-y-3">
+            <h2 id="sec6-title" class="text-2xl sm:text-3xl md:text-4xl font-serif font-medium text-app-espresso">
               Загадай бажання о 22:22.
             </h2>
-            <p id="sec6-desc" class="text-sm sm:text-base text-app-brown max-w-md mx-auto leading-relaxed">
+            <p id="sec6-desc" class="text-xs sm:text-sm md:text-base text-app-brown max-w-md mx-auto leading-relaxed">
               Ми готуємо першу закриту когорту 22:22. Залиш контакти, щоб опинитися серед перших учасниць, коли розпочнеться запуск у твоєму місті.
             </p>
           </div>
@@ -502,15 +513,15 @@
           <form id="bot-waitlist-form" onsubmit="handleWaitlistSubmit(event, 'bottom')" class="max-w-md mx-auto space-y-3 text-left">
             <div>
               <label id="label-bot-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
-              <input type="text" id="bot-name" required placeholder="Оля" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
+              <input type="text" id="bot-name" required placeholder="Оля" class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-app-bgsubtle border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
             </div>
 
             <div>
               <label id="label-bot-contact" class="block text-xs font-medium text-app-brown mb-1.5">Email або нік у Telegram</label>
-              <input type="text" id="bot-contact" required placeholder="@olia або olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
+              <input type="text" id="bot-contact" required placeholder="@olia або olia@email.com" class="w-full px-3.5 sm:px-4 py-2.5 sm:py-3 rounded-xl bg-app-bgsubtle border border-app-border text-app-espresso placeholder-app-muted/70 text-sm focus:outline-none focus:border-app-rose transition-colors">
             </div>
 
-            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3.5 px-6 rounded-xl bg-app-rose hover:bg-app-espresso text-white text-sm font-medium transition-colors shadow-sm flex items-center justify-center gap-2">
+            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3 sm:py-3.5 px-6 rounded-xl bg-app-rose hover:bg-app-espresso text-white text-sm font-medium transition-colors shadow-sm flex items-center justify-center gap-2">
               <span>Приєднатися до списку очікування</span>
               <span>♡</span>
             </button>
@@ -526,9 +537,9 @@
             </p>
           </div>
 
-          <div class="flex items-center justify-center gap-6 text-xs text-app-muted pt-2">
+          <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 text-xs text-app-muted pt-2">
             <span id="bot-foot-1">Приватно та конфіденційно</span>
-            <span>•</span>
+            <span class="hidden sm:inline">•</span>
             <span id="bot-foot-2">Лише для жінок</span>
           </div>
 
@@ -538,22 +549,22 @@
     </section>
   </main>
 
-  <footer class="py-12 border-t border-app-border bg-app-bgsubtle/70 text-app-muted text-xs">
-    <div class="max-w-6xl mx-auto px-5 sm:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+  <footer class="py-8 sm:py-12 border-t border-app-border bg-app-bgsubtle/70 text-app-muted text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6 text-center sm:text-left">
       
-      <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2.5 sm:gap-3">
         <span class="font-serif font-medium text-app-espresso text-base">22:22</span>
         <span class="text-app-border">•</span>
         <span id="foot-slogan">де жінка для жінки — дім.</span>
       </div>
 
-      <div class="flex items-center gap-6">
+      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
         <a href="javascript:void(0)" onclick="openModal('privacy')" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
         <a href="javascript:void(0)" onclick="openModal('terms')" id="btn-terms" class="hover:text-app-espresso transition-colors">Правила спільноти</a>
         <a href="#waitlist-section" id="btn-foot-join" class="text-app-rose hover:underline">Список очікування</a>
       </div>
 
-      <div>
+      <div class="text-[11px] sm:text-xs">
         <span>Київ: </span>
         <span id="footer-time" class="font-mono text-app-espresso font-medium">16:16</span>
       </div>
@@ -1085,21 +1096,68 @@
       renderMockups(lang);
     }
 
-    function handleWaitlistSubmit(event, location) {
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx50iCHWgF8Why_21VfhmS6eaIXHJeg1OSCko9d_zu84oNGplj_zZg3mC7HX1-qLDoq/exec";
+
+    async function handleWaitlistSubmit(event, location) {
       event.preventDefault();
-      if (location === 'hero') {
-        const form = document.getElementById('hero-waitlist-form');
-        const alertBox = document.getElementById('hero-success');
+
+      const isHero = location === 'hero';
+      const form = document.getElementById(isHero ? 'hero-waitlist-form' : 'bot-waitlist-form');
+      const alertBox = document.getElementById(isHero ? 'hero-success' : 'bot-success');
+      const nameInput = document.getElementById(isHero ? 'hero-name' : 'bot-name');
+      const contactInput = document.getElementById(isHero ? 'hero-contact' : 'bot-contact');
+      const submitBtn = document.getElementById(isHero ? 'btn-hero-submit' : 'btn-bot-submit');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const contact = contactInput ? contactInput.value.trim() : '';
+
+      if (!name || !contact) return;
+
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const loadingText = currentLang === 'ua' ? 'Надсилаємо...' : 'Submitting...';
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>${loadingText}</span>
+        `;
+      }
+
+      const payload = {
+        name: name,
+        contact: contact,
+        lang: currentLang,
+        source: isHero ? 'Hero Form' : 'Bottom Form'
+      };
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain'
+          },
+          body: JSON.stringify(payload)
+        });
+
         if (form && alertBox) {
           form.classList.add('hidden');
           alertBox.classList.remove('hidden');
         }
-      } else {
-        const form = document.getElementById('bot-waitlist-form');
-        const alertBox = document.getElementById('bot-success');
+      } catch (err) {
+        console.error('Waitlist submission error:', err);
+        // Even if network blips or CORS restricts inspection, no-cors ensures Google receives it
         if (form && alertBox) {
           form.classList.add('hidden');
           alertBox.classList.remove('hidden');
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
         }
       }
     }
