@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>22:22 — жінка жінці — дім</title>
   
-  <!-- Favicon from your GitHub repository -->
+  <!-- Favicon from your GitHub repository (AnastasiaChaikovska/2222) -->
   <link rel="icon" href="favicon">
   <link rel="shortcut icon" href="favicon">
   <link rel="apple-touch-icon" href="favicon">
@@ -50,7 +50,7 @@
           }
         }
       }
-    }
+    };
   </script>
   <style>
     body {
@@ -81,17 +81,16 @@
             <!-- Tendrils falling down left -->
             <path d="M36 67C31 72 30 79 34 85C35 87 32 89 31 87C28 81 29 72 34 65C35 64 37 66 36 67Z" fill="#261613"/>
             <path d="M57 77C60 83 60 88 56 94C55 95 54 94 54 92C56 88 56 83 54 78C53 77 56 75 57 77Z" fill="#261613"/>
-            <!-- Left woman body/torso silhouette (Espresso) -->
+            <!-- Left woman body silhouette (Espresso) -->
             <path d="M26 126C27 106 40 94 57 93C62 93 69 96 74 100C72 108 72 119 75 127C60 129 42 129 26 126Z" fill="#261613"/>
             <!-- Right woman wavy hair (Terracotta Rose) -->
             <path d="M85 53C76 55 70 63 69 72C67 82 72 90 70 100C69 105 64 110 65 116C66 121 72 124 74 128C84 128 97 127 107 126C112 123 115 117 114 111C113 103 104 99 105 91C107 83 116 79 116 70C116 58 106 50 94 50C91 50 88 51 85 53Z" fill="#BD7573"/>
-            <!-- Wavy hair texture lines -->
+            <!-- Hair texture lines -->
             <path d="M78 69C75 77 78 86 76 95C75 102 71 107 72 114" stroke="#FAF6F0" stroke-width="2.5" stroke-linecap="round"/>
             <path d="M92 63C89 74 93 84 90 95C88 103 84 109 86 117" stroke="#FAF6F0" stroke-width="2.5" stroke-linecap="round"/>
             <path d="M104 74C102 83 105 92 101 100C99 105 96 110 97 116" stroke="#FAF6F0" stroke-width="2.5" stroke-linecap="round"/>
             <!-- Embracing arm of right woman over left shoulder (Terracotta Rose) -->
             <path d="M31 100C45 88 74 88 104 99C104 104 101 113 97 119C74 107 51 106 31 116C29 112 30 105 31 100Z" fill="#BD7573"/>
-            <!-- Gentle separation stroke -->
             <path d="M30 100C45 88 74 88 104 99" stroke="#FAF6F0" stroke-width="3" stroke-linecap="round"/>
           </svg>
         </div>
@@ -135,10 +134,10 @@
     <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
       <div class="max-w-6xl mx-auto px-5 sm:px-8">
         
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           
           <!-- Left Column: Editorial Manifesto & Waitlist Form -->
-          <div class="lg:col-span-7 space-y-7">
+          <div class="lg:col-span-6 space-y-7">
             
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-app-roselight border border-app-rose/30 text-app-rose text-xs font-medium">
               <span class="text-sm leading-none">♡</span>
@@ -198,33 +197,31 @@
 
           </div>
 
-          <!-- Right Column: Realistic iPhone Frame Showcase (Profile Screen) -->
-          <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
+          <!-- Right Column: iPhone Frame & Rotating Badge Showcase -->
+          <div class="lg:col-span-6 flex flex-col sm:flex-row items-center justify-center lg:justify-end gap-6 sm:gap-8 lg:gap-10">
             
-            <!-- Rotating Aesthetic Badge -->
-            <div class="absolute -top-6 -left-6 sm:-left-8 z-20 w-28 h-28 hidden sm:flex items-center justify-center pointer-events-none select-none">
-              <svg viewBox="0 0 100 100" class="w-full h-full animate-spin-slow">
-                <path id="badge-circle-path" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
-                <text class="text-[8.5px] fill-app-muted tracking-[0.2em] uppercase font-sans">
-                  <textPath href="#badge-circle-path" id="rotating-badge-text">
-                    • 22:22 • ЗАГАДАЙ БАЖАННЯ • ЩОДНЯ
-                  </textPath>
-                </text>
-              </svg>
-              <div class="absolute w-10 h-10 rounded-full bg-app-card border border-app-border flex items-center justify-center text-app-rose text-xs font-serif font-medium">
-                22:22
+            <!-- Rotating Aesthetic Badge (Placed in open negative space with generous margins, NO overlap) -->
+            <div class="flex-shrink-0 flex items-center justify-center select-none py-2 order-2 sm:order-1">
+              <div class="relative w-28 h-28 flex items-center justify-center">
+                <svg viewBox="0 0 120 120" class="w-full h-full animate-spin-slow origin-center">
+                  <defs>
+                    <path id="badge-circle-path" d="M 60, 60 m -43, 0 a 43,43 0 1,1 86,0 a 43,43 0 1,1 -86,0" fill="none"/>
+                  </defs>
+                  <text class="text-[8px] fill-app-muted font-sans font-medium tracking-[0.24em] uppercase">
+                    <textPath href="#badge-circle-path" xlink:href="#badge-circle-path" id="rotating-badge-text">
+                      • 22:22 • ЗАГАДАЙ БАЖАННЯ • ЩОДНЯ
+                    </textPath>
+                  </text>
+                </svg>
+                <div class="absolute w-10 h-10 rounded-full bg-app-card border border-app-border flex items-center justify-center text-app-rose text-xs font-serif font-medium shadow-xs">
+                  22:22
+                </div>
               </div>
             </div>
 
             <!-- iPhone Device Shell -->
-            <div class="relative w-[285px] sm:w-[310px] rounded-[46px] p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30">
-              <!-- Physical buttons on phone sides -->
+            <div class="relative w-[285px] sm:w-[310px] flex-shrink-0 rounded-[46px] p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30 order-1 sm:order-2">
               <div class="absolute -left-[3px] top-[100px] w-[3px] h-[24px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -left-[3px] top-[135px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -left-[3px] top-[185px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
-              <div class="absolute -right-[3px] top-[125px] w-[3px] h-[55px] bg-[#3B3230] rounded-r-xs"></div>
-
-              <!-- Phone Screen Glass -->
               <div class="relative rounded-[36px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
                 
                 <!-- Status bar with Dynamic Island -->
@@ -243,7 +240,7 @@
 
                 <!-- Screen Content (Profile App Screen) -->
                 <div id="mockup-profile-container" class="p-4 pt-3 min-h-[500px] flex flex-col justify-between">
-                  <!-- Dynamically populated via renderMockups() to ensure seamless UA/EN translation -->
+                  <!-- Injected via renderMockups() -->
                 </div>
 
                 <!-- Home Indicator Bar -->
@@ -346,7 +343,6 @@
           <div class="lg:col-span-6 flex justify-center lg:justify-end">
             
             <div class="relative w-[285px] sm:w-[310px] rounded-[46px] p-3 bg-[#1F1918] shadow-2xl ring-1 ring-black/30">
-              <!-- Phone Physical buttons -->
               <div class="absolute -left-[3px] top-[100px] w-[3px] h-[24px] bg-[#3B3230] rounded-l-xs"></div>
               <div class="absolute -left-[3px] top-[135px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
               <div class="absolute -left-[3px] top-[185px] w-[3px] h-[40px] bg-[#3B3230] rounded-l-xs"></div>
@@ -371,7 +367,7 @@
 
                 <!-- Chat Mockup Content -->
                 <div id="mockup-chat-container" class="p-4 pt-2.5 min-h-[500px] flex flex-col justify-between">
-                  <!-- Dynamically populated via renderMockups() -->
+                  <!-- Injected via renderMockups() -->
                 </div>
 
                 <!-- Home Indicator -->
@@ -824,7 +820,7 @@
             </div>
 
             <div class="max-w-[90%] bg-app-rose text-white text-[11px] p-2.5 rounded-2xl rounded-tr-xs leading-snug shadow-xs">
-              I'm not always the one who writes first either, so let me ask: are you more into coffee somewhere in town or a slow walk?
+              I am not always the one who writes first either, so let me ask: are you more into coffee somewhere in town or a slow walk?
             </div>
           </div>
 
@@ -834,14 +830,13 @@
               Where to begin
             </div>
             <div class="text-app-espresso leading-snug">
-              You both seem to value honesty, warmth, and conversations that unfold naturally. A good start is a simple question: what's your favorite coffee spot in Kyiv?
+              You both seem to value honesty, warmth, and conversations that unfold naturally. A good start is a simple question: what is your favorite coffee spot in Kyiv?
             </div>
           </div>
         `
       }
     };
 
-    // Translations Dictionary for Site Content
     const translations = {
       ua: {
         navMotto: "жінка жінці — дім",
@@ -916,20 +911,20 @@
         navCountdown: "Next match at 22:22:",
         navCta: "Beta Waitlist",
         heroBadge: "One Match • Every Day • At 22:22",
-        heroTitle: "The friend you've been looking for. <br><span class=\"text-app-rose italic font-normal\">Without endless swiping.</span>",
+        heroTitle: "The friend you have been looking for. <br><span class=\"text-app-rose italic font-normal\">Without endless swiping.</span>",
         heroDesc: "No endless feeds of hundreds of profiles or shallow small talk. Every evening at 22:22, you meet one woman who could genuinely become a close friend — with shared values, pacing, and mutual respect.",
         labelHeroName: "What should we call you",
         labelHeroContact: "Email or Telegram username",
         btnHeroSubmit: "<span>Join the private beta waitlist</span> <span>→</span>",
-        heroSuccessTitle: "You're on the list.",
-        heroSuccessNote: "We'll send a personal invitation as soon as 22:22 opens in your city.",
+        heroSuccessTitle: "You are on the list.",
+        heroSuccessNote: "We will send a personal invitation as soon as 22:22 opens in your city.",
         heroFoot1: "Private beta cohort",
         heroFoot2: "A space exclusively for women",
         rotatingBadge: "• 22:22 • MAKE A WISH • EVERY DAY",
 
         sec2Tag: "01 / Why it matters",
-        sec2Title: "Making real friends as an adult shouldn't feel this hard.",
-        sec2Desc: "In school or college, friendship happened naturally through daily shared spaces and open time. In adult life, there are careers, relocations, and daily responsibilities. Dating apps reduce you to split-second swipes, networking apps reduce you to utility. Genuine female friendship doesn't happen on an assembly line.",
+        sec2Title: "Making real friends as an adult should not feel this hard.",
+        sec2Desc: "In school or college, friendship happened naturally through daily shared spaces and open time. In adult life, there are careers, relocations, and daily responsibilities. Dating apps reduce you to split-second swipes, networking apps reduce you to utility. Genuine female friendship does not happen on an assembly line.",
         sec2Col1Title: "How it used to be",
         sec2Col1Text: "Campus halls, shared corridors, unstructured days. Friends appeared effortlessly because you shared the same physical routine.",
         sec2Col2Title: "Why standard apps fail",
@@ -960,12 +955,12 @@
         sec4C24: "<strong>Warm nudges:</strong> gentle contextual cues in chat to break the ice without awkwardness.",
 
         sec5Tag: "The Power of Scarcity",
-        sec5Title: "You don't need 100 new people. <br><span class=\"text-app-rose italic font-normal\">You just need the right one.</span>",
+        sec5Title: "You do not need 100 new people. <br><span class=\"text-app-rose italic font-normal\">You just need the right one.</span>",
         sec5Desc: "22:22 intentionally delivers only one match per day. When your attention is centered on one person, she isn't lost in a sea of profiles — she receives genuine care and time.",
         sec5Btn: "Join the private waitlist →",
 
         sec6Title: "Make a wish at 22:22.",
-        sec6Desc: "We're preparing the first private beta cohort of 22:22. Leave your details to be among the first women matched when we launch in your area.",
+        sec6Desc: "We are preparing the first private beta cohort of 22:22. Leave your details to be among the first women matched when we launch in your area.",
         labelBotName: "First name",
         labelBotContact: "Email or Telegram username",
         btnBotSubmit: "<span>Join the beta waitlist</span> <span>♡</span>",
@@ -999,7 +994,6 @@
       const t = translations[lang];
       if (!t) return;
 
-      // Update button states
       const btnUa = document.getElementById('btn-lang-ua');
       const btnEn = document.getElementById('btn-lang-en');
       if (lang === 'ua') {
@@ -1012,7 +1006,6 @@
         document.documentElement.lang = "en";
       }
 
-      // Update text elements safely
       const updateText = (id, text, isHtml = false) => {
         const el = document.getElementById(id);
         if (el) {
@@ -1089,11 +1082,9 @@
       updateText('btn-foot-join', t.btnFootJoin);
       updateText('modal-btn-close', t.modalClose);
 
-      // Render Phone Mockups
       renderMockups(lang);
     }
 
-    // Form submission simulation
     function handleWaitlistSubmit(event, location) {
       event.preventDefault();
       if (location === 'hero') {
@@ -1113,13 +1104,11 @@
       }
     }
 
-    // Live Countdown to 22:22
     function updateCountdown() {
       const now = new Date();
       let target = new Date();
       target.setHours(22, 22, 0, 0);
 
-      // If past 22:22 today, set for tomorrow
       if (now > target) {
         target.setDate(target.getDate() + 1);
       }
@@ -1135,14 +1124,12 @@
         timerEl.textContent = `${pad(hours)}:${pad(minutes)}:${pad(seconds)}`;
       }
 
-      // Footer Kyiv current time
       const footTimeEl = document.getElementById('footer-time');
       if (footTimeEl) {
         footTimeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
       }
     }
 
-    // Modal Handling
     const modalData = {
       privacy: {
         ua: {
@@ -1183,7 +1170,6 @@
       if (modal) modal.classList.add('hidden');
     }
 
-    // Close on backdrop click
     document.addEventListener('click', (e) => {
       const modal = document.getElementById('info-modal');
       if (modal && e.target === modal) {
@@ -1191,7 +1177,6 @@
       }
     });
 
-    // Initialize on window load
     window.addEventListener('DOMContentLoaded', () => {
       renderMockups('ua');
       updateCountdown();
