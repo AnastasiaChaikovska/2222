@@ -1096,7 +1096,7 @@
       renderMockups(lang);
     }
 
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbx50iCHWgF8Why_21VfhmS6eaIXHJeg1OSCko9d_zu84oNGplj_zZg3mC7HX1-qLDoq/exec";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDIcoAIc4YjhHy4Wr9Bujuj0e0iKUfXREJLTGJ4SoTDxv3ZXIDhA0wIZSytwcXa_Bn/exec";
 
     async function handleWaitlistSubmit(event, location) {
       event.preventDefault();
@@ -1126,19 +1126,29 @@
         `;
       }
 
+      const submissionId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+      const params = new URLSearchParams({
+        name: name,
+        contact: contact,
+        lang: currentLang,
+        source: isHero ? 'Hero Form' : 'Bottom Form',
+        subId: submissionId
+      });
+
       const payload = {
         name: name,
         contact: contact,
         lang: currentLang,
-        source: isHero ? 'Hero Form' : 'Bottom Form'
+        source: isHero ? 'Hero Form' : 'Bottom Form',
+        subId: submissionId
       };
 
       try {
-        await fetch(GOOGLE_SCRIPT_URL, {
+        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain'
+            'Content-Type': 'text/plain;charset=utf-8'
           },
           body: JSON.stringify(payload)
         });
@@ -1148,8 +1158,12 @@
           alertBox.classList.remove('hidden');
         }
       } catch (err) {
-        console.error('Waitlist submission error:', err);
-        // Even if network blips or CORS restricts inspection, no-cors ensures Google receives it
+        console.warn('Primary POST delivery completed with fallback check:', err);
+        try {
+          const fallbackBeacon = new Image();
+          fallbackBeacon.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
+        } catch (e) {}
+
         if (form && alertBox) {
           form.classList.add('hidden');
           alertBox.classList.remove('hidden');
