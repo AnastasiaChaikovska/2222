@@ -5,17 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>22:22 — Знайомства, з яких може вийти дружба</title>
   
-  <!-- Favicon from GitHub repository (AnastasiaChaikovska/2222) -->
   <link rel="icon" href="favicon">
   <link rel="shortcut icon" href="favicon">
   <link rel="apple-touch-icon" href="favicon">
 
-  <!-- Google Fonts: Onest for the entire site (pure, contemporary, reliable Cyrillic support) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -76,7 +73,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
       <!-- Brand Lockup -->
-      <a href="#" class="flex items-center gap-3 group">
+      <a href="#" onclick="navigateTo('home'); return false;" class="flex items-center gap-3 group">
         <div class="w-8 h-8 flex-shrink-0 transition-opacity group-hover:opacity-80">
           <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
             <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
@@ -94,7 +91,7 @@
         </div>
       </a>
 
-      <!-- Countdown & Language Controls -->
+      <!-- Navigation Actions -->
       <div class="flex items-center gap-3 sm:gap-6">
         
         <div class="hidden md:flex items-center gap-2 text-xs text-app-brown">
@@ -102,7 +99,6 @@
           <span id="countdown-timer" class="font-medium text-app-espresso tracking-tight">--:--:--</span>
         </div>
 
-        <!-- Language Switcher (Clean, understated) -->
         <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
           <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">
             UA
@@ -116,7 +112,7 @@
           Підтримка
         </a>
 
-        <a href="#waitlist-section" onclick="navigateTo('home'); document.getElementById('waitlist-section')?.scrollIntoView({behavior: 'smooth'}); return false;" id="nav-cta-btn" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+        <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="nav-cta-btn" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
           Список очікування
         </a>
       </div>
@@ -130,7 +126,7 @@
         
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          <!-- Left Content (540px focus) -->
+          <!-- Left Content -->
           <div class="lg:col-span-7 space-y-6">
             
             <p id="hero-badge" class="text-xs uppercase tracking-wider text-app-muted font-medium">
@@ -146,35 +142,25 @@
               Відповідаєш на кілька простих запитань про себе. Щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас схожі погляди на життя та спілкування. Якщо ви обидві кажете «так», відкривається чат.
             </p>
 
-            <!-- Waitlist Form (Hero) -->
-            <div class="pt-2 max-w-[470px]">
-              <form id="hero-waitlist-form" onsubmit="handleWaitlistSubmit(event, 'hero')" class="space-y-3">
+            <!-- Hero Step 1 Form (Two Main Fields Only) -->
+            <div class="pt-2 max-w-[490px]">
+              <form id="hero-waitlist-form" onsubmit="handleStep1Submit(event, 'hero')" class="space-y-3">
                 <div class="grid sm:grid-cols-2 gap-3">
                   <div>
-                    <label id="label-hero-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
+                    <label id="label-hero-name" for="hero-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
                     <input type="text" id="hero-name" required placeholder="Оля" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
                   </div>
                   <div>
-                    <label id="label-hero-contact" class="block text-xs font-medium text-app-brown mb-1.5">Email або нік у Telegram</label>
-                    <input type="text" id="hero-contact" required placeholder="@olia або olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+                    <label id="label-hero-email" for="hero-email" class="block text-xs font-medium text-app-brown mb-1.5">Email <span class="text-app-rose">*</span></label>
+                    <input type="email" id="hero-email" required placeholder="olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
                   </div>
                 </div>
 
-                <button type="submit" id="btn-hero-submit" class="w-full py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2">
+                <button type="submit" id="btn-hero-submit" class="w-full py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
                   <span>Потрапити в Beta</span>
                   <span>→</span>
                 </button>
               </form>
-
-              <!-- Success Alert Box (Hero) -->
-              <div id="hero-success" class="hidden p-4 rounded-xl bg-app-card border border-app-border text-app-espresso space-y-1">
-                <div class="font-medium text-app-espresso text-base flex items-center gap-1.5">
-                  <span id="hero-success-title">Ти в списку.</span>
-                </div>
-                <p id="hero-success-note" class="text-xs text-app-brown leading-relaxed">
-                  Надішлемо особисте запрошення на пошту або в Telegram, щойно відкриємо доступ у Києві.
-                </p>
-              </div>
 
               <div class="flex items-center gap-4 text-xs text-app-muted pt-3 font-normal">
                 <span id="hero-foot-1">Закрита Beta</span>
@@ -187,7 +173,6 @@
 
           </div>
 
-          <!-- Right Content: Tactile iPhone Mockup (Subtle 1.5° angle, not sterile SaaS) -->
           <div class="lg:col-span-5 flex justify-center lg:justify-end">
             <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500">
               <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
@@ -225,7 +210,6 @@
     <section class="py-16 sm:py-24 border-b border-app-border bg-app-bgsubtle/40">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Top Editorial Split (Asymmetric, left-heavy) -->
         <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-baseline mb-12 sm:mb-16">
           <div class="lg:col-span-7">
             <span id="sec2-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-3">01 / Проблема</span>
@@ -240,7 +224,6 @@
           </div>
         </div>
 
-        <!-- Asymmetrical Staggered Comparison Cards -->
         <div class="grid lg:grid-cols-12 gap-6 items-start">
           <div class="lg:col-span-5 bg-app-card p-6 sm:p-8 rounded-2xl border border-app-border space-y-3">
             <span class="text-xs font-mono text-app-muted">01</span>
@@ -267,7 +250,6 @@
         
         <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
           
-          <!-- Left narrative & steps (7 cols) -->
           <div class="lg:col-span-7 space-y-8">
             <div class="space-y-3">
               <span id="sec3-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block">02 / Як це влаштовано</span>
@@ -309,7 +291,6 @@
             </div>
           </div>
 
-          <!-- Right phone mockup (Subtle 1° tilt) -->
           <div class="lg:col-span-5 flex justify-center lg:justify-end">
             <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[1deg] hover:rotate-0 transition-transform duration-500">
               <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
@@ -363,7 +344,6 @@
 
         <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
           
-          <!-- What we don't do -->
           <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
             <span id="sec4-col1-title" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Чого в нас немає</span>
             <ul class="space-y-3 text-sm text-app-brown">
@@ -386,7 +366,6 @@
             </ul>
           </div>
 
-          <!-- What matters -->
           <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
             <span id="sec4-col2-title" class="text-xs uppercase tracking-wider text-app-brown font-medium block">Що ми запитуємо</span>
             <ul class="space-y-3 text-sm text-app-espresso">
@@ -429,7 +408,7 @@
         </p>
 
         <div class="pt-2">
-          <a href="#waitlist-section" id="sec5-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-xs sm:text-sm font-medium transition-colors">
+          <a href="#waitlist-section" onclick="scrollToWaitlist(); return false;" id="sec5-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-xs sm:text-sm font-medium transition-colors">
             Потрапити в Beta →
           </a>
         </div>
@@ -440,7 +419,7 @@
     <section id="waitlist-section" class="py-16 sm:py-24 bg-app-bg">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="bg-app-card rounded-3xl p-8 sm:p-12 border border-app-border text-center space-y-8">
+        <div class="bg-app-card rounded-3xl p-8 sm:p-12 border border-app-border text-center space-y-8 shadow-xs">
           
           <div class="w-12 h-12 mx-auto flex items-center justify-center">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
@@ -462,33 +441,23 @@
             </p>
           </div>
 
-          <!-- Bottom Form -->
-          <form id="bot-waitlist-form" onsubmit="handleWaitlistSubmit(event, 'bottom')" class="max-w-md mx-auto space-y-3 text-left">
+          <!-- Bottom Step 1 Form (Name & Email) -->
+          <form id="bot-waitlist-form" onsubmit="handleStep1Submit(event, 'bottom')" class="max-w-md mx-auto space-y-3 text-left">
             <div>
-              <label id="label-bot-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
+              <label id="label-bot-name" for="bot-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
               <input type="text" id="bot-name" required placeholder="Оля" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
             </div>
 
             <div>
-              <label id="label-bot-contact" class="block text-xs font-medium text-app-brown mb-1.5">Email або нік у Telegram</label>
-              <input type="text" id="bot-contact" required placeholder="@olia або olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+              <label id="label-bot-email" for="bot-email" class="block text-xs font-medium text-app-brown mb-1.5">Email <span class="text-app-rose">*</span></label>
+              <input type="email" id="bot-email" required placeholder="olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
             </div>
 
-            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2">
+            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
               <span>Потрапити в Beta</span>
               <span>→</span>
             </button>
           </form>
-
-          <!-- Bottom Success Alert -->
-          <div id="bot-success" class="hidden max-w-md mx-auto p-4 rounded-xl bg-app-bgsubtle border border-app-border text-app-espresso space-y-1">
-            <div class="font-medium text-app-espresso text-base">
-              Ти в списку.
-            </div>
-            <p id="bot-success-note" class="text-xs text-app-brown leading-relaxed">
-              Надішлемо особисте запрошення перед відкриттям доступу в Києві.
-            </p>
-          </div>
 
           <div class="flex items-center justify-center gap-4 text-xs text-app-muted pt-2 font-normal">
             <span id="bot-foot-1">Без спаму</span>
@@ -503,7 +472,110 @@
     </section>
   </main>
 
-  <!-- Dedicated Subpage Container (Hidden by default, shown for /privacy, /terms, /support) -->
+  <section id="step2-container" class="hidden min-h-[80vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
+    <div class="max-w-xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-app-card rounded-3xl p-6 sm:p-10 border border-app-border space-y-6 shadow-md">
+        
+        <div class="space-y-2">
+          <div class="flex items-center justify-between">
+            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-app-rose bg-app-roselight/60 px-3 py-1 rounded-full">
+              Крок 2 з 2
+            </span>
+            <span class="text-xs text-app-muted">Займає 30 секунд</span>
+          </div>
+          <h2 id="step2-heading" class="text-2xl sm:text-3xl font-semibold text-app-espresso tracking-tight">
+            Майже все! Ще пара деталей.
+          </h2>
+          <p id="step2-subheading" class="text-sm text-app-brown leading-relaxed">
+            Ми зберегли твій імейл. Щоб нам було простіше зв'язатися з тобою перед стартом у Києві, можеш додати ще кілька речей:
+          </p>
+        </div>
+
+        <form id="step2-form" onsubmit="handleStep2Submit(event)" class="space-y-5 text-left">
+          
+          <!-- Optional Contact Handles -->
+          <div class="grid sm:grid-cols-2 gap-3.5">
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label id="step2-lbl-tg" for="step2-telegram" class="text-xs font-medium text-app-brown">Нік у Telegram</label>
+                <span id="step2-lbl-tg-opt" class="text-[11px] text-app-muted">необов'язково</span>
+              </div>
+              <input type="text" id="step2-telegram" placeholder="@olia" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            </div>
+
+            <div>
+              <div class="flex items-center justify-between mb-1.5">
+                <label id="step2-lbl-phone" for="step2-phone" class="text-xs font-medium text-app-brown">Номер телефону</label>
+                <span id="step2-lbl-phone-opt" class="text-[11px] text-app-muted">необов'язково</span>
+              </div>
+              <input type="tel" id="step2-phone" placeholder="+380..." class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            </div>
+          </div>
+
+          <!-- Testing Mode Selection -->
+          <div class="space-y-2.5 pt-1">
+            <div class="flex items-center justify-between">
+              <span id="step2-lbl-mode" class="text-xs font-medium text-app-brown">Як тобі комфортно брати участь?</span>
+              <span id="step2-lbl-free" class="text-[11px] font-medium text-app-espresso bg-app-bgsubtle px-2 py-0.5 rounded-md">Beta безкоштовна</span>
+            </div>
+
+            <div class="space-y-2.5">
+              <label class="flex items-start gap-3 p-3.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer transition-colors">
+                <input type="radio" name="test-mode" value="active" checked class="mt-0.5 accent-app-espresso">
+                <div class="text-xs space-y-0.5">
+                  <strong id="step2-opt1-strong" class="block font-medium text-app-espresso">Готова активно ділитися фідбеком</strong>
+                  <span id="step2-opt1-sub" class="text-app-muted block leading-snug">Найактивнішим користувачкам дамо безкоштовний доступ назавжди після тестування.</span>
+                </div>
+              </label>
+
+              <label class="flex items-start gap-3 p-3.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer transition-colors">
+                <input type="radio" name="test-mode" value="casual" class="mt-0.5 accent-app-espresso">
+                <div class="text-xs space-y-0.5">
+                  <strong id="step2-opt2-strong" class="block font-medium text-app-espresso">Хочу тестувати у власному темпі</strong>
+                  <span id="step2-opt2-sub" class="text-app-muted block leading-snug">Без зобов'язань писати детальні відгуки, просто дивитися одне знайомство на день.</span>
+                </div>
+              </label>
+            </div>
+          </div>
+
+          <div class="p-3.5 rounded-xl bg-app-bgsubtle/70 border border-app-border text-xs text-app-brown leading-relaxed flex items-center gap-2.5">
+            <span class="text-app-rose text-base leading-none">♡</span>
+            <span id="step2-free-note">Усі перші користувачки отримують повний доступ до закритої бети безоплатно.</span>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
+            <button type="submit" id="btn-step2-submit" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer">
+              <span id="step2-btn-save-text">Зберегти та завершити</span>
+              <span>→</span>
+            </button>
+            <button type="button" onclick="skipStep2()" id="btn-step2-skip" class="w-full sm:w-auto px-5 py-3.5 text-xs text-app-muted hover:text-app-espresso font-medium transition-colors cursor-pointer text-center">
+              Пропустити
+            </button>
+          </div>
+        </form>
+
+        <!-- Final Confirmation inside Step 2 (hidden until submitted) -->
+        <div id="step2-success" class="hidden p-6 rounded-2xl bg-app-bgsubtle/80 border border-app-border text-center space-y-3">
+          <div class="w-10 h-10 mx-auto rounded-full bg-app-card flex items-center justify-center text-app-espresso font-semibold">
+            ✓
+          </div>
+          <h3 id="step2-success-title" class="text-xl font-semibold text-app-espresso">Ти в списку очікування!</h3>
+          <p id="step2-success-note" class="text-xs text-app-brown leading-relaxed max-w-sm mx-auto">
+            Ми надішлемо особисте запрошення та посилання на додаток, щойно відкриємо доступ у Києві.
+          </p>
+          <div class="pt-2">
+            <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-white text-xs font-medium hover:bg-black transition-colors cursor-pointer">
+              Повернутися на головну
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <div id="subpage-container" class="hidden min-h-[75vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
       <div>
@@ -529,7 +601,7 @@
         <a href="#/privacy" onclick="navigateTo('privacy'); return false;" id="btn-privacy" class="hover:text-app-espresso transition-colors cursor-pointer">Конфіденційність</a>
         <a href="#/terms" onclick="navigateTo('terms'); return false;" id="btn-terms" class="hover:text-app-espresso transition-colors cursor-pointer">Умови користування</a>
         <a href="#/support" onclick="navigateTo('support'); return false;" id="btn-support-foot" class="hover:text-app-espresso transition-colors cursor-pointer">Підтримка</a>
-        <a href="#waitlist-section" onclick="navigateTo('home'); document.getElementById('waitlist-section')?.scrollIntoView({behavior: 'smooth'}); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування</a>
+        <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування</a>
       </div>
 
       <div class="text-[11px] sm:text-xs text-app-muted">
@@ -539,25 +611,21 @@
     </div>
   </footer>
 
-  <!-- Modal Dialog -->
-  <div id="info-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-xs flex items-center justify-center p-4 hidden">
-    <div class="bg-app-card max-w-md w-full rounded-2xl p-6 sm:p-8 border border-app-border space-y-4 shadow-xl">
-      <div class="flex items-center justify-between">
-        <h3 id="modal-title" class="font-semibold text-lg text-app-espresso">Інформація</h3>
-        <button onclick="closeModal()" class="text-app-muted hover:text-app-espresso text-xl leading-none">&times;</button>
-      </div>
-      <p id="modal-content" class="text-xs sm:text-sm text-app-brown leading-relaxed">
-      </p>
-      <div class="pt-2 text-right">
-        <button onclick="closeModal()" id="modal-btn-close" class="px-5 py-2 rounded-full bg-app-espresso text-white text-xs font-medium hover:bg-black transition-colors">
-          Зрозуміло
-        </button>
-      </div>
-    </div>
-  </div>
-
   <script>
     const avatarPhoto = "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=260&h=260&q=80";
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9sxuLq6fq22dGlPU0fcp4opWKXi-Z9Dcltp2clT_fJQuWlblORLERhARBFHydgmgP/exec";
+
+    let currentLang = 'ua';
+    let currentPage = 'home';
+    let userSubmission = {
+      name: '',
+      email: '',
+      telegram: '',
+      phone: '',
+      mode: 'active',
+      source: 'Hero Form',
+      subId: ''
+    };
 
     const mockupsData = {
       ua: {
@@ -799,10 +867,8 @@
         heroTitle: "Одна нова людина на день. <br><span class=\"text-app-rose font-normal\">Для дружби, не дейтингу.</span>",
         heroDesc: "Відповідаєш на кілька простих запитань про себе. Щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас схожі погляди на життя та спілкування. Якщо ви обидві кажете «так», відкривається чат.",
         labelHeroName: "Як до тебе звертатися",
-        labelHeroContact: "Email або нік у Telegram",
+        labelHeroEmail: "Email",
         btnHeroSubmit: "<span>Потрапити в Beta</span> <span>→</span>",
-        heroSuccessTitle: "Ти в списку.",
-        heroSuccessNote: "Надішлемо особисте запрошення на пошту або в Telegram, щойно відкриємо доступ у Києві.",
         heroFoot1: "Закрита Beta",
         heroFoot2: "Тільки для жінок",
         heroFoot3: "Київ",
@@ -847,18 +913,34 @@
         sec6Title: "Потрапити в перший набір 22:22.",
         sec6Desc: "Зараз ми збираємо першу закриту групу в Києві. Залиш свої контакти, щоб отримати доступ, щойно ми запустимося.",
         labelBotName: "Як до тебе звертатися",
-        labelBotContact: "Email або нік у Telegram",
+        labelBotEmail: "Email",
         btnBotSubmit: "<span>Потрапити в Beta</span> <span>→</span>",
-        botSuccessNote: "Надішлемо особисте запрошення перед відкриттям доступу в Києві.",
         botFoot1: "Без спаму",
         botFoot2: "Тільки для жінок",
         botFoot3: "Київ",
 
+        // Step 2 translations
+        step2Heading: "Майже все! Ще пара деталей.",
+        step2Subheading: "Ми зберегли твій імейл. Щоб нам було простіше зв'язатися з тобою перед стартом у Києві, можеш додати ще кілька речей:",
+        step2LblTg: "Нік у Telegram",
+        step2LblPhone: "Номер телефону",
+        step2LblOpt: "необов'язково",
+        step2LblMode: "Як тобі комфортно брати участь?",
+        step2LblFree: "Beta безкоштовна",
+        step2Opt1Strong: "Готова активно ділитися фідбеком",
+        step2Opt1Sub: "Найактивнішим користувачкам дамо безкоштовний доступ назавжди після тестування.",
+        step2Opt2Strong: "Хочу тестувати у власному темпі",
+        step2Opt2Sub: "Без зобов'язань писати детальні відгуки, просто дивитися одне знайомство на день.",
+        step2FreeNote: "Усі перші користувачки отримують повний доступ до закритої бети безоплатно.",
+        step2BtnSave: "Зберегти та завершити",
+        step2BtnSkip: "Пропустити",
+        step2SuccessTitle: "Ти в списку очікування!",
+        step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на додаток, щойно відкриємо доступ у Києві.",
+
         footSlogan: "знайомства, з яких може вийти дружба.",
         btnPrivacy: "Конфіденційність",
         btnTerms: "Умови користування",
-        btnFootJoin: "Список очікування",
-        modalClose: "Зрозуміло"
+        btnFootJoin: "Список очікування"
       },
       en: {
         navMotto: "introductions that can turn into friendship",
@@ -868,10 +950,8 @@
         heroTitle: "One new person a day. <br><span class=\"text-app-rose font-normal\">For friendship, not dating.</span>",
         heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, you see one woman in Kyiv who shares your pace and outlook. If you both say yes, the chat opens.",
         labelHeroName: "What should we call you",
-        labelHeroContact: "Email or Telegram handle",
+        labelHeroEmail: "Email",
         btnHeroSubmit: "<span>Join the Beta</span> <span>→</span>",
-        heroSuccessTitle: "You're on the list.",
-        heroSuccessNote: "We’ll send a personal invite as soon as we open access in Kyiv.",
         heroFoot1: "Private Beta",
         heroFoot2: "Women only",
         heroFoot3: "Kyiv",
@@ -916,23 +996,36 @@
         sec6Title: "Get into the first 22:22 cohort.",
         sec6Desc: "We are preparing our first closed group in Kyiv. Leave your info to get early access as soon as we open.",
         labelBotName: "What should we call you",
-        labelBotContact: "Email or Telegram handle",
+        labelBotEmail: "Email",
         btnBotSubmit: "<span>Join the Beta</span> <span>→</span>",
-        botSuccessNote: "We'll send your personal invitation when access opens in Kyiv.",
         botFoot1: "No spam",
         botFoot2: "Women only",
         botFoot3: "Kyiv",
 
+        // Step 2 translations
+        step2Heading: "Almost there! Just two quick details.",
+        step2Subheading: "We saved your email. To make it easier for us to reach out before launching in Kyiv, feel free to add:",
+        step2LblTg: "Telegram handle",
+        step2LblPhone: "Phone number",
+        step2LblOpt: "optional",
+        step2LblMode: "How would you like to participate?",
+        step2LblFree: "Beta is free",
+        step2Opt1Strong: "Ready to actively share feedback",
+        step2Opt1Sub: "Most active testers get free lifetime access after the beta.",
+        step2Opt2Strong: "Testing at my own pace",
+        step2Opt2Sub: "No pressure for detailed reviews, just enjoying one match per day.",
+        step2FreeNote: "All early cohort members receive full beta access completely free of charge.",
+        step2BtnSave: "Save and finish",
+        step2BtnSkip: "Skip",
+        step2SuccessTitle: "You're on the waitlist!",
+        step2SuccessNote: "We'll send your personal invitation and app link as soon as access opens in Kyiv.",
+
         footSlogan: "introductions that can turn into friendship.",
         btnPrivacy: "Privacy Policy",
         btnTerms: "Terms of Service",
-        btnFootJoin: "Waitlist",
-        modalClose: "Got it"
+        btnFootJoin: "Waitlist"
       }
     };
-
-    let currentLang = 'ua';
-    let currentPage = 'home';
 
     const subpageContent = {
       privacy: {
@@ -941,56 +1034,17 @@
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
               <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
-
-              <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє, зберігає та захищає персональні дані користувачок під час відвідування сайту, реєстрації у списку очікування (waitlist) та використання мобільного додатку.</p>
-
+              <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє та зберігає персональні дані користувачок під час реєстрації у списку очікування (waitlist) та використання додатку.</p>
               <section class="space-y-2">
                 <h3 class="text-base font-semibold text-app-espresso">1. Дані, які ми збираємо</h3>
-                <p>Ми збираємо лише ту інформацію, яка є критично необхідною для організації знайомств та надання доступу до сервісу:</p>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися) та контактний канал (адреса електронної пошти або логін у Telegram).</li>
-                  <li><strong>Дані профілю для знайомств:</strong> вік, місто/район проживання, рід діяльності, фотографія профілю, а також відповіді на запитання анкети (погляди на дружбу, темп спілкування, спосіб проведення вільного часу, особисті межі).</li>
-                  <li><strong>Повідомлення та активність:</strong> факт взаємної згоди («так») між двома користувачками, факт відкриття чату та технічні метадані повідомлень.</li>
-                  <li><strong>Технічні дані:</strong> мовні налаштування браузера, базова діагностична інформація та відмітки часу взаємодії.</li>
+                  <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися), адреса електронної пошти та, за бажанням, Telegram-нік чи телефон.</li>
+                  <li><strong>Дані анкети:</strong> відповіді на запитання про темп спілкування, погляди на дружбу та особисті кордони для підбору знайомств.</li>
                 </ul>
               </section>
-
               <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">2. Мета та правові підстави обробки даних</h3>
-                <p>Ваші персональні дані обробляються виключно для таких цілей:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Надсилання індивідуального запрошення до закритого тестування сервісу;</li>
-                  <li>Підбір однієї щоденної кандидатки для знайомства на основі збігу ваших відповідей про цінності й стиль комунікації;</li>
-                  <li>Забезпечення роботи приватного чату після обопільного погодження знайомства;</li>
-                  <li>Захист спільноти від спаму, фальшивих профілів, ботів і порушень безпеки.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">3. Принцип мінімізації та нерозголошення</h3>
-                <p>Ми дотримуємося суворого принципу приватності:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Жодного продажу даних:</strong> ми ніколи не продаємо, не здаємо в оренду та не монетизуємо ваші персональні дані або відповіді з анкет третім сторонам чи рекламодавцям.</li>
-                  <li><strong>Відсутність відкритого каталогу:</strong> ваші дані не індексуються пошуковими системами та не виставляються у публічний відкритий доступ або загальну стрічку. Ваш профіль демонструється лише одній людині на добу в межах механіки знайомства.</li>
-                  <li><strong>Конфіденційність діалогів:</strong> особисте листування в чаті є приватним простором учасниць і не використовується для тренування публічних моделей або сторонніх аналітичних систем.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">4. Зберігання та безпека інформації</h3>
-                <p>Ми впроваджуємо сучасні технічні й організаційні заходи для захисту ваших даних від несанкціонованого доступу, зміни, втрати чи розкриття. Доступ до списку очікування та адміністративних інструментів обмежено відповідальними особами проєкту з обов'язковою двофакторною автентифікацією.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">5. Ваші права</h3>
-                <p>Відповідно до законодавства про захист персональних даних ви маєте повне право:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Дізнатися, які саме ваші дані зберігаються в сервісі;</li>
-                  <li>Вимагати виправлення неточних або застарілих даних;</li>
-                  <li>Вимагати повного й безповоротного видалення вашого запису зі списку очікування або акаунту в додатку (право на забуття);</li>
-                  <li>Відкликати згоду на обробку персональних даних у будь-який момент.</li>
-                </ul>
-                <p>Для реалізації будь-якого з цих прав достатньо написати нашій службі підтримки за контактами, наведеними нижче або на сторінці <a href="#/support" class="text-app-espresso underline font-medium">Підтримка</a>.</p>
+                <h3 class="text-base font-semibold text-app-espresso">2. Принцип нерозголошення</h3>
+                <p>Ми ніколи не продаємо і не передаємо ваші дані третім особам або рекламодавцям. У додатку немає публічних стрічок — ваш профіль показується виключно одній людині на день.</p>
               </section>
             </div>
           `
@@ -1000,47 +1054,13 @@
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
               <p class="text-xs text-app-muted">Last updated: September 2026</p>
-
-              <p>This Privacy Policy describes how <strong>22:22</strong> ("we", "our", or "the platform") collects, uses, stores, and protects personal information obtained from visitors, waitlist participants, and app users.</p>
-
+              <p>This Privacy Policy describes how <strong>22:22</strong> handles and protects your personal information when signing up for the waitlist or using the mobile application.</p>
               <section class="space-y-2">
                 <h3 class="text-base font-semibold text-app-espresso">1. Information We Collect</h3>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Waitlist Contact Information:</strong> your preferred first name and primary contact handle (email address or Telegram handle).</li>
-                  <li><strong>Matching & Profile Data:</strong> age, city/neighborhood, occupation, profile photo, and your responses to lifestyle and friendship preference questions (values, pace of communication, social energy, and personal boundaries).</li>
-                  <li><strong>Interaction & Chat Metadata:</strong> mutual opt-in confirmations ("yes" choices), session timestamps, and technical delivery confirmation of messages.</li>
-                  <li><strong>Technical Logs:</strong> language preferences, device operating characteristics, and crash diagnostics.</li>
+                  <li><strong>Contact Information:</strong> your preferred name, email, and optional phone or Telegram handle.</li>
+                  <li><strong>Questionnaire responses:</strong> lifestyle and communication style answers used exclusively to find one match a day.</li>
                 </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">2. Purpose of Data Processing</h3>
-                <p>We process your personal information strictly for the following purposes:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Distributing personal invitations to the closed beta release;</li>
-                  <li>Calculating daily candidate compatibility based on reciprocal answers to communication questions;</li>
-                  <li>Powering mutual-consent private chats when both individuals agree to connect;</li>
-                  <li>Preventing abuse, commercial solicitation, identity impersonation, and fraudulent registrations.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">3. Non-Disclosure & Anti-Commercialization</h3>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Zero Data Selling:</strong> we do not rent, sell, or commercialize your personal information or questionnaire responses to advertisers or third-party brokers.</li>
-                  <li><strong>No Public Catalog:</strong> profiles are never indexed in public search engines or browsable in an open card stack. Your details are viewed solely by one matched individual per day.</li>
-                  <li><strong>Chat Confidentiality:</strong> conversations remain strictly between matched participants and are not mined for advertising or external analytics.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">4. Storage and Security</h3>
-                <p>We maintain organizational and technical safeguards designed to protect personal data from unauthorized disclosure, loss, or manipulation. Access to production systems is restricted under least-privilege protocols with mandatory two-factor authentication.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">5. Your Legal Rights</h3>
-                <p>You maintain the right to inspect, rectify, or request complete deletion of your waitlist record or user profile at any time. To exercise these rights, submit your request via the <a href="#/support" class="text-app-espresso underline font-medium">Support</a> channel.</p>
               </section>
             </div>
           `
@@ -1048,52 +1068,18 @@
       },
       terms: {
         ua: {
-          title: "Умови користування сервісом (Terms of Service)",
+          title: "Умови користування",
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
               <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
-
-              <p>Ці Умови користування (надалі — «Умови») є обов'язковим юридичним договором між вами (користувачкою) та платформою <strong>22:22</strong>. Отримуючи доступ до вебсайту, реєструючись у списку очікування або використовуючи мобільний додаток, ви беззастережно погоджуєтеся з цими Умовами.</p>
-
+              <p>22:22 — це приватний простір для побудови платонічної жіночої дружби у місті Києві.</p>
               <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Призначення сервісу та критерії доступу</h3>
-                <p>22:22 — це закрита платформа, створена виключно для пошуку та побудови платонічної жіночої дружби у місті Києві. Для реєстрації та використання сервісу ви підтверджуєте, що:</p>
+                <h3 class="text-base font-semibold text-app-espresso">1. Правила спільноти</h3>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>Вам виповнилося не менше 18 років;</li>
-                  <li>Ви реєструєтеся від власного імені, надаєте достовірні дані про себе та власні актуальні фотографії;</li>
-                  <li>Ви розумієте та погоджуєтеся, що сервіс призначений винятково для дружнього, ненасильницького спілкування між жінками.</li>
+                  <li>Сервіс призначений виключно для повнолітніх жінок (18+).</li>
+                  <li>Суворо заборонено комерційні пропозиції, мережевий маркетинг (MLM) та нетворкінг-продажі під виглядом дружби.</li>
+                  <li>Нульова толерантність до токсичності, агресії чи поширення скріншотів приватних листувань.</li>
                 </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">2. Правила поведінки та неприпустима діяльність</h3>
-                <p>У сервісі 22:22 діє політика нульової толерантності до токсичної та маніпулятивної поведінки. Користувачкам суворо забороняється:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Комерційна діяльність та нетворкінг:</strong> використовувати сервіс для прямих продажів товарів, просування послуг, мережевого маркетингу (MLM), фінансових пропозицій або рекрутингу під виглядом дружби;</li>
-                  <li><strong>Фальсифікація та шахрайство:</strong> створювати акаунти від імені інших осіб, видавати себе за іншу людину, використовувати чужі світлини чи вводити в оману щодо свого віку або намірів;</li>
-                  <li><strong>Токсичність та агресія:</strong> надсилати образливі, принизливі, дискримінаційні, залякуючі або відверто нав'язливі повідомлення;</li>
-                  <li><strong>Порушення конфіденційності (доксинг):</strong> робити публічними особисті листування, фотографії чи контактні дані інших учасниць без їхньої прямої письмової згоди.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">3. Механіка підбору та модерація</h3>
-                <p>Сервіс працює за принципом надання одного знайомства на день. Ми не гарантуємо, що запропонований контакт обов'язково переросте в довготривалу дружбу або що інша сторона обов'язково надасть позитивну відповідь. Кожна користувачка має право самостійно вирішувати, чи починати діалог. У разі скарги на порушення цих Умов адміністрація залишає за собою право тимчасово призупинити або безповоротно заблокувати обліковий запис без права відновлення.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">4. Інтелектуальна власність</h3>
-                <p>Усі елементи дизайну, програмний код, логотипи, фірмовий стиль, тексти та графічні матеріали сервісу 22:22 є об'єктами інтелектуальної власності проєкту. Будь-яке копіювання, модифікація або комерційне використання матеріалів без попереднього дозволу заборонено.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">5. Обмеження відповідальності</h3>
-                <p>Сервіс надається на умовах «як є» (as is). Ми не несемо цивільної чи фінансової відповідальності за поведінку учасниць під час їхньої особистої взаємодії в чаті або під час зустрічей офлайн. Ми наполегливо закликаємо дотримуватися базових правил особистої безпеки під час знайомств.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">6. Зміни до Умов</h3>
-                <p>Ми можемо періодично оновлювати ці Умови. Продовжуючи користуватися сервісом після внесення змін, ви засвідчуєте свою згоду з новою редакцією документа.</p>
               </section>
             </div>
           `
@@ -1103,48 +1089,14 @@
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
               <p class="text-xs text-app-muted">Last updated: September 2026</p>
-
-              <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and the operators of <strong>22:22</strong> ("we", "us", or "our"). By registering for the waitlist or accessing our platform, you agree to comply with and be bound by these Terms.</p>
-
+              <p>22:22 is an intentional, private space for platonic female friendships in Kyiv.</p>
               <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Eligibility and Service Scope</h3>
-                <p>22:22 is a private, intentional mobile platform created specifically for adult women in Kyiv seeking genuine, non-commercial friendships. By using the platform, you represent and warrant that:</p>
+                <h3 class="text-base font-semibold text-app-espresso">1. Community Guidelines</h3>
                 <ul class="list-disc pl-5 space-y-1">
-                  <li>You are at least 18 years of age;</li>
-                  <li>You register using your genuine identity, authentic photo, and accurate personal information;</li>
-                  <li>You are joining exclusively for platonic social companionship and reciprocal connection.</li>
+                  <li>For adult women (18+) only.</li>
+                  <li>Commercial pitching, multi-level marketing, and sales under the guise of friendship are strictly prohibited.</li>
+                  <li>Zero tolerance for harassment, malice, or unauthorized sharing of private conversations.</li>
                 </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">2. Prohibited Conduct and Community Safety</h3>
-                <p>Maintaining an emotionally safe and respectful environment is the core operating premise of 22:22. You explicitly agree not to:</p>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Commercial Pitching & Networking:</strong> solicit other users for multi-level marketing (MLM), product sales, financial ventures, business consulting, or employment recruitment;</li>
-                  <li><strong>Impersonation & Dishonesty:</strong> create accounts on behalf of other individuals, submit fraudulent photographs, or misrepresent identity;</li>
-                  <li><strong>Harassment & Toxicity:</strong> engage in hostile, abusive, stalking, derogatory, or unsolicited explicit behavior;</li>
-                  <li><strong>Privacy Breaches:</strong> publish, capture, or externally disseminate private chat communications, personal photographs, or contact details of matched users without consent.</li>
-                </ul>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">3. Matching Protocol and Moderation</h3>
-                <p>22:22 operates on a one-introduction-per-day cadence. We make no representations regarding the outcome, compatibility longevity, or response speed of any match. We reserve the absolute right to suspend or permanently ban accounts found to be in breach of these Terms without notice.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">4. Intellectual Property</h3>
-                <p>All brand assets, software architecture, user interface compositions, custom illustrations, and written copy are the exclusive intellectual property of 22:22. Unauthorized reproduction or commercial derivation is strictly prohibited.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">5. Disclaimers and Limitation of Liability</h3>
-                <p>The platform is provided on an "as-is" and "as-available" basis. We bear no liability for the independent conduct, offline encounters, or individual choices of users outside the platform. Users are urged to exercise standard personal precautions when meeting peers in public locations.</p>
-              </section>
-
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">6. Amendments</h3>
-                <p>We may revise these Terms as the beta program develops. Continued use of the platform following published changes constitutes your full acceptance of the updated Terms.</p>
               </section>
             </div>
           `
@@ -1155,13 +1107,11 @@
           title: "Підтримка та турбота",
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p>Маєте запитання щодо закритої Beta, хочете оновити свій контакт у списку очікування або повідомити про технічну помилку? Ми завжди на зв'язку.</p>
-
+              <p>Маєте запитання щодо закритої Beta або бажаєте оновити контактні дані? Ми з радістю відповімо:</p>
               <div class="grid sm:grid-cols-2 gap-4 pt-2">
                 <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
                   <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Швидкий зв'язок</div>
                   <div class="font-semibold text-base text-app-espresso">Telegram</div>
-                  <p class="text-xs text-app-brown">Прямий контакт із авторкою та координаторкою проєкту для будь-яких оперативних запитань:</p>
                   <div class="pt-2">
                     <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
                       <span>@AnastasiaChaikovska</span>
@@ -1169,30 +1119,14 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
                   <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Офіційна пошта</div>
                   <div class="font-semibold text-base text-app-espresso">Email</div>
-                  <p class="text-xs text-app-brown">Для запитань конфіденційності, юридичних запитів та видалення даних зі списку:</p>
                   <div class="pt-2">
                     <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
                       <span>chaikovska.anastasia@gmail.com</span>
                       <span>✉</span>
                     </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-3">
-                <h3 class="font-semibold text-app-espresso text-sm">Часті запитання щодо Beta:</h3>
-                <div class="space-y-3 text-xs leading-relaxed text-app-brown">
-                  <div>
-                    <strong class="text-app-espresso block mb-0.5">Коли відкриється доступ?</strong>
-                    Ми відкриваємо доступ поступово невеликими групами у Києві, щоб перші діалоги відбувалися в затишному й живому середовищі. Ви отримаєте персональне повідомлення, щойно ваша черга настане.
-                  </div>
-                  <div>
-                    <strong class="text-app-espresso block mb-0.5">Як змінити контактні дані або вийти зі списку?</strong>
-                    Напишіть у Telegram або на пошту, вказавши початковий контакт — ми оперативно оновимо або повністю видалимо ваш запис.
                   </div>
                 </div>
               </div>
@@ -1203,13 +1137,11 @@
           title: "Support & Assistance",
           body: `
             <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p>Have questions about the private beta, need to update your waitlist contact information, or wish to report a technical issue? We are here to assist you.</p>
-
+              <p>Questions about the private beta or need to update your email entry? Reach out to us:</p>
               <div class="grid sm:grid-cols-2 gap-4 pt-2">
                 <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
                   <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Direct Channel</div>
                   <div class="font-semibold text-base text-app-espresso">Telegram</div>
-                  <p class="text-xs text-app-brown">Reach out directly to the founder for quick questions and onboarding inquiries:</p>
                   <div class="pt-2">
                     <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
                       <span>@AnastasiaChaikovska</span>
@@ -1217,30 +1149,14 @@
                     </a>
                   </div>
                 </div>
-
                 <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
-                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Direct Inquiries</div>
+                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Official Email</div>
                   <div class="font-semibold text-base text-app-espresso">Email</div>
-                  <p class="text-xs text-app-brown">For privacy requests, data deletion, or formal feedback:</p>
                   <div class="pt-2">
                     <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
                       <span>chaikovska.anastasia@gmail.com</span>
                       <span>✉</span>
                     </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-3">
-                <h3 class="font-semibold text-app-espresso text-sm">Beta Frequently Asked Questions:</h3>
-                <div class="space-y-3 text-xs leading-relaxed text-app-brown">
-                  <div>
-                    <strong class="text-app-espresso block mb-0.5">When will beta access open?</strong>
-                    We are releasing access in staged cohorts in Kyiv to preserve the intimate and high-touch experience. You will receive an invitation directly as soon as your cohort opens.
-                  </div>
-                  <div>
-                    <strong class="text-app-espresso block mb-0.5">How do I update or remove my entry?</strong>
-                    Send a direct note via Telegram or email with your original contact handle, and we will update or permanently delete your record immediately.
                   </div>
                 </div>
               </div>
@@ -1267,17 +1183,28 @@
     function navigateTo(target) {
       currentPage = target;
       const mainEl = document.getElementById('main-content');
+      const step2El = document.getElementById('step2-container');
       const subpageContainer = document.getElementById('subpage-container');
 
-      if (target === 'home' || !subpageContent[target]) {
+      if (target === 'home') {
         if (mainEl) mainEl.classList.remove('hidden');
+        if (step2El) step2El.classList.add('hidden');
         if (subpageContainer) subpageContainer.classList.add('hidden');
         try {
           if (window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
         } catch (e) {}
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
+      } else if (target === 'step2') {
         if (mainEl) mainEl.classList.add('hidden');
+        if (subpageContainer) subpageContainer.classList.add('hidden');
+        if (step2El) step2El.classList.remove('hidden');
+        try {
+          window.location.hash = '/step-2';
+        } catch (e) {}
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (subpageContent[target]) {
+        if (mainEl) mainEl.classList.add('hidden');
+        if (step2El) step2El.classList.add('hidden');
         if (subpageContainer) subpageContainer.classList.remove('hidden');
         renderSubpage(target);
         try {
@@ -1287,8 +1214,19 @@
       }
     }
 
+    function scrollToWaitlist() {
+      const el = document.getElementById('waitlist-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
     function handleHashChange() {
       const hash = window.location.hash;
+      if (hash === '#/step-2') {
+        navigateTo('step2');
+        return;
+      }
       if (hash.startsWith('#/')) {
         const page = hash.replace('#/', '');
         if (subpageContent[page]) {
@@ -1302,6 +1240,154 @@
     }
 
     window.addEventListener('hashchange', handleHashChange);
+
+    // STEP 1 SUBMISSION: Captures Name + Email, sends immediate record, opens Step 2
+    async function handleStep1Submit(event, sourceLocation) {
+      event.preventDefault();
+
+      const isHero = sourceLocation === 'hero';
+      const nameInput = document.getElementById(isHero ? 'hero-name' : 'bot-name');
+      const emailInput = document.getElementById(isHero ? 'hero-email' : 'bot-email');
+      const submitBtn = document.getElementById(isHero ? 'btn-hero-submit' : 'btn-bot-submit');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+
+      if (!name || !email) return;
+
+      // Save to global user submission state
+      userSubmission.name = name;
+      userSubmission.email = email;
+      userSubmission.source = isHero ? 'Hero Form' : 'Bottom Form';
+      userSubmission.subId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+
+      // Loading state on Step 1 button
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const loadingText = currentLang === 'ua' ? 'Секунду...' : 'Please wait...';
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>${loadingText}</span>
+        `;
+      }
+
+      // Send initial step-1 lead right away so contact is never lost
+      sendLeadToGoogleSheet({
+        name: userSubmission.name,
+        email: userSubmission.email,
+        telegram: '',
+        phone: '',
+        mode: '',
+        lang: currentLang,
+        source: userSubmission.source
+      });
+
+      // Update Step 2 greeting with user's name
+      const step2Heading = document.getElementById('step2-heading');
+      if (step2Heading) {
+        step2Heading.textContent = currentLang === 'ua' 
+          ? `Майже все, ${name}! Ще пара деталей.` 
+          : `Almost there, ${name}! Just two quick details.`;
+      }
+
+      // Move to Step 2 page
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+        navigateTo('step2');
+      }, 350);
+    }
+
+    // STEP 2 SUBMISSION: Optional Telegram, Phone, and Testing Mode
+    async function handleStep2Submit(event) {
+      event.preventDefault();
+
+      const tgInput = document.getElementById('step2-telegram');
+      const phoneInput = document.getElementById('step2-phone');
+      const selectedModeEl = document.querySelector('input[name="test-mode"]:checked');
+      const submitBtn = document.getElementById('btn-step2-submit');
+
+      const telegram = tgInput ? tgInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const mode = selectedModeEl ? selectedModeEl.value : 'active';
+      const modeLabel = mode === 'active' 
+        ? (currentLang === 'ua' ? 'Активне тестування (фідбек)' : 'Active Feedback') 
+        : (currentLang === 'ua' ? 'У власному темпі' : 'Casual Pace');
+
+      userSubmission.telegram = telegram;
+      userSubmission.phone = phone;
+      userSubmission.mode = modeLabel;
+
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const savingText = currentLang === 'ua' ? 'Зберігаємо...' : 'Saving...';
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>${savingText}</span>
+        `;
+      }
+
+      await sendLeadToGoogleSheet({
+        name: userSubmission.name,
+        email: userSubmission.email,
+        telegram: telegram,
+        phone: phone,
+        mode: modeLabel,
+        lang: currentLang,
+        source: userSubmission.source + ' + Step 2'
+      });
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+
+      showStep2Success();
+    }
+
+    function skipStep2() {
+      // User just skips step 2, show confirmation
+      showStep2Success();
+    }
+
+    function showStep2Success() {
+      const formEl = document.getElementById('step2-form');
+      const successEl = document.getElementById('step2-success');
+      if (formEl) formEl.classList.add('hidden');
+      if (successEl) successEl.classList.remove('hidden');
+    }
+
+    // Network request to Google Apps Script Webhook
+    async function sendLeadToGoogleSheet(payload) {
+      const params = new URLSearchParams(payload);
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('Fallback beacon dispatch:', err);
+        try {
+          const img = new Image();
+          img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
+        } catch (e) {}
+      }
+    }
 
     function renderMockups(lang) {
       const profileEl = document.getElementById('mockup-profile-container');
@@ -1347,10 +1433,8 @@
       updateText('hero-title', t.heroTitle, true);
       updateText('hero-desc', t.heroDesc);
       updateText('label-hero-name', t.labelHeroName);
-      updateText('label-hero-contact', t.labelHeroContact);
+      updateText('label-hero-email', t.labelHeroEmail + ' <span class="text-app-rose">*</span>', true);
       updateText('btn-hero-submit', t.btnHeroSubmit, true);
-      updateText('hero-success-title', t.heroSuccessTitle);
-      updateText('hero-success-note', t.heroSuccessNote);
       updateText('hero-foot-1', t.heroFoot1);
       updateText('hero-foot-2', t.heroFoot2);
       updateText('hero-foot-3', t.heroFoot3);
@@ -1395,18 +1479,34 @@
       updateText('sec6-title', t.sec6Title);
       updateText('sec6-desc', t.sec6Desc);
       updateText('label-bot-name', t.labelBotName);
-      updateText('label-bot-contact', t.labelBotContact);
+      updateText('label-bot-email', t.labelBotEmail + ' <span class="text-app-rose">*</span>', true);
       updateText('btn-bot-submit', t.btnBotSubmit, true);
-      updateText('bot-success-note', t.botSuccessNote);
       updateText('bot-foot-1', t.botFoot1);
       updateText('bot-foot-2', t.botFoot2);
       updateText('bot-foot-3', t.botFoot3);
+
+      // Step 2 elements
+      updateText('step2-subheading', t.step2Subheading);
+      updateText('step2-lbl-tg', t.step2LblTg);
+      updateText('step2-lbl-tg-opt', t.step2LblOpt);
+      updateText('step2-lbl-phone', t.step2LblPhone);
+      updateText('step2-lbl-phone-opt', t.step2LblOpt);
+      updateText('step2-lbl-mode', t.step2LblMode);
+      updateText('step2-lbl-free', t.step2LblFree);
+      updateText('step2-opt1-strong', t.step2Opt1Strong);
+      updateText('step2-opt1-sub', t.step2Opt1Sub);
+      updateText('step2-opt2-strong', t.step2Opt2Strong);
+      updateText('step2-opt2-sub', t.step2Opt2Sub);
+      updateText('step2-free-note', t.step2FreeNote);
+      updateText('step2-btn-save-text', t.step2BtnSave);
+      updateText('btn-step2-skip', t.step2BtnSkip);
+      updateText('step2-success-title', t.step2SuccessTitle);
+      updateText('step2-success-note', t.step2SuccessNote);
 
       updateText('foot-slogan', t.footSlogan);
       updateText('btn-privacy', t.btnPrivacy);
       updateText('btn-terms', t.btnTerms);
       updateText('btn-foot-join', t.btnFootJoin);
-      updateText('modal-btn-close', t.modalClose);
 
       const navSupport = document.getElementById('nav-support-btn');
       if (navSupport) {
@@ -1418,91 +1518,11 @@
         btnSupport.textContent = lang === 'ua' ? 'Підтримка' : 'Support';
       }
 
-      if (currentPage !== 'home') {
+      if (currentPage !== 'home' && currentPage !== 'step2') {
         renderSubpage(currentPage);
       }
 
       renderMockups(lang);
-    }
-
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwDIcoAIc4YjhHy4Wr9Bujuj0e0iKUfXREJLTGJ4SoTDxv3ZXIDhA0wIZSytwcXa_Bn/exec";
-
-    async function handleWaitlistSubmit(event, location) {
-      event.preventDefault();
-
-      const isHero = location === 'hero';
-      const form = document.getElementById(isHero ? 'hero-waitlist-form' : 'bot-waitlist-form');
-      const alertBox = document.getElementById(isHero ? 'hero-success' : 'bot-success');
-      const nameInput = document.getElementById(isHero ? 'hero-name' : 'bot-name');
-      const contactInput = document.getElementById(isHero ? 'hero-contact' : 'bot-contact');
-      const submitBtn = document.getElementById(isHero ? 'btn-hero-submit' : 'btn-bot-submit');
-
-      const name = nameInput ? nameInput.value.trim() : '';
-      const contact = contactInput ? contactInput.value.trim() : '';
-
-      if (!name || !contact) return;
-
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        const loadingText = currentLang === 'ua' ? 'Надсилаємо...' : 'Submitting...';
-        submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span>${loadingText}</span>
-        `;
-      }
-
-      const submissionId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
-      const params = new URLSearchParams({
-        name: name,
-        contact: contact,
-        lang: currentLang,
-        source: isHero ? 'Hero Form' : 'Bottom Form',
-        subId: submissionId
-      });
-
-      const payload = {
-        name: name,
-        contact: contact,
-        lang: currentLang,
-        source: isHero ? 'Hero Form' : 'Bottom Form',
-        subId: submissionId
-      };
-
-      try {
-        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
-          body: JSON.stringify(payload)
-        });
-
-        if (form && alertBox) {
-          form.classList.add('hidden');
-          alertBox.classList.remove('hidden');
-        }
-      } catch (err) {
-        console.warn('Fallback request:', err);
-        try {
-          const fallbackBeacon = new Image();
-          fallbackBeacon.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
-        } catch (e) {}
-
-        if (form && alertBox) {
-          form.classList.add('hidden');
-          alertBox.classList.remove('hidden');
-        }
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnHtml;
-        }
-      }
     }
 
     function updateCountdown() {
@@ -1530,53 +1550,6 @@
         footTimeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
       }
     }
-
-    const modalData = {
-      privacy: {
-        ua: {
-          title: "Конфіденційність",
-          content: "Твої контактні дані використовуються тільки для особистого запрошення в закриту Beta 22:22 у Києві. Ми не розсилаємо спам і не передаємо контакти третім особам."
-        },
-        en: {
-          title: "Privacy Policy",
-          content: "Your contact details will only be used to send your personal invitation to the 22:22 Beta in Kyiv. We never spam or share your information."
-        }
-      },
-      terms: {
-        ua: {
-          title: "Правила спільноти",
-          content: "22:22 — це закритий простір для жінок, побудований на взаємній повазі. Будь-яка токсичність, навʼязливий спам або хамство призводять до моментального блокування."
-        },
-        en: {
-          title: "Community Guidelines",
-          content: "22:22 is a women-only space built on mutual respect. Any harassment, unsolicited commercial pitches, or toxic behavior leads to an immediate ban."
-        }
-      }
-    };
-
-    function openModal(type) {
-      const modal = document.getElementById('info-modal');
-      const title = document.getElementById('modal-title');
-      const content = document.getElementById('modal-content');
-      if (modal && modalData[type]) {
-        const langData = modalData[type][currentLang] || modalData[type]['ua'];
-        title.textContent = langData.title;
-        content.textContent = langData.content;
-        modal.classList.remove('hidden');
-      }
-    }
-
-    function closeModal() {
-      const modal = document.getElementById('info-modal');
-      if (modal) modal.classList.add('hidden');
-    }
-
-    document.addEventListener('click', (e) => {
-      const modal = document.getElementById('info-modal');
-      if (modal && e.target === modal) {
-        closeModal();
-      }
-    });
 
     window.addEventListener('DOMContentLoaded', () => {
       renderMockups('ua');
