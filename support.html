@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Підтримка та турбота — 22:22</title>
+  
+  <link rel="icon" href="favicon">
+  <link rel="shortcut icon" href="favicon">
+  <link rel="apple-touch-icon" href="favicon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            app: {
+              bg: '#FAF6F0',
+              bgsubtle: '#F3EDE4',
+              card: '#FFFFFF',
+              cardsoft: '#FAF5EE',
+              border: '#E8DFD5',
+              borderstrong: '#D8CBC0',
+              rose: '#BD7573',
+              roselight: '#F7EFEB',
+              espresso: '#261613',
+              brown: '#5C4B46',
+              muted: '#94837E'
+            }
+          },
+          fontFamily: {
+            sans: ['Onest', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * {
+      font-family: 'Onest', system-ui, -apple-system, sans-serif !important;
+    }
+    body {
+      background-color: #FAF6F0;
+      color: #261613;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-app-bg text-app-espresso antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-app-bg/95 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 flex-shrink-0 transition-opacity group-hover:opacity-80">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#261613"/>
+            </g>
+            <g transform="translate(50, 39) rotate(14) scale(0.5) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#BD7573" stroke="#FAF6F0" stroke-width="5" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
+          <span class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">знайомства, з яких може вийти дружба</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">UA</button>
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">EN</button>
+        </div>
+        <a href="support.html" class="text-xs text-app-espresso font-semibold">Підтримка</a>
+        <a href="index.html#waitlist-section" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+          Список очікування
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 py-12 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 text-xs font-medium text-app-muted hover:text-app-espresso transition-colors mb-6">
+          <span>←</span>
+          <span id="back-home-label">На головну</span>
+        </a>
+        <h1 id="page-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight">Підтримка та турбота</h1>
+        <p id="page-subtitle" class="text-sm text-app-brown mt-2">Маєте запитання щодо закритої Beta, хочете оновити контактні дані або маєте ідею для покращення сервісу? Ми на зв'язку.</p>
+      </div>
+
+      <!-- Contact channel -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-app-card border border-app-border space-y-4 shadow-xs">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-app-bgsubtle flex items-center justify-center text-app-espresso font-medium text-sm">
+            ✉
+          </div>
+          <div>
+            <div id="email-card-label" class="text-xs uppercase tracking-wider text-app-muted font-medium">Офіційна пошта</div>
+            <h3 id="email-card-title" class="font-semibold text-lg text-app-espresso">Email підтримки</h3>
+          </div>
+        </div>
+        <p id="email-card-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">Для будь-яких запитань щодо закритої Beta, оновлення контактних даних або відгуків.</p>
+        <div class="pt-1">
+          <a href="mailto:support@twentytwo22.app" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-app-espresso text-white text-xs sm:text-sm font-medium hover:bg-black transition-colors">
+            <span>support@twentytwo22.app</span>
+            <span>✉</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- FAQ Section -->
+      <div class="p-6 sm:p-8 rounded-3xl bg-app-card border border-app-border space-y-4">
+        <h2 id="faq-title" class="font-semibold text-xl text-app-espresso">Часті запитання</h2>
+        
+        <div class="space-y-4 text-xs sm:text-sm text-app-brown">
+          <div class="space-y-1">
+            <h3 id="faq-q1" class="font-semibold text-app-espresso">Коли почнеться відкриття доступів?</h3>
+            <p id="faq-a1" class="leading-relaxed">Ми відкриваємо доступ невеликими когортами в Києві. Запрошення та персональне посилання на додаток прийдуть на вказаний вами email.</p>
+          </div>
+
+          <div class="border-t border-app-border/60 pt-3 space-y-1">
+            <h3 id="faq-q2" class="font-semibold text-app-espresso">Чи платна Beta-версія?</h3>
+            <p id="faq-a2" class="leading-relaxed">Ні. Усі перші учасниці списку очікування отримують повний доступ до бети абсолютно безкоштовно. Найактивніші тестувальниці отримають довічний безкоштовний доступ.</p>
+          </div>
+
+          <div class="border-t border-app-border/60 pt-3 space-y-1">
+            <h3 id="faq-q3" class="font-semibold text-app-espresso">Як змінити або видалити свої контакти?</h3>
+            <p id="faq-a3" class="leading-relaxed">Просто напишіть нам листа на support@twentytwo22.app з тієї самої електронної адреси, і ми оновимо або видалимо ваш запис.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-app-border py-8 bg-app-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-app-espresso tracking-tight">22:22</span>
+        <span class="text-app-muted">•</span>
+        <span>знайомства, з яких може вийти дружба.</span>
+      </div>
+
+      <div class="flex items-center gap-5 flex-wrap justify-center">
+        <a href="privacy.html" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
+        <a href="terms.html" class="hover:text-app-espresso transition-colors">Умови користування</a>
+        <a href="support.html" class="text-app-espresso font-semibold">Підтримка</a>
+        <a href="index.html#waitlist-section" class="text-app-espresso hover:underline font-medium">Список очікування</a>
+      </div>
+
+      <div class="text-[11px] sm:text-xs text-app-muted">
+        Київ • 22:22
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const i18n = {
+      ua: {
+        title: "Підтримка та турбота — 22:22",
+        heading: "Підтримка та турбота",
+        subtitle: "Маєте запитання щодо закритої Beta, хочете оновити контактні дані або маєте ідею для покращення сервісу? Ми на зв'язку.",
+        back: "На головну",
+        emailLabel: "Офіційна пошта",
+        emailTitle: "Email підтримки",
+        emailDesc: "Для будь-яких запитань щодо закритої Beta, оновлення контактних даних або відгуків.",
+        faqTitle: "Часті запитання",
+        q1: "Коли почнеться відкриття доступів?",
+        a1: "Ми відкриваємо доступ невеликими когортами в Києві. Запрошення та персональне посилання на додаток прийдуть на вказаний вами email.",
+        q2: "Чи платна Beta-версія?",
+        a2: "Ні. Усі перші учасниці списку очікування отримують повний доступ до бети абсолютно безкоштовно. Найактивніші тестувальниці отримають довічний безкоштовний доступ.",
+        q3: "Як змінити або видалити свої контакти?",
+        a3: "Просто напишіть нам листа на support@twentytwo22.app з тієї самої електронної адреси, і ми оновимо або видалимо ваш запис."
+      },
+      en: {
+        title: "Support & Care — 22:22",
+        heading: "Support & Care",
+        subtitle: "Questions about the private beta, need to update your email entry, or have a thought to share? We are here.",
+        back: "Back to Home",
+        emailLabel: "Official Channel",
+        emailTitle: "Support Email",
+        emailDesc: "For any inquiries regarding private beta testing, data updates, or feedback.",
+        faqTitle: "Frequently Asked Questions",
+        q1: "When will invites be sent?",
+        a1: "We are rolling out invites in small cohorts across Kyiv. Your invite and app download link will be delivered directly to your email.",
+        q2: "Is the beta free?",
+        a2: "Yes. All early members receive access to the private beta completely free of charge. Active feedback participants receive lifetime access.",
+        q3: "How can I update or remove my submission?",
+        a3: "Simply send an email to support@twentytwo22.app from your registered address, and we will update or erase your record immediately."
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('btn-lang-ua').className = lang === 'ua' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+      document.getElementById('btn-lang-en').className = lang === 'en' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+
+      const data = i18n[lang];
+      document.title = data.title;
+      document.getElementById('page-title').textContent = data.heading;
+      document.getElementById('page-subtitle').textContent = data.subtitle;
+      document.getElementById('back-home-label').textContent = data.back;
+      document.getElementById('email-card-label').textContent = data.emailLabel;
+      document.getElementById('email-card-title').textContent = data.emailTitle;
+      document.getElementById('email-card-desc').textContent = data.emailDesc;
+      document.getElementById('faq-title').textContent = data.faqTitle;
+      document.getElementById('faq-q1').textContent = data.q1;
+      document.getElementById('faq-a1').textContent = data.a1;
+      document.getElementById('faq-q2').textContent = data.q2;
+      document.getElementById('faq-a2').textContent = data.a2;
+      document.getElementById('faq-q3').textContent = data.q3;
+      document.getElementById('faq-a3').textContent = data.a3;
+    }
+  </script>
+</body>
+</html>
