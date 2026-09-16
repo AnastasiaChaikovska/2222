@@ -108,7 +108,7 @@
           </button>
         </div>
 
-        <a href="#/support" onclick="navigateTo('support'); return false;" id="nav-support-btn" class="hidden sm:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
+        <a href="support.html" id="nav-support-btn" class="hidden sm:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
           Підтримка
         </a>
 
@@ -576,19 +576,6 @@
     </div>
   </section>
 
-  <div id="subpage-container" class="hidden min-h-[75vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-      <div>
-        <button onclick="navigateTo('home')" class="inline-flex items-center gap-2 text-xs font-medium text-app-muted hover:text-app-espresso transition-colors mb-6 cursor-pointer">
-          <span>←</span>
-          <span id="subpage-back-label">На головну</span>
-        </button>
-        <h1 id="subpage-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight"></h1>
-      </div>
-      <div id="subpage-body" class="prose text-sm text-app-brown leading-relaxed space-y-6"></div>
-    </div>
-  </div>
-
   <footer class="border-t border-app-border py-8 bg-app-bg">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
       <div class="flex items-center gap-3">
@@ -598,9 +585,9 @@
       </div>
 
       <div class="flex items-center gap-5 flex-wrap justify-center">
-        <a href="#/privacy" onclick="navigateTo('privacy'); return false;" id="btn-privacy" class="hover:text-app-espresso transition-colors cursor-pointer">Конфіденційність</a>
-        <a href="#/terms" onclick="navigateTo('terms'); return false;" id="btn-terms" class="hover:text-app-espresso transition-colors cursor-pointer">Умови користування</a>
-        <a href="#/support" onclick="navigateTo('support'); return false;" id="btn-support-foot" class="hover:text-app-espresso transition-colors cursor-pointer">Підтримка</a>
+        <a href="privacy.html" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
+        <a href="terms.html" id="btn-terms" class="hover:text-app-espresso transition-colors">Умови користування</a>
+        <a href="support.html" id="btn-support-foot" class="hover:text-app-espresso transition-colors">Підтримка</a>
         <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування</a>
       </div>
 
@@ -612,7 +599,7 @@
   </footer>
 
   <script>
-    const avatarPhoto = "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=260&h=260&q=80";
+    const avatarPhoto = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=260&h=260&q=80";
     const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby9sxuLq6fq22dGlPU0fcp4opWKXi-Z9Dcltp2clT_fJQuWlblORLERhARBFHydgmgP/exec";
 
     let currentLang = 'ua';
@@ -1184,31 +1171,19 @@
       currentPage = target;
       const mainEl = document.getElementById('main-content');
       const step2El = document.getElementById('step2-container');
-      const subpageContainer = document.getElementById('subpage-container');
 
       if (target === 'home') {
         if (mainEl) mainEl.classList.remove('hidden');
         if (step2El) step2El.classList.add('hidden');
-        if (subpageContainer) subpageContainer.classList.add('hidden');
         try {
           if (window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
         } catch (e) {}
         window.scrollTo({ top: 0, behavior: 'smooth' });
       } else if (target === 'step2') {
         if (mainEl) mainEl.classList.add('hidden');
-        if (subpageContainer) subpageContainer.classList.add('hidden');
         if (step2El) step2El.classList.remove('hidden');
         try {
           window.location.hash = '/step-2';
-        } catch (e) {}
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (subpageContent[target]) {
-        if (mainEl) mainEl.classList.add('hidden');
-        if (step2El) step2El.classList.add('hidden');
-        if (subpageContainer) subpageContainer.classList.remove('hidden');
-        renderSubpage(target);
-        try {
-          window.location.hash = '/' + target;
         } catch (e) {}
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
@@ -1225,16 +1200,7 @@
       const hash = window.location.hash;
       if (hash === '#/step-2') {
         navigateTo('step2');
-        return;
-      }
-      if (hash.startsWith('#/')) {
-        const page = hash.replace('#/', '');
-        if (subpageContent[page]) {
-          navigateTo(page);
-          return;
-        }
-      }
-      if (hash === '' || hash === '#') {
+      } else if (hash === '' || hash === '#') {
         navigateTo('home');
       }
     }
@@ -1516,10 +1482,6 @@
       const btnSupport = document.getElementById('btn-support-foot');
       if (btnSupport) {
         btnSupport.textContent = lang === 'ua' ? 'Підтримка' : 'Support';
-      }
-
-      if (currentPage !== 'home' && currentPage !== 'step2') {
-        renderSubpage(currentPage);
       }
 
       renderMockups(lang);
