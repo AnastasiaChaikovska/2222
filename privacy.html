@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Політика конфіденційності — 22:22</title>
+  
+  <link rel="icon" href="favicon">
+  <link rel="shortcut icon" href="favicon">
+  <link rel="apple-touch-icon" href="favicon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            app: {
+              bg: '#FAF6F0',
+              bgsubtle: '#F3EDE4',
+              card: '#FFFFFF',
+              cardsoft: '#FAF5EE',
+              border: '#E8DFD5',
+              borderstrong: '#D8CBC0',
+              rose: '#BD7573',
+              roselight: '#F7EFEB',
+              espresso: '#261613',
+              brown: '#5C4B46',
+              muted: '#94837E'
+            }
+          },
+          fontFamily: {
+            sans: ['Onest', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * {
+      font-family: 'Onest', system-ui, -apple-system, sans-serif !important;
+    }
+    body {
+      background-color: #FAF6F0;
+      color: #261613;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-app-bg text-app-espresso antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-app-bg/95 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 flex-shrink-0 transition-opacity group-hover:opacity-80">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#261613"/>
+            </g>
+            <g transform="translate(50, 39) rotate(14) scale(0.5) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#BD7573" stroke="#FAF6F0" stroke-width="5" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
+          <span id="nav-motto" class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">знайомства, з яких може вийти дружба</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">UA</button>
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">EN</button>
+        </div>
+        <a href="support.html" class="text-xs text-app-brown hover:text-app-espresso transition-colors">Підтримка</a>
+        <a href="index.html#waitlist-section" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+          Список очікування
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 py-12 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 text-xs font-medium text-app-muted hover:text-app-espresso transition-colors mb-6">
+          <span>←</span>
+          <span id="back-home-label">На головну</span>
+        </a>
+        <h1 id="page-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight">Політика конфіденційності</h1>
+        <p id="page-date" class="text-xs text-app-muted mt-2">Останнє оновлення: вересень 2026 року</p>
+      </div>
+
+      <div id="content-body" class="space-y-6 text-sm text-app-brown leading-relaxed bg-app-card p-6 sm:p-10 rounded-3xl border border-app-border">
+        <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє та зберігає персональні дані користувачок під час реєстрації у списку очікування (waitlist) та використання додатку.</p>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">1. Які дані ми збираємо</h2>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися), адресу електронної пошти та, за вашим бажанням, нік у Telegram чи номер телефону.</li>
+            <li><strong>Дані анкети:</strong> відповіді на запитання про темп спілкування, цінності в дружбі та особисті кордони — виключно для якісного щоденного підбору.</li>
+            <li><strong>Технічні дані:</strong> час реєстрації та мовні налаштування пристрою.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">2. Для чого ми використовуємо ці дані</h2>
+          <p>Ваші дані використовуються тільки з однією метою — надати вам доступ до додатку та показати одну людину в день, з якою у вас може скластися дружба. Ми надсилаємо персональне запрошення на вказаний email, коли додаток стає доступним у Києві.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">3. Принцип повної приватності</h2>
+          <p><strong>Ми ніколи не продаємо і не передаємо ваші дані третім особам, рекламним мережам чи аналітичним брокерам.</strong> У нашому сервісі немає публічних відкритих стрічок — ваш профіль може побачити тільки одна конкретна користувачка раз на добу о 22:22.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">4. Зберігання та видалення даних</h2>
+          <p>Ви маєте повне право у будь-який момент дізнатися, які ваші дані зберігаються, змінити їх або вимагати повного видалення вашого запису зі списку очікування. Для цього достатньо написати нам на пошту <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a>.</p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-app-border py-8 bg-app-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-app-espresso tracking-tight">22:22</span>
+        <span class="text-app-muted">•</span>
+        <span>знайомства, з яких може вийти дружба.</span>
+      </div>
+
+      <div class="flex items-center gap-5 flex-wrap justify-center">
+        <a href="privacy.html" class="text-app-espresso font-semibold">Конфіденційність</a>
+        <a href="terms.html" class="hover:text-app-espresso transition-colors">Умови користування</a>
+        <a href="support.html" class="hover:text-app-espresso transition-colors">Підтримка</a>
+        <a href="index.html#waitlist-section" class="text-app-espresso hover:underline font-medium">Список очікування</a>
+      </div>
+
+      <div class="text-[11px] sm:text-xs text-app-muted">
+        Київ • 22:22
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const i18n = {
+      ua: {
+        title: "Політика конфіденційності — 22:22",
+        heading: "Політика конфіденційності",
+        date: "Останнє оновлення: вересень 2026 року",
+        back: "На головну",
+        body: `
+          <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє та зберігає персональні дані користувачок під час реєстрації у списку очікування (waitlist) та використання додатку.</p>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">1. Які дані ми збираємо</h2>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися), адресу електронної пошти та, за вашим бажанням, нік у Telegram чи номер телефону.</li>
+              <li><strong>Дані анкети:</strong> відповіді на запитання про темп спілкування, цінності в дружбі та особисті кордони — виключно для якісного щоденного підбору.</li>
+              <li><strong>Технічні дані:</strong> час реєстрації та мовні налаштування пристрою.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">2. Для чого ми використовуємо ці дані</h2>
+            <p>Ваші дані використовуються тільки з однією метою — надати вам доступ до додатку та показати одну людину в день, з якою у вас може скластися дружба. Ми надсилаємо персональне запрошення на вказаний email, коли додаток стає доступним у Києві.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">3. Принцип повної приватності</h2>
+            <p><strong>Ми ніколи не продаємо і не передаємо ваші дані третім особам, рекламним мережам чи аналітичним брокерам.</strong> У нашому сервісі немає публічних відкритих стрічок — ваш профіль може побачити тільки одна конкретна користувачка раз на добу о 22:22.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">4. Зберігання та видалення даних</h2>
+            <p>Ви маєте повне право у будь-який момент дізнатися, які ваші дані зберігаються, змінити їх або вимагати повного видалення вашого запису зі списку очікування. Для цього достатньо написати нам на пошту <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a>.</p>
+          </section>
+        `
+      },
+      en: {
+        title: "Privacy Policy — 22:22",
+        heading: "Privacy Policy",
+        date: "Last updated: September 2026",
+        back: "Back to Home",
+        body: `
+          <p>This Privacy Policy explains how <strong>22:22</strong> collects, processes, and protects your personal data when joining the waitlist and using the application.</p>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">1. Information We Collect</h2>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li><strong>Waitlist Contact Info:</strong> your preferred name, email address, and optional Telegram handle or phone number.</li>
+              <li><strong>Questionnaire Answers:</strong> responses regarding your communication rhythm, friendship perspectives, and boundaries — used solely to find one match each day.</li>
+              <li><strong>Technical Metadata:</strong> registration timestamps and language preferences.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">2. How We Use Your Data</h2>
+            <p>Your details are used exclusively to grant early access and introduce you to one woman in Kyiv who shares your lifestyle. We send your invitation via email once your cohort opens.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">3. Strict Privacy Guarantee</h2>
+            <p><strong>We never sell, rent, or share your data with third-party advertisers or data brokers.</strong> There are no public feeds: your profile is shown to only one selected person per day at 22:22.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">4. Your Rights and Data Deletion</h2>
+            <p>You can request to view, correct, or permanently delete your waitlist submission at any time by contacting us at <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a>.</p>
+          </section>
+        `
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('btn-lang-ua').className = lang === 'ua' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+      document.getElementById('btn-lang-en').className = lang === 'en' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+
+      const data = i18n[lang];
+      document.title = data.title;
+      document.getElementById('page-title').textContent = data.heading;
+      document.getElementById('page-date').textContent = data.date;
+      document.getElementById('back-home-label').textContent = data.back;
+      document.getElementById('content-body').innerHTML = data.body;
+    }
+  </script>
+</body>
+</html>
