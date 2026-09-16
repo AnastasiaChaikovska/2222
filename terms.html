@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Умови користування — 22:22</title>
+  
+  <link rel="icon" href="favicon">
+  <link rel="shortcut icon" href="favicon">
+  <link rel="apple-touch-icon" href="favicon">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            app: {
+              bg: '#FAF6F0',
+              bgsubtle: '#F3EDE4',
+              card: '#FFFFFF',
+              cardsoft: '#FAF5EE',
+              border: '#E8DFD5',
+              borderstrong: '#D8CBC0',
+              rose: '#BD7573',
+              roselight: '#F7EFEB',
+              espresso: '#261613',
+              brown: '#5C4B46',
+              muted: '#94837E'
+            }
+          },
+          fontFamily: {
+            sans: ['Onest', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    * {
+      font-family: 'Onest', system-ui, -apple-system, sans-serif !important;
+    }
+    body {
+      background-color: #FAF6F0;
+      color: #261613;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-app-bg text-app-espresso antialiased flex flex-col min-h-screen">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-app-bg/95 backdrop-blur-md border-b border-app-border">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
+      
+      <a href="index.html" class="flex items-center gap-3 group">
+        <div class="w-8 h-8 flex-shrink-0 transition-opacity group-hover:opacity-80">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+            <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#261613"/>
+            </g>
+            <g transform="translate(50, 39) rotate(14) scale(0.5) translate(-50, -50)">
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#BD7573" stroke="#FAF6F0" stroke-width="5" stroke-linejoin="round"/>
+            </g>
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
+          <span class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">знайомства, з яких може вийти дружба</span>
+        </div>
+      </a>
+
+      <div class="flex items-center gap-3 sm:gap-6">
+        <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">UA</button>
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">EN</button>
+        </div>
+        <a href="support.html" class="text-xs text-app-brown hover:text-app-espresso transition-colors">Підтримка</a>
+        <a href="index.html#waitlist-section" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+          Список очікування
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="flex-1 py-12 sm:py-20">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      
+      <div>
+        <a href="index.html" class="inline-flex items-center gap-2 text-xs font-medium text-app-muted hover:text-app-espresso transition-colors mb-6">
+          <span>←</span>
+          <span id="back-home-label">На головну</span>
+        </a>
+        <h1 id="page-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight">Умови користування</h1>
+        <p id="page-date" class="text-xs text-app-muted mt-2">Останнє оновлення: вересень 2026 року</p>
+      </div>
+
+      <div id="content-body" class="space-y-6 text-sm text-app-brown leading-relaxed bg-app-card p-6 sm:p-10 rounded-3xl border border-app-border">
+        <p>Ласкаво просимо до <strong>22:22</strong>. Цей сервіс створений для безпечного та щирого знайомства жінок з метою побудови дружби. Використовуючи наш сайт та реєструючись у списку очікування, ви погоджуєтеся з цими Умовами.</p>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">1. Критерії участі</h2>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li>Сервіс призначений виключно для повнолітніх жінок (від 18 років).</li>
+            <li>Сервіс орієнтований на жительок міста Києва для реального спілкування офлайн.</li>
+            <li>Користувачка зобов'язується надавати правдиву інформацію про себе та використовувати власні фото.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">2. Правила простору та заборонена поведінка</h2>
+          <p>Ми дбаємо про атмосферу взаємної поваги, тому суворо забороняється:</p>
+          <ul class="list-disc pl-5 space-y-1.5">
+            <li>Будь-яка комерційна діяльність, продажі, мережевий маркетинг (MLM) чи бізнес-нетворкінг під виглядом дружби.</li>
+            <li>Публікація, пересилання або розповсюдження скріншотів приватних листувань без згоди співрозмовниці.</li>
+            <li>Прояви неповаги, токсичності, переслідування або ворожості.</li>
+            <li>Створення фейкових чи дублюючих профілів.</li>
+          </ul>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">3. Механіка сервісу</h2>
+          <p>22:22 пропонує одне знайомство на добу (о 22:22). Чат між користувачками відкривається виключно за умови взаємної згоди («так» з обох сторін). Ми залишаємо за собою право обмежити доступ до сервісу у разі порушення правил спільноти.</p>
+        </section>
+
+        <section class="space-y-2">
+          <h2 class="text-base font-semibold text-app-espresso">4. Зв'язок із командою</h2>
+          <p>Якщо у вас виникли запитання щодо Умов або ви помітили порушення з боку іншої учасниці, напишіть нам на <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a> або в Telegram <a href="https://t.me/AnastasiaChaikovska" class="text-app-espresso underline font-medium">@AnastasiaChaikovska</a>.</p>
+        </section>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-app-border py-8 bg-app-bg">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-app-espresso tracking-tight">22:22</span>
+        <span class="text-app-muted">•</span>
+        <span>знайомства, з яких може вийти дружба.</span>
+      </div>
+
+      <div class="flex items-center gap-5 flex-wrap justify-center">
+        <a href="privacy.html" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
+        <a href="terms.html" class="text-app-espresso font-semibold">Умови користування</a>
+        <a href="support.html" class="hover:text-app-espresso transition-colors">Підтримка</a>
+        <a href="index.html#waitlist-section" class="text-app-espresso hover:underline font-medium">Список очікування</a>
+      </div>
+
+      <div class="text-[11px] sm:text-xs text-app-muted">
+        Київ • 22:22
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const i18n = {
+      ua: {
+        title: "Умови користування — 22:22",
+        heading: "Умови користування",
+        date: "Останнє оновлення: вересень 2026 року",
+        back: "На головну",
+        body: `
+          <p>Ласкаво просимо до <strong>22:22</strong>. Цей сервіс створений для безпечного та щирого знайомства жінок з метою побудови дружби. Використовуючи наш сайт та реєструючись у списку очікування, ви погоджуєтеся з цими Умовами.</p>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">1. Критерії участі</h2>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Сервіс призначений виключно для повнолітніх жінок (від 18 років).</li>
+              <li>Сервіс орієнтований на жительок міста Києва для реального спілкування офлайн.</li>
+              <li>Користувачка зобов'язується надавати правдиву інформацію про себе та використовувати власні фото.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">2. Правила простору та заборонена поведінка</h2>
+            <p>Ми дбаємо про атмосферу взаємної поваги, тому суворо забороняється:</p>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Будь-яка комерційна діяльність, продажі, мережевий маркетинг (MLM) чи бізнес-нетворкінг під виглядом дружби.</li>
+              <li>Публікація, пересилання або розповсюдження скріншотів приватних листувань без згоди співрозмовниці.</li>
+              <li>Прояви неповаги, токсичності, переслідування або ворожості.</li>
+              <li>Створення фейкових чи дублюючих профілів.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">3. Механіка сервісу</h2>
+            <p>22:22 пропонує одне знайомство на добу (о 22:22). Чат між користувачками відкривається виключно за умови взаємної згоди («так» з обох сторін). Ми залишаємо за собою право обмежити доступ до сервісу у разі порушення правил спільноти.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">4. Зв'язок із командою</h2>
+            <p>Якщо у вас виникли запитання щодо Умов або ви помітили порушення з боку іншої учасниці, напишіть нам на <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a> або в Telegram <a href="https://t.me/AnastasiaChaikovska" class="text-app-espresso underline font-medium">@AnastasiaChaikovska</a>.</p>
+          </section>
+        `
+      },
+      en: {
+        title: "Terms of Service — 22:22",
+        heading: "Terms of Service",
+        date: "Last updated: September 2026",
+        back: "Back to Home",
+        body: `
+          <p>Welcome to <strong>22:22</strong>. This service is designed to help adult women in Kyiv meet and build genuine friendships. By using our website or signing up for the waitlist, you agree to these Terms.</p>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">1. Eligibility</h2>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Exclusively for adult women (18+).</li>
+              <li>Intended for residents of Kyiv seeking in-person connection.</li>
+              <li>You agree to provide accurate information and genuine photos.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">2. Community Standards & Restrictions</h2>
+            <p>To ensure a safe environment, the following actions are strictly prohibited:</p>
+            <ul class="list-disc pl-5 space-y-1.5">
+              <li>Commercial pitches, sales promotions, multi-level marketing (MLM), or business recruiting under the guise of friendship.</li>
+              <li>Sharing or screenshotting private conversations without prior explicit consent.</li>
+              <li>Harassment, malice, or disrespectful behavior.</li>
+              <li>Creating deceptive or duplicate accounts.</li>
+            </ul>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">3. Service Mechanics</h2>
+            <p>22:22 introduces one person per day at 22:22. Chats unlock only when both members mutually accept. We reserve the right to suspend access for conduct violations.</p>
+          </section>
+          <section class="space-y-2">
+            <h2 class="text-base font-semibold text-app-espresso">4. Contacting Support</h2>
+            <p>If you have any questions or wish to report a violation, please contact us at <a href="mailto:chaikovska.anastasia@gmail.com" class="text-app-espresso underline font-medium">chaikovska.anastasia@gmail.com</a> or via Telegram <a href="https://t.me/AnastasiaChaikovska" class="text-app-espresso underline font-medium">@AnastasiaChaikovska</a>.</p>
+          </section>
+        `
+      }
+    };
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
+      document.getElementById('btn-lang-ua').className = lang === 'ua' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+      document.getElementById('btn-lang-en').className = lang === 'en' 
+        ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
+        : "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+
+      const data = i18n[lang];
+      document.title = data.title;
+      document.getElementById('page-title').textContent = data.heading;
+      document.getElementById('page-date').textContent = data.date;
+      document.getElementById('back-home-label').textContent = data.back;
+      document.getElementById('content-body').innerHTML = data.body;
+    }
+  </script>
+</body>
+</html>
