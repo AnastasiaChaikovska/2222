@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>22:22 — Знайомства, з яких може вийти дружба</title>
+  <title>22:22 — для тих, хто хоче знайти нових подруг</title>
   
   <link rel="icon" href="favicon">
   <link rel="shortcut icon" href="favicon">
@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -34,8 +34,8 @@
             }
           },
           fontFamily: {
-            sans: ['Onest', 'system-ui', 'sans-serif'],
-            display: ['Onest', 'system-ui', 'sans-serif']
+            sans: ['Montserrat', 'system-ui', 'sans-serif'],
+            display: ['Montserrat', 'system-ui', 'sans-serif']
           }
         }
       }
@@ -43,7 +43,7 @@
   </script>
   <style>
     * {
-      font-family: 'Onest', system-ui, -apple-system, sans-serif !important;
+      font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
     }
     body {
       background-color: #FAF6F0;
@@ -59,6 +59,11 @@
       width: 100%;
       max-width: 310px;
       margin: 0 auto;
+    }
+    @media (min-width: 740px) and (max-width: 1024px) {
+      .iphone-frame {
+        max-width: 265px;
+      }
     }
     @media (max-width: 360px) {
       .iphone-frame {
@@ -87,7 +92,7 @@
 
         <div class="flex flex-col">
           <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
-          <span id="nav-motto" class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">знайомства, з яких може вийти дружба</span>
+          <span id="nav-motto" class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">для тих, хто хоче знайти нових подруг</span>
         </div>
       </a>
 
@@ -124,22 +129,21 @@
     <section class="pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32 overflow-hidden border-b border-app-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div class="grid grid-cols-1 min-[740px]:grid-cols-12 gap-8 lg:gap-14 items-center">
           
           <!-- Left Content -->
-          <div class="lg:col-span-7 space-y-6">
+          <div class="min-[740px]:col-span-7 space-y-6">
             
             <p id="hero-badge" class="text-xs uppercase tracking-wider text-app-muted font-medium">
               Одне знайомство на день • Щовечора о 22:22
             </p>
 
-            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[62px] font-semibold text-app-espresso leading-[1.0] tracking-[-0.03em] max-w-[580px]">
-              Одна нова людина на день. <br>
-              <span class="text-app-rose font-normal">Для дружби, не дейтингу.</span>
+            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[60px] font-semibold text-app-espresso leading-[1.04] tracking-[-0.03em] max-w-[600px]">
+              Щодня — одна нова людина, з якою варто познайомитися.
             </h1>
 
             <p id="hero-desc" class="text-base sm:text-[17px] text-app-brown max-w-[490px] leading-relaxed font-normal">
-              Відповідаєш на кілька простих запитань про себе. Щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас схожі погляди на життя та спілкування. Якщо ви обидві кажете «так», відкривається чат.
+              Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.
             </p>
 
             <!-- Hero Step 1 Form (Two Main Fields Only) -->
@@ -157,13 +161,13 @@
                 </div>
 
                 <button type="submit" id="btn-hero-submit" class="w-full py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-                  <span>Потрапити в Beta</span>
+                  <span>Хочу спробувати</span>
                   <span>→</span>
                 </button>
               </form>
 
               <div class="flex items-center gap-4 text-xs text-app-muted pt-3 font-normal">
-                <span id="hero-foot-1">Закрита Beta</span>
+                <span id="hero-foot-1">Закрита beta</span>
                 <span>•</span>
                 <span id="hero-foot-2">Тільки для жінок</span>
                 <span>•</span>
@@ -173,7 +177,7 @@
 
           </div>
 
-          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="min-[740px]:col-span-5 flex justify-center min-[740px]:justify-end">
             <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500">
               <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
                 
@@ -212,14 +216,14 @@
         
         <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-baseline mb-12 sm:mb-16">
           <div class="lg:col-span-7">
-            <span id="sec2-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-3">01 / Проблема</span>
+            <span id="sec2-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-3">Про дружбу в дорослому віці</span>
             <h2 id="sec2-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
-              У дорослому житті нові подруги перестають знаходитися самі.
+              Чому в дорослому віці так складно знайти нових подруг?
             </h2>
           </div>
           <div class="lg:col-span-5">
             <p id="sec2-desc" class="text-base text-app-brown leading-relaxed font-normal">
-              У школі та університеті люди постійно були поруч, тому друзі зʼявлялися природно. У дорослому віці залишається робота й побут, а для знайомств пропонують хіба що дейтинги з нескінченними свайпами або холодний нетворкінг. Справжнє спілкування так не виникає.
+              Раніше знайомства якось траплялися самі: університет, гуртожиток, спільні компанії, друзі друзів. Потім усі розʼїжджаються, занурюються в роботу, стосунки й своє життя — і в якийсь момент знайти нову подругу стає напрочуд складно.
             </p>
           </div>
         </div>
@@ -229,15 +233,15 @@
             <span class="text-xs font-mono text-app-muted">01</span>
             <h3 id="sec2-col1-title" class="font-semibold text-lg text-app-espresso tracking-tight">Як було раніше</h3>
             <p id="sec2-col1-text" class="text-sm text-app-brown leading-relaxed">
-              Спільні аудиторії, гуртожитки, купа вільного часу. Дружба зав'язувалася сама, бо ви щодня перетиналися в одному місці.
+              Ви постійно десь перетиналися: на парах, вечірках, у спільних компаніях. Не треба було спеціально шукати нових друзів — знайомства просто ставали дружбою.
             </p>
           </div>
 
           <div class="lg:col-span-7 bg-app-card p-6 sm:p-8 rounded-2xl border border-app-border space-y-3 lg:mt-6">
             <span class="text-xs font-mono text-app-muted">02</span>
-            <h3 id="sec2-col2-title" class="font-semibold text-lg text-app-espresso tracking-tight">Чому додатки не працюють</h3>
+            <h3 id="sec2-col2-title" class="font-semibold text-lg text-app-espresso tracking-tight">А зараз треба якось знайомитися спеціально</h3>
             <p id="sec2-col2-text" class="text-sm text-app-brown leading-relaxed">
-              Свайпнула сотню фото, почала три листування, які померли після «привіт, як справи». Не зрозуміло, про що вам взагалі говорити.
+              І тут стає складніше. Свайпати сотні профілів не хочеться, на нетворкінг за подругами теж не підеш, а випадкові переписки часто закінчуються після «привіт, як справи?».
             </p>
           </div>
         </div>
@@ -248,50 +252,50 @@
     <section class="py-16 sm:py-24 border-b border-app-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="grid lg:grid-cols-12 gap-12 lg:gap-14 items-center">
+        <div class="grid grid-cols-1 min-[740px]:grid-cols-12 gap-10 lg:gap-14 items-center">
           
-          <div class="lg:col-span-7 space-y-8">
+          <div class="min-[740px]:col-span-7 space-y-8">
             <div class="space-y-3">
-              <span id="sec3-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block">02 / Як це влаштовано</span>
+              <span id="sec3-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Як це працює</span>
               <h2 id="sec3-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
-                Щовечора о 22:22 зʼявляється одне знайомство.
+                Щовечора о 22:22 — одне нове знайомство.
               </h2>
               <p id="sec3-desc" class="text-base text-app-brown leading-relaxed max-w-lg">
-                Без каталогів і гортання сотень людей. Усе просто:
+                Без стрічки профілів і нескінченного свайпінгу.
               </p>
             </div>
 
             <div class="space-y-4">
               <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
-                <span class="text-xs font-mono text-app-muted font-medium">Крок 01</span>
-                <h3 id="sec3-s1-title" class="text-lg font-semibold text-app-espresso tracking-tight">Трохи розповідаєш про себе</h3>
+                <span class="text-xs font-mono text-app-muted font-medium">Крок 1</span>
+                <h3 id="sec3-s1-title" class="text-lg font-semibold text-app-espresso tracking-tight">Розповідаєш трохи про себе</h3>
                 <p id="sec3-s1-desc" class="text-sm text-app-brown leading-relaxed">
-                  Замість анкети на три рядки ми розпитаємо тебе про прості речі: що для тебе важливо у спілкуванні, як виглядає твій нормальний вихідний і від чого ти втомлюєшся.
+                  Кілька запитань про те, як ти спілкуєшся, як любиш проводити час, як часто хочеш бачитися з друзями і що для тебе важливо у близькому спілкуванні.
                 </p>
               </div>
 
               <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
-                <span class="text-xs font-mono text-app-muted font-medium">Крок 02</span>
-                <h3 id="sec3-s2-title" class="text-lg font-semibold text-app-espresso tracking-tight">Щодня показуємо одну дівчину</h3>
+                <span class="text-xs font-mono text-app-muted font-medium">Крок 2</span>
+                <h3 id="sec3-s2-title" class="text-lg font-semibold text-app-espresso tracking-tight">Щодня знайомишся з однією дівчиною</h3>
                 <p id="sec3-s2-desc" class="text-sm text-app-brown leading-relaxed">
-                  Жодної нескінченної стрічки. Щодня ми підбираємо одну людину з Києва, з якою у вас схожі погляди на дружбу і спільний темп.
+                  О 22:22 бачиш профіль однієї дівчини з Києва. Не просто фото — ще й її відповіді на ті самі запитання.
                 </p>
               </div>
 
               <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono text-app-muted font-medium">Крок 03</span>
+                  <span class="text-xs font-mono text-app-muted font-medium">Крок 3</span>
                   <span class="text-xs font-medium text-app-espresso">22:22</span>
                 </div>
-                <h3 id="sec3-s3-title" class="text-lg font-semibold text-app-espresso tracking-tight">Якщо обидві сказали «так» — відкривається чат</h3>
+                <h3 id="sec3-s3-title" class="text-lg font-semibold text-app-espresso tracking-tight">Якщо ви обрали одна одну — відкривається чат</h3>
                 <p id="sec3-s3-desc" class="text-sm text-app-brown leading-relaxed">
-                  Якщо вам обом відгукнулися відповіді одна одної, можна починати говорити. Ми дамо просту тему для старту, щоб не писати чергове незручне привітання.
+                  Якщо обидві натиснули «так» — можна писати. А щоб не починати з ніякового «привіт, як справи?», підкинемо кілька тем із ваших відповідей.
                 </p>
               </div>
             </div>
           </div>
 
-          <div class="lg:col-span-5 flex justify-center lg:justify-end">
+          <div class="min-[740px]:col-span-5 flex justify-center min-[740px]:justify-end">
             <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[1deg] hover:rotate-0 transition-transform duration-500">
               <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
                 
@@ -330,14 +334,14 @@
         
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 mb-12">
           <div class="lg:col-span-7">
-            <span id="sec4-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-2.5">03 / Підхід</span>
+            <span id="sec4-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-2.5">Не тільки фото</span>
             <h2 id="sec4-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
-              Без свайпів. Без нетворкінгу. Без марнування часу.
+              Важливо не лише як людина виглядає, а й чи вам буде комфортно разом.
             </h2>
           </div>
           <div class="lg:col-span-5 flex items-end">
             <p id="sec4-desc" class="text-base text-app-brown leading-relaxed font-normal">
-              Підбираємо людей не за фотографією, а за тим, що дійсно має значення у спілкуванні.
+              Хтось надсилає двадцять кружечків у Telegram за день. Хтось відповідає раз на кілька годин і любить довгі зустрічі за кавою. Хтось може написати «я поруч, виходь», а комусь краще домовитися за тиждень. Такі дрібниці багато вирішують.
             </p>
           </div>
         </div>
@@ -345,45 +349,45 @@
         <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
           
           <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
-            <span id="sec4-col1-title" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Чого в нас немає</span>
+            <span id="sec4-col1-title" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Чого тут точно не буде</span>
             <ul class="space-y-3 text-sm text-app-brown">
               <li class="flex items-start gap-3">
                 <span class="text-app-espresso font-semibold">—</span>
-                <span id="sec4-c1-1">Свайпнула по фото і пішла далі.</span>
+                <span id="sec4-c1-1"><strong>Нескінченного свайпінгу</strong> — не треба переглядати сотні профілів.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-espresso font-semibold">—</span>
-                <span id="sec4-c1-2">Каталогів із сотнями анкет, де зависаєш годинами.</span>
+                <span id="sec4-c1-2"><strong>Десятків чатів одночасно</strong> — нове знайомство зʼявляється раз на день.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-espresso font-semibold">—</span>
-                <span id="sec4-c1-3">Ділових пропозицій та спроб щось продати під виглядом дружби.</span>
+                <span id="sec4-c1-3"><strong>Нетворкінгу під виглядом дружби</strong> — без продажів, клієнтів і «давай заколабимося».</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-espresso font-semibold">—</span>
-                <span id="sec4-c1-4">Десятків паралельних діалогів, які нічим не закінчуються.</span>
+                <span id="sec4-c1-4"><strong>Дейтингу</strong> — тут знайомляться саме для дружби.</span>
               </li>
             </ul>
           </div>
 
           <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
-            <span id="sec4-col2-title" class="text-xs uppercase tracking-wider text-app-brown font-medium block">Що ми запитуємо</span>
+            <span id="sec4-col2-title" class="text-xs uppercase tracking-wider text-app-brown font-medium block">Про що ми запитуємо</span>
             <ul class="space-y-3 text-sm text-app-espresso">
               <li class="flex items-start gap-3">
                 <span class="text-app-rose font-medium">•</span>
-                <span id="sec4-c2-1"><strong>Погляди на дружбу:</strong> чи важлива надійність, прямота і взаємна підтримка.</span>
+                <span id="sec4-c2-1"><strong>Як ти спілкуєшся:</strong> повідомлення, голосові, кружечки, меми чи довгі розмови наживо.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-rose font-medium">•</span>
-                <span id="sec4-c2-2"><strong>Темп спілкування:</strong> короткі повідомлення на бігу чи неспішні зустрічі за кавою раз на місяць.</span>
+                <span id="sec4-c2-2"><strong>Як часто хочеш бачитися:</strong> спонтанно кілька разів на тиждень чи на довгу каву раз на місяць.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-rose font-medium">•</span>
-                <span id="sec4-c2-3"><strong>Як проводити час:</strong> спокійні прогулянки, кавʼярні чи спільна робота поруч.</span>
+                <span id="sec4-c2-3"><strong>Що любиш робити разом:</strong> гуляти, ходити по кавʼярнях, на концерти, тренування чи просто працювати поруч.</span>
               </li>
               <li class="flex items-start gap-3">
                 <span class="text-app-rose font-medium">•</span>
-                <span id="sec4-c2-4"><strong>Особисті кордони:</strong> що для тебе категорично не ок у людях.</span>
+                <span id="sec4-c2-4"><strong>Що для тебе не ок:</strong> речі, через які вам точно буде складно порозумітися.</span>
               </li>
             </ul>
           </div>
@@ -399,17 +403,16 @@
         <span id="sec5-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium">Чому лише одна людина</span>
         
         <h2 id="sec5-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.08] tracking-[-0.02em]">
-          Тобі не потрібні десятки нових людей. <br>
-          <span class="text-app-rose font-normal">Достатньо знайти одну свою.</span>
+          Бо знайомитися з людьми — не те саме, що гортати каталог.
         </h2>
 
         <p id="sec5-desc" class="text-sm sm:text-base text-app-bg/75 max-w-lg mx-auto leading-relaxed">
-          Коли перед очима немає сотні профілів, кожне знайомство отримує нормальну увагу і час, а не зникає в черговому списку свайпів.
+          Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.
         </p>
 
         <div class="pt-2">
           <a href="#waitlist-section" onclick="scrollToWaitlist(); return false;" id="sec5-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-xs sm:text-sm font-medium transition-colors">
-            Потрапити в Beta →
+            Хочу спробувати →
           </a>
         </div>
 
@@ -434,10 +437,10 @@
 
           <div class="space-y-3">
             <h2 id="sec6-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight">
-              Потрапити в перший набір 22:22.
+              Спробуй 22:22 однією з перших.
             </h2>
             <p id="sec6-desc" class="text-sm sm:text-base text-app-brown max-w-md mx-auto leading-relaxed">
-              Зараз ми збираємо першу закриту групу в Києві. Залиш свої контакти, щоб отримати доступ, щойно ми запустимося.
+              Зараз збираємо перших учасниць у Києві. Залиш контакти — напишемо, коли відкриємо доступ.
             </p>
           </div>
 
@@ -454,7 +457,7 @@
             </div>
 
             <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-              <span>Потрапити в Beta</span>
+              <span>Хочу спробувати</span>
               <span>→</span>
             </button>
           </form>
@@ -488,7 +491,7 @@
             Майже все! Ще пара деталей.
           </h2>
           <p id="step2-subheading" class="text-sm text-app-brown leading-relaxed">
-            Ми зберегли твій імейл. Щоб нам було простіше зв'язатися з тобою перед стартом у Києві, можеш додати ще кілька речей:
+            Email збережено. Щоб нам було простіше надіслати запрошення перед запуском у Києві, можеш додати ще кілька контактів:
           </p>
         </div>
 
@@ -524,8 +527,8 @@
               <label class="flex items-start gap-3 p-3.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer transition-colors">
                 <input type="radio" name="test-mode" value="active" checked class="mt-0.5 accent-app-espresso">
                 <div class="text-xs space-y-0.5">
-                  <strong id="step2-opt1-strong" class="block font-medium text-app-espresso">Готова активно ділитися фідбеком</strong>
-                  <span id="step2-opt1-sub" class="text-app-muted block leading-snug">Найактивнішим користувачкам дамо безкоштовний доступ назавжди після тестування.</span>
+                  <strong id="step2-opt1-strong" class="block font-medium text-app-espresso">Готова активно ділитися враженнями</strong>
+                  <span id="step2-opt1-sub" class="text-app-muted block leading-snug">Найактивнішим учасницям дамо постійний безкоштовний доступ після завершення тестування.</span>
                 </div>
               </label>
 
@@ -533,7 +536,7 @@
                 <input type="radio" name="test-mode" value="casual" class="mt-0.5 accent-app-espresso">
                 <div class="text-xs space-y-0.5">
                   <strong id="step2-opt2-strong" class="block font-medium text-app-espresso">Хочу тестувати у власному темпі</strong>
-                  <span id="step2-opt2-sub" class="text-app-muted block leading-snug">Без зобов'язань писати детальні відгуки, просто дивитися одне знайомство на день.</span>
+                  <span id="step2-opt2-sub" class="text-app-muted block leading-snug">Без зобов'язань писати відгуки, просто дивитися одне нове знайомство щовечора.</span>
                 </div>
               </label>
             </div>
@@ -541,7 +544,7 @@
 
           <div class="p-3.5 rounded-xl bg-app-bgsubtle/70 border border-app-border text-xs text-app-brown leading-relaxed flex items-center gap-2.5">
             <span class="text-app-rose text-base leading-none">♡</span>
-            <span id="step2-free-note">Усі перші користувачки отримують повний доступ до закритої бети безоплатно.</span>
+            <span id="step2-free-note">Усі учасниці першого набору отримують доступ до закритої beta безкоштовно.</span>
           </div>
 
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
@@ -562,7 +565,7 @@
           </div>
           <h3 id="step2-success-title" class="text-xl font-semibold text-app-espresso">Ти в списку очікування!</h3>
           <p id="step2-success-note" class="text-xs text-app-brown leading-relaxed max-w-sm mx-auto">
-            Ми надішлемо особисте запрошення та посилання на додаток, щойно відкриємо доступ у Києві.
+            Ми надішлемо особисте запрошення та посилання на застосунок, щойно відкриємо доступ у Києві.
           </p>
           <div class="pt-2">
             <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-white text-xs font-medium hover:bg-black transition-colors cursor-pointer">
@@ -581,7 +584,7 @@
       <div class="flex items-center gap-3">
         <span class="font-bold text-app-espresso tracking-tight">22:22</span>
         <span class="text-app-muted">•</span>
-        <span id="foot-slogan">знайомства, з яких може вийти дружба.</span>
+        <span id="foot-slogan">місце, де знаходять подруг.</span>
       </div>
 
       <div class="flex items-center gap-5 flex-wrap justify-center">
@@ -659,24 +662,24 @@
 
               <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
                 <div class="text-app-espresso font-semibold text-[10.5px]">
-                  Мені важливо в подрузі
+                  Що важливо в подрузі
                 </div>
                 <p class="text-[10px] text-app-brown leading-snug">
-                  Щоб не зникала, коли стає складно, і прямо говорила, якщо щось не так. Щоб можна було сміятися разом і мені ок просто мовчати поруч.
+                  Щоб не зникала без пояснень і говорила прямо, якщо щось не так. Щоб можна було сміятися разом і було спокійно просто помовчати поруч.
                 </p>
               </div>
 
               <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
                 <div class="text-app-espresso font-semibold text-[10.5px]">
-                  Ідеальна неділя
+                  Звична неділя
                 </div>
                 <p class="text-[10px] text-app-brown leading-snug">
-                  Прокинутися без будильника, взяти каву в улюбленому місці, купити квітів на ринку й заговоритися так, що не помічаєш часу.
+                  Прокинутися без будильника, взяти каву біля дому, купити квітів на ринку й заговоритися так, що не помічаєш часу.
                 </p>
               </div>
 
               <div class="bg-white border border-app-border rounded-xl px-3 py-2 flex items-center justify-between text-[10px] text-app-espresso">
-                <span><strong>Без компромісів:</strong> байдужість та ігри</span>
+                <span><strong>Точно не ок:</strong> пасивна агресія та маніпуляції</span>
                 <span class="text-app-muted">›</span>
               </div>
             </div>
@@ -693,29 +696,29 @@
 
           <div class="bg-white border border-app-border rounded-xl p-3 space-y-1.5 mb-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-app-espresso">Підказка для тебе</span>
+              <span class="text-xs font-semibold text-app-espresso">Підказка для старту</span>
               <span class="text-[9.5px] text-app-muted">сховати</span>
             </div>
             <ul class="text-[10.5px] text-app-brown space-y-1 leading-snug">
               <li class="flex items-start gap-1.5">
                 <span class="text-app-espresso font-bold">•</span>
-                <span>У вас схожий темп: неквапливі розмови, уважність і без поспіху.</span>
+                <span>У вас спільний ритм: спокійні розмови, без поспіху та тиску.</span>
               </li>
               <li class="flex items-start gap-1.5">
                 <span class="text-app-espresso font-bold">•</span>
-                <span>Ви обидві рідко пишете першими, тож без простого питання знайомство може так і залишитися в чаті.</span>
+                <span>Обидві рідко пишуть першими — просте конкретне запитання допоможе почати діалог.</span>
               </li>
             </ul>
-            <div class="text-[9px] text-app-muted italic pt-0.5">Це бачиш лише ти. Не скрипт, а підказка для старту.</div>
+            <div class="text-[9px] text-app-muted italic pt-0.5">Це бачиш тільки ти. Проста тема, щоб почати розмову.</div>
           </div>
 
           <div class="space-y-2 flex flex-col items-end">
             <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              Привіт :) Побачила в тебе про каву та квіти в неділю — мені це дуже відгукнулося.
+              Привіт :) Побачила в тебе про каву та квіти в неділю — мені це дуже знайомо.
             </div>
 
             <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              Я теж зазвичай не пишу першою, тому спитаю просто: де в Києві твоє улюблене місце для кави?
+              Я зазвичай теж ніяковію писати першою, тому запитаю просто: де в Києві твоє улюблене місце для кави?
             </div>
           </div>
 
@@ -724,7 +727,7 @@
               З чого почати
             </div>
             <div class="text-app-espresso leading-snug">
-              Ви обидві сказали «так». Можна знайомитися :) Хороший старт — не загальна фраза, а просте конкретне запитання про улюблені місця в місті.
+              Ви обидві обрали одна одну. Чат відкрито :) Найпростіший спосіб почати — запитати про улюблені місця в місті.
             </div>
           </div>
         `
@@ -776,13 +779,13 @@
                   What matters in a friend
                 </div>
                 <p class="text-[10px] text-app-brown leading-snug">
-                  Someone who stays when things get tricky, speaks plainly, and with whom it feels completely fine to just sit quietly together.
+                  Someone who doesn't disappear without a word, speaks plainly, and with whom it feels completely fine to just sit quietly together.
                 </p>
               </div>
 
               <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
                 <div class="text-app-espresso font-semibold text-[10.5px]">
-                  My ideal Sunday
+                  My usual Sunday
                 </div>
                 <p class="text-[10px] text-app-brown leading-snug">
                   No alarm, finding coffee and flowers in town, and ending up in a conversation where you lose track of time.
@@ -790,7 +793,7 @@
               </div>
 
               <div class="bg-white border border-app-border rounded-xl px-3 py-2 flex items-center justify-between text-[10px] text-app-espresso">
-                <span><strong>No compromise on:</strong> indifference & mind games</span>
+                <span><strong>Deal-breakers:</strong> passive aggression & manipulation</span>
                 <span class="text-app-muted">›</span>
               </div>
             </div>
@@ -807,20 +810,20 @@
 
           <div class="bg-white border border-app-border rounded-xl p-3 space-y-1.5 mb-3">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-app-espresso">A quick note for you</span>
+              <span class="text-xs font-semibold text-app-espresso">A quick prompt for you</span>
               <span class="text-[9.5px] text-app-muted">hide</span>
             </div>
             <ul class="text-[10.5px] text-app-brown space-y-1 leading-snug">
               <li class="flex items-start gap-1.5">
                 <span class="text-app-espresso font-bold">•</span>
-                <span>You both share a relaxed pace: straightforward chat, warmth, no rush.</span>
+                <span>You both share a relaxed pace: direct communication, warmth, no rush.</span>
               </li>
               <li class="flex items-start gap-1.5">
                 <span class="text-app-espresso font-bold">•</span>
-                <span>Neither of you usually writes first, so a simple concrete question helps get things moving.</span>
+                <span>Neither of you usually texts first, so a simple concrete question helps break the ice.</span>
               </li>
             </ul>
-            <div class="text-[9px] text-app-muted italic pt-0.5">Only you see this. Just a simple nudge to break the ice.</div>
+            <div class="text-[9px] text-app-muted italic pt-0.5">Only you see this. Just a simple topic to get started.</div>
           </div>
 
           <div class="space-y-2 flex flex-col items-end">
@@ -838,7 +841,7 @@
               Where to begin
             </div>
             <div class="text-app-espresso leading-snug">
-              You both said yes. Time to say hello :) A good opener is a simple question about your favorite local neighborhood spots.
+              You both picked each other. Chat is open :) An easy way to start is asking about your favorite spots in town.
             </div>
           </div>
         `
@@ -847,513 +850,172 @@
 
     const translations = {
       ua: {
-        navMotto: "знайомства, з яких може вийти дружба",
+        navMotto: "для тих, хто хоче знайти нових подруг",
         navCountdown: "Наступне знайомство о 22:22:",
         navCta: "Список очікування",
         heroBadge: "Одне знайомство на день • Щовечора о 22:22",
-        heroTitle: "Одна нова людина на день. <br><span class=\"text-app-rose font-normal\">Для дружби, не дейтингу.</span>",
-        heroDesc: "Відповідаєш на кілька простих запитань про себе. Щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас схожі погляди на життя та спілкування. Якщо ви обидві кажете «так», відкривається чат.",
+        heroTitle: "Щодня — одна нова людина, з якою варто познайомитися.",
+        heroDesc: "Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.",
         labelHeroName: "Як до тебе звертатися",
         labelHeroEmail: "Email",
-        btnHeroSubmit: "<span>Потрапити в Beta</span> <span>→</span>",
-        heroFoot1: "Закрита Beta",
+        btnHeroSubmit: "<span>Хочу спробувати</span> <span>→</span>",
+        heroFoot1: "Закрита beta",
         heroFoot2: "Тільки для жінок",
         heroFoot3: "Київ",
         
-        sec2Tag: "01 / Проблема",
-        sec2Title: "У дорослому житті нові подруги перестають знаходитися самі.",
-        sec2Desc: "У школі та університеті люди постійно були поруч, тому друзі зʼявлялися природно. У дорослому віці залишається робота й побут, а для знайомств пропонують хіба що дейтинги з нескінченними свайпами або холодний нетворкінг. Справжнє спілкування так не виникає.",
+        sec2Tag: "Про дружбу в дорослому віці",
+        sec2Title: "Чому в дорослому віці так складно знайти нових подруг?",
+        sec2Desc: "Раніше знайомства якось траплялися самі: університет, гуртожиток, спільні компанії, друзі друзів. Потім усі розʼїжджаються, занурюються в роботу, стосунки й своє життя — і в якийсь момент знайти нову подругу стає напрочуд складно.",
         sec2Col1Title: "Як було раніше",
-        sec2Col1Text: "Спільні аудиторії, гуртожитки, купа вільного часу. Дружба зав'язувалася сама, бо ви щодня перетиналися в одному місці.",
-        sec2Col2Title: "Чому додатки не працюють",
-        sec2Col2Text: "Свайпнула сотню фото, почала три листування, які померли після «привіт, як справи». Не зрозуміло, про що вам взагалі говорити.",
+        sec2Col1Text: "Ви постійно десь перетиналися: на парах, вечірках, у спільних компаніях. Не треба було спеціально шукати нових друзів — знайомства просто ставали дружбою.",
+        sec2Col2Title: "А зараз треба якось знайомитися спеціально",
+        sec2Col2Text: "І тут стає складніше. Свайпати сотні профілів не хочеться, на нетворкінг за подругами теж не підеш, а випадкові переписки часто закінчуються після «привіт, як справи?».",
 
-        sec3Tag: "02 / Як це влаштовано",
-        sec3Title: "Щовечора о 22:22 зʼявляється одне знайомство.",
-        sec3Desc: "Без каталогів і гортання сотень людей. Усе просто:",
-        sec3S1Title: "Трохи розповідаєш про себе",
-        sec3S1Desc: "Замість анкети на три рядки ми розпитаємо тебе про прості речі: що для тебе важливо у спілкуванні, як виглядає твій нормальний вихідний і від чого ти втомлюєшся.",
-        sec3S2Title: "Щодня показуємо одну дівчину",
-        sec3S2Desc: "Жодної нескінченної стрічки. Щодня ми підбираємо одну людину з Києва, з якою у вас схожі погляди на дружбу і спільний темп.",
-        sec3S3Title: "Якщо обидві сказали «так» — відкривається чат",
-        sec3S3Desc: "Якщо вам обом відгукнулися відповіді одна одної, можна починати говорити. Ми дамо просту тему для старту, щоб не писати чергове незручне привітання.",
+        sec3Tag: "Як це працює",
+        sec3Title: "Щовечора о 22:22 — одне нове знайомство.",
+        sec3Desc: "Без стрічки профілів і нескінченного свайпінгу.",
+        sec3S1Title: "Розповідаєш трохи про себе",
+        sec3S1Desc: "Кілька запитань про те, як ти спілкуєшся, як любиш проводити час, як часто хочеш бачитися з друзями і що для тебе важливо у близькому спілкуванні.",
+        sec3S2Title: "Щодня знайомишся з однією дівчиною",
+        sec3S2Desc: "О 22:22 бачиш профіль однієї дівчини з Києва. Не просто фото — ще й її відповіді на ті самі запитання.",
+        sec3S3Title: "Якщо ви обрали одна одну — відкривається чат",
+        sec3S3Desc: "Якщо обидві натиснули «так» — можна писати. А щоб не починати з ніякового «привіт, як справи?», підкинемо кілька тем із ваших відповідей.",
 
-        sec4Tag: "03 / Підхід",
-        sec4Title: "Без свайпів. Без нетворкінгу. Без марнування часу.",
-        sec4Desc: "Підбираємо людей не за фотографією, а за тим, що дійсно має значення у спілкуванні.",
-        sec4Col1Title: "Чого в нас немає",
-        sec4C11: "Свайпнула по фото і пішла далі.",
-        sec4C12: "Каталогів із сотнями анкет, де зависаєш годинами.",
-        sec4C13: "Ділових пропозицій та спроб щось продати під виглядом дружби.",
-        sec4C14: "Десятків паралельних діалогів, які нічим не закінчуються.",
-        sec4Col2Title: "Що ми запитуємо",
-        sec4C21: "<strong>Погляди на дружбу:</strong> чи важлива надійність, прямота і взаємна підтримка.",
-        sec4C22: "<strong>Темп спілкування:</strong> короткі повідомлення на бігу чи неспішні зустрічі за кавою раз на місяць.",
-        sec4C23: "<strong>Як проводити час:</strong> спокійні прогулянки, кавʼярні чи спільна робота поруч.",
-        sec4C24: "<strong>Особисті кордони:</strong> що для тебе категорично не ок у людях.",
+        sec4Tag: "Не тільки фото",
+        sec4Title: "Важливо не лише як людина виглядає, а й чи вам буде комфортно разом.",
+        sec4Desc: "Хтось надсилає двадцять кружечків у Telegram за день. Хтось відповідає раз на кілька годин і любить довгі зустрічі за кавою. Хтось може написати «я поруч, виходь», а комусь краще домовитися за тиждень. Такі дрібниці багато вирішують.",
+        sec4Col1Title: "Чого тут точно не буде",
+        sec4C11: "<strong>Нескінченного свайпінгу</strong> — не треба переглядати сотні профілів.",
+        sec4C12: "<strong>Десятків чатів одночасно</strong> — нове знайомство зʼявляється раз на день.",
+        sec4C13: "<strong>Нетворкінгу під виглядом дружби</strong> — без продажів, клієнтів і «давай заколабимося».",
+        sec4C14: "<strong>Дейтингу</strong> — тут знайомляться саме для дружби.",
+        sec4Col2Title: "Про що ми запитуємо",
+        sec4C21: "<strong>Як ти спілкуєшся:</strong> повідомлення, голосові, кружечки, меми чи довгі розмови наживо.",
+        sec4C22: "<strong>Як часто хочеш бачитися:</strong> спонтанно кілька разів на тиждень чи на довгу каву раз на місяць.",
+        sec4C23: "<strong>Що любиш робити разом:</strong> гуляти, ходити по кавʼярнях, на концерти, тренування чи просто працювати поруч.",
+        sec4C24: "<strong>Що для тебе не ок:</strong> речі, через які вам точно буде складно порозумітися.",
 
         sec5Tag: "Чому лише одна людина",
-        sec5Title: "Тобі не потрібні десятки нових людей. <br><span class=\"text-app-rose font-normal\">Достатньо знайти одну свою.</span>",
-        sec5Desc: "Коли перед очима немає сотні профілів, кожне знайомство отримує нормальну увагу і час, а не зникає в черговому списку свайпів.",
-        sec5Btn: "Потрапити в Beta →",
+        sec5Title: "Бо знайомитися з людьми — не те саме, що гортати каталог.",
+        sec5Desc: "Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.",
+        sec5Btn: "Хочу спробувати →",
 
-        sec6Title: "Потрапити в перший набір 22:22.",
-        sec6Desc: "Зараз ми збираємо першу закриту групу в Києві. Залиш свої контакти, щоб отримати доступ, щойно ми запустимося.",
+        sec6Title: "Спробуй 22:22 однією з перших.",
+        sec6Desc: "Зараз збираємо перших учасниць у Києві. Залиш контакти — напишемо, коли відкриємо доступ.",
         labelBotName: "Як до тебе звертатися",
         labelBotEmail: "Email",
-        btnBotSubmit: "<span>Потрапити в Beta</span> <span>→</span>",
+        btnBotSubmit: "<span>Хочу спробувати</span> <span>→</span>",
         botFoot1: "Без спаму",
         botFoot2: "Тільки для жінок",
         botFoot3: "Київ",
 
         // Step 2 translations
         step2Heading: "Майже все! Ще пара деталей.",
-        step2Subheading: "Ми зберегли твій імейл. Щоб нам було простіше зв'язатися з тобою перед стартом у Києві, можеш додати ще кілька речей:",
+        step2Subheading: "Email збережено. Щоб нам було простіше надіслати запрошення перед запуском у Києві, можеш додати ще кілька контактів:",
         step2LblTg: "Нік у Telegram",
         step2LblPhone: "Номер телефону",
         step2LblOpt: "необов'язково",
         step2LblMode: "Як тобі комфортно брати участь?",
         step2LblFree: "Beta безкоштовна",
-        step2Opt1Strong: "Готова активно ділитися фідбеком",
-        step2Opt1Sub: "Найактивнішим користувачкам дамо безкоштовний доступ назавжди після тестування.",
+        step2Opt1Strong: "Готова активно ділитися враженнями",
+        step2Opt1Sub: "Найактивнішим учасницям дамо постійний безкоштовний доступ після завершення тестування.",
         step2Opt2Strong: "Хочу тестувати у власному темпі",
-        step2Opt2Sub: "Без зобов'язань писати детальні відгуки, просто дивитися одне знайомство на день.",
-        step2FreeNote: "Усі перші користувачки отримують повний доступ до закритої бети безоплатно.",
+        step2Opt2Sub: "Без зобов'язань писати відгуки, просто дивитися одне нове знайомство щовечора.",
+        step2FreeNote: "Усі учасниці першого набору отримують доступ до закритої beta безкоштовно.",
         step2BtnSave: "Зберегти та завершити",
         step2BtnSkip: "Пропустити",
         step2SuccessTitle: "Ти в списку очікування!",
-        step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на додаток, щойно відкриємо доступ у Києві.",
+        step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на застосунок, щойно відкриємо доступ у Києві.",
 
-        footSlogan: "знайомства, з яких може вийти дружба.",
+        footSlogan: "місце, де знаходять подруг.",
         btnPrivacy: "Конфіденційність",
         btnTerms: "Умови користування",
         btnFootJoin: "Список очікування"
       },
       en: {
-        navMotto: "introductions that can turn into friendship",
+        navMotto: "for those who want to make new friends",
         navCountdown: "Next match at 22:22:",
         navCta: "Waitlist",
         heroBadge: "One Match A Day • Every Evening at 22:22",
-        heroTitle: "One new person a day. <br><span class=\"text-app-rose font-normal\">For friendship, not dating.</span>",
-        heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, you see one woman in Kyiv who shares your pace and outlook. If you both say yes, the chat opens.",
+        heroTitle: "Every day — one new person worth meeting.",
+        heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, see one woman in Kyiv with whom you could share a lot in common. If you both choose each other, the chat opens.",
         labelHeroName: "What should we call you",
         labelHeroEmail: "Email",
-        btnHeroSubmit: "<span>Join the Beta</span> <span>→</span>",
-        heroFoot1: "Private Beta",
+        btnHeroSubmit: "<span>I want to try</span> <span>→</span>",
+        heroFoot1: "Private beta",
         heroFoot2: "Women only",
         heroFoot3: "Kyiv",
 
-        sec2Tag: "01 / The Problem",
-        sec2Title: "In adult life, new friends stop appearing on their own.",
-        sec2Desc: "In school or college, people were around every day, so friendships happened naturally. Later on, life is mostly work and routine, while apps offer either swipe-heavy dating or transactional networking. Real friendship doesn't start that way.",
+        sec2Tag: "On Adult Friendship",
+        sec2Title: "Why is it so hard to find new friends in adult life?",
+        sec2Desc: "Friendships used to happen naturally: university, dorms, shared groups, mutual friends. Later on, everyone moves away, gets consumed by work, relationships, and routines — and at some point, finding a new friend becomes surprisingly difficult.",
         sec2Col1Title: "How it used to be",
-        sec2Col1Text: "Shared campuses, common hallways, unstructured time. Friends appeared because you saw each other every single day.",
-        sec2Col2Title: "Why standard apps fail",
-        sec2Col2Text: "Swiped through a hundred faces, started three dead-end chats that fizzled out after 'hey, how are you'. You don't even know what to talk about.",
+        sec2Col1Text: "You crossed paths constantly: lectures, parties, casual gatherings. You didn't have to look for new friends — casual encounters just turned into friendships.",
+        sec2Col2Title: "Now you have to make an intentional effort",
+        sec2Col2Text: "And that's where it gets tricky. Swiping hundreds of profiles feels exhausting, you wouldn't go networking for friendships, and random chats often fizzle out after 'hey, how are you?'.",
 
-        sec3Tag: "02 / How It Works",
-        sec3Title: "Every evening at 22:22, you meet someone new.",
-        sec3Desc: "No endless feeds or browsing hundreds of profiles. Three simple steps:",
+        sec3Tag: "How It Works",
+        sec3Title: "Every evening at 22:22 — one new match.",
+        sec3Desc: "No infinite scroll and no endless swiping.",
         sec3S1Title: "Tell us a bit about yourself",
-        sec3S1Desc: "Instead of a 3-line bio, we ask simple questions: what matters to you in conversation, your ideal weekend, and what drains your battery.",
-        sec3S2Title: "One person every day",
-        sec3S2Desc: "No infinite scroll. Each day we find one woman in Kyiv who matches your communication pace and outlook.",
-        sec3S3Title: "Both say yes — chat opens",
-        sec3S3Desc: "If you both like each other's answers, the chat unlocks with an easy contextual starter so you don't have to write an awkward opener.",
+        sec3S1Desc: "A few simple questions about your communication style, how you spend free time, how often you like seeing friends, and what matters to you in close relationships.",
+        sec3S2Title: "Meet one woman every day",
+        sec3S2Desc: "At 22:22 you see the profile of one woman in Kyiv. Not just a photo — but her answers to those exact same questions.",
+        sec3S3Title: "If you both choose each other — chat opens",
+        sec3S3Desc: "If both press yes, you can start talking. And so you don't have to start with an awkward 'hey, how are you?', we suggest a few starter topics based on your answers.",
 
-        sec4Tag: "03 / Principles",
-        sec4Title: "No swiping. No networking. No wasted time.",
-        sec4Desc: "Matching people based on how they actually talk, not just photos.",
-        sec4Col1Title: "What we don't do",
-        sec4C11: "Glance at photos and swipe away in two seconds.",
-        sec4C12: "Endless catalogs designed to keep you scrolling for hours.",
-        sec4C13: "Networking pitches and commercial proposals disguised as friendship.",
-        sec4C14: "Dozens of dead conversations running at the same time.",
-        sec4Col2Title: "What we look for",
-        sec4C21: "<strong>Views on friendship:</strong> reliability, honesty, and showing up.",
-        sec4C22: "<strong>Communication pace:</strong> quick voice notes on the go or quiet coffee dates once a month.",
-        sec4C23: "<strong>Spending time:</strong> long walks, quiet cafes, or working side by side.",
-        sec4C24: "<strong>Boundaries:</strong> what is a clear deal-breaker for you in people.",
+        sec4Tag: "Not just photos",
+        sec4Title: "It matters not just what a person looks like, but whether you'll genuinely feel comfortable together.",
+        sec4Desc: "Someone sends twenty Telegram video circles a day on the go. Someone replies every few hours and loves long catch-ups over coffee. Someone texts 'I'm outside, come down', while someone else plans a week ahead. These details make all the difference.",
+        sec4Col1Title: "What you definitely won't find here",
+        sec4C11: "<strong>Endless swiping</strong> — no need to browse hundreds of profiles.",
+        sec4C12: "<strong>Dozens of chats at once</strong> — one new match appears once a day.",
+        sec4C13: "<strong>Networking disguised as friendship</strong> — no sales pitches, client hunting, or 'let's collab'.",
+        sec4C14: "<strong>Dating</strong> — this is strictly for friendship.",
+        sec4Col2Title: "What we ask about",
+        sec4C21: "<strong>How you communicate:</strong> quick texts, voice notes, video circles, memes, or long in-person chats.",
+        sec4C22: "<strong>How often you want to see each other:</strong> spontaneously a few times a week or a long coffee catch-up once a month.",
+        sec4C23: "<strong>What you enjoy doing together:</strong> walking, trying coffee spots, going to concerts, workouts, or quiet co-working side by side.",
+        sec4C24: "<strong>Deal-breakers:</strong> things that definitely make it hard for you to connect.",
 
         sec5Tag: "Why just one person",
-        sec5Title: "You don’t need dozens of new people. <br><span class=\"text-app-rose font-normal\">You just need the right one.</span>",
-        sec5Desc: "Without an endless feed in front of you, each introduction gets genuine attention and time instead of vanishing in a pile of swipes.",
-        sec5Btn: "Join the Beta →",
+        sec5Title: "Meeting people isn't the same as browsing a shopping catalog.",
+        sec5Desc: "We show one person at a time so you can actually read her profile and decide whether you're genuinely interested in getting to know each other.",
+        sec5Btn: "I want to try →",
 
-        sec6Title: "Get into the first 22:22 cohort.",
-        sec6Desc: "We are preparing our first closed group in Kyiv. Leave your info to get early access as soon as we open.",
+        sec6Title: "Try 22:22 among the first.",
+        sec6Desc: "We are currently gathering the first cohort of women in Kyiv. Leave your contacts — we'll message you as soon as access opens.",
         labelBotName: "What should we call you",
         labelBotEmail: "Email",
-        btnBotSubmit: "<span>Join the Beta</span> <span>→</span>",
+        btnBotSubmit: "<span>I want to try</span> <span>→</span>",
         botFoot1: "No spam",
         botFoot2: "Women only",
         botFoot3: "Kyiv",
 
         // Step 2 translations
         step2Heading: "Almost there! Just two quick details.",
-        step2Subheading: "We saved your email. To make it easier for us to reach out before launching in Kyiv, feel free to add:",
+        step2Subheading: "Email saved. To make it easier for us to send an invitation before launch in Kyiv, feel free to add:",
         step2LblTg: "Telegram handle",
         step2LblPhone: "Phone number",
         step2LblOpt: "optional",
         step2LblMode: "How would you like to participate?",
         step2LblFree: "Beta is free",
         step2Opt1Strong: "Ready to actively share feedback",
-        step2Opt1Sub: "Most active testers get free lifetime access after the beta.",
+        step2Opt1Sub: "Most active testers get lifetime free access after beta concludes.",
         step2Opt2Strong: "Testing at my own pace",
         step2Opt2Sub: "No pressure for detailed reviews, just enjoying one match per day.",
-        step2FreeNote: "All early cohort members receive full beta access completely free of charge.",
+        step2FreeNote: "All early cohort members receive full beta access completely free.",
         step2BtnSave: "Save and finish",
         step2BtnSkip: "Skip",
         step2SuccessTitle: "You're on the waitlist!",
         step2SuccessNote: "We'll send your personal invitation and app link as soon as access opens in Kyiv.",
 
-        footSlogan: "introductions that can turn into friendship.",
+        footSlogan: "where women find friends.",
         btnPrivacy: "Privacy Policy",
         btnTerms: "Terms of Service",
         btnFootJoin: "Waitlist"
       }
     };
-
-    const subpageContent = {
-      privacy: {
-        ua: {
-          title: "Політика конфіденційності",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
-              <p>Ця Політика конфіденційності пояснює, як сервіс <strong>22:22</strong> (надалі — «ми», «наш сервіс») збирає, обробляє та зберігає персональні дані користувачок під час реєстрації у списку очікування (waitlist) та використання додатку.</p>
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Дані, які ми збираємо</h3>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Контактні дані списку очікування:</strong> ім'я (як до вас звертатися), адреса електронної пошти та, за бажанням, Telegram-нік чи телефон.</li>
-                  <li><strong>Дані анкети:</strong> відповіді на запитання про темп спілкування, погляди на дружбу та особисті кордони для підбору знайомств.</li>
-                </ul>
-              </section>
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">2. Принцип нерозголошення</h3>
-                <p>Ми ніколи не продаємо і не передаємо ваші дані третім особам або рекламодавцям. У додатку немає публічних стрічок — ваш профіль показується виключно одній людині на день.</p>
-              </section>
-            </div>
-          `
-        },
-        en: {
-          title: "Privacy Policy",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p class="text-xs text-app-muted">Last updated: September 2026</p>
-              <p>This Privacy Policy describes how <strong>22:22</strong> handles and protects your personal information when signing up for the waitlist or using the mobile application.</p>
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Information We Collect</h3>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li><strong>Contact Information:</strong> your preferred name, email, and optional phone or Telegram handle.</li>
-                  <li><strong>Questionnaire responses:</strong> lifestyle and communication style answers used exclusively to find one match a day.</li>
-                </ul>
-              </section>
-            </div>
-          `
-        }
-      },
-      terms: {
-        ua: {
-          title: "Умови користування",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p class="text-xs text-app-muted">Останнє оновлення: вересень 2026 року</p>
-              <p>22:22 — це приватний простір для побудови платонічної жіночої дружби у місті Києві.</p>
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Правила спільноти</h3>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>Сервіс призначений виключно для повнолітніх жінок (18+).</li>
-                  <li>Суворо заборонено комерційні пропозиції, мережевий маркетинг (MLM) та нетворкінг-продажі під виглядом дружби.</li>
-                  <li>Нульова толерантність до токсичності, агресії чи поширення скріншотів приватних листувань.</li>
-                </ul>
-              </section>
-            </div>
-          `
-        },
-        en: {
-          title: "Terms of Service",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p class="text-xs text-app-muted">Last updated: September 2026</p>
-              <p>22:22 is an intentional, private space for platonic female friendships in Kyiv.</p>
-              <section class="space-y-2">
-                <h3 class="text-base font-semibold text-app-espresso">1. Community Guidelines</h3>
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>For adult women (18+) only.</li>
-                  <li>Commercial pitching, multi-level marketing, and sales under the guise of friendship are strictly prohibited.</li>
-                  <li>Zero tolerance for harassment, malice, or unauthorized sharing of private conversations.</li>
-                </ul>
-              </section>
-            </div>
-          `
-        }
-      },
-      support: {
-        ua: {
-          title: "Підтримка та турбота",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p>Маєте запитання щодо закритої Beta або бажаєте оновити контактні дані? Ми з радістю відповімо:</p>
-              <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
-                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Швидкий зв'язок</div>
-                  <div class="font-semibold text-base text-app-espresso">Telegram</div>
-                  <div class="pt-2">
-                    <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
-                      <span>@AnastasiaChaikovska</span>
-                      <span>↗</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
-                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Офіційна пошта</div>
-                  <div class="font-semibold text-base text-app-espresso">Email</div>
-                  <div class="pt-2">
-                    <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
-                      <span>chaikovska.anastasia@gmail.com</span>
-                      <span>✉</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-        },
-        en: {
-          title: "Support & Assistance",
-          body: `
-            <div class="space-y-6 text-sm text-app-brown leading-relaxed">
-              <p>Questions about the private beta or need to update your email entry? Reach out to us:</p>
-              <div class="grid sm:grid-cols-2 gap-4 pt-2">
-                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
-                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Direct Channel</div>
-                  <div class="font-semibold text-base text-app-espresso">Telegram</div>
-                  <div class="pt-2">
-                    <a href="https://t.me/AnastasiaChaikovska" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
-                      <span>@AnastasiaChaikovska</span>
-                      <span>↗</span>
-                    </a>
-                  </div>
-                </div>
-                <div class="p-5 rounded-2xl bg-app-card border border-app-border space-y-2">
-                  <div class="text-xs uppercase tracking-wider text-app-muted font-medium">Official Email</div>
-                  <div class="font-semibold text-base text-app-espresso">Email</div>
-                  <div class="pt-2">
-                    <a href="mailto:chaikovska.anastasia@gmail.com" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-app-bgsubtle text-app-espresso font-medium text-xs hover:bg-app-espresso hover:text-white transition-colors">
-                      <span>chaikovska.anastasia@gmail.com</span>
-                      <span>✉</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          `
-        }
-      }
-    };
-
-    function renderSubpage(pageKey) {
-      const pageData = subpageContent[pageKey];
-      if (!pageData) return;
-
-      const langData = pageData[currentLang] || pageData['ua'];
-      const titleEl = document.getElementById('subpage-title');
-      const bodyEl = document.getElementById('subpage-body');
-      const backLabelEl = document.getElementById('subpage-back-label');
-
-      if (titleEl) titleEl.textContent = langData.title;
-      if (bodyEl) bodyEl.innerHTML = langData.body;
-      if (backLabelEl) backLabelEl.textContent = currentLang === 'ua' ? '← На головну' : '← Back to Home';
-    }
-
-    function navigateTo(target) {
-      currentPage = target;
-      const mainEl = document.getElementById('main-content');
-      const step2El = document.getElementById('step2-container');
-
-      if (target === 'home') {
-        if (mainEl) mainEl.classList.remove('hidden');
-        if (step2El) step2El.classList.add('hidden');
-        try {
-          if (window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
-        } catch (e) {}
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (target === 'step2') {
-        if (mainEl) mainEl.classList.add('hidden');
-        if (step2El) step2El.classList.remove('hidden');
-        try {
-          window.location.hash = '/step-2';
-        } catch (e) {}
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    }
-
-    function scrollToWaitlist() {
-      const el = document.getElementById('waitlist-section');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-
-    function handleHashChange() {
-      const hash = window.location.hash;
-      if (hash === '#/step-2') {
-        navigateTo('step2');
-      } else if (hash === '' || hash === '#') {
-        navigateTo('home');
-      }
-    }
-
-    window.addEventListener('hashchange', handleHashChange);
-
-    // STEP 1 SUBMISSION: Captures Name + Email, sends immediate record, opens Step 2
-    async function handleStep1Submit(event, sourceLocation) {
-      event.preventDefault();
-
-      const isHero = sourceLocation === 'hero';
-      const nameInput = document.getElementById(isHero ? 'hero-name' : 'bot-name');
-      const emailInput = document.getElementById(isHero ? 'hero-email' : 'bot-email');
-      const submitBtn = document.getElementById(isHero ? 'btn-hero-submit' : 'btn-bot-submit');
-
-      const name = nameInput ? nameInput.value.trim() : '';
-      const email = emailInput ? emailInput.value.trim() : '';
-
-      if (!name || !email) return;
-
-      // Save to global user submission state
-      userSubmission.name = name;
-      userSubmission.email = email;
-      userSubmission.source = isHero ? 'Hero Form' : 'Bottom Form';
-      userSubmission.subId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
-
-      // Loading state on Step 1 button
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        const loadingText = currentLang === 'ua' ? 'Секунду...' : 'Please wait...';
-        submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span>${loadingText}</span>
-        `;
-      }
-
-      // Send initial step-1 lead right away so contact is never lost
-      sendLeadToGoogleSheet({
-        name: userSubmission.name,
-        email: userSubmission.email,
-        telegram: '',
-        phone: '',
-        mode: '',
-        lang: currentLang,
-        source: userSubmission.source
-      });
-
-      // Update Step 2 greeting with user's name
-      const step2Heading = document.getElementById('step2-heading');
-      if (step2Heading) {
-        step2Heading.textContent = currentLang === 'ua' 
-          ? `Майже все, ${name}! Ще пара деталей.` 
-          : `Almost there, ${name}! Just two quick details.`;
-      }
-
-      // Move to Step 2 page
-      setTimeout(() => {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = originalBtnHtml;
-        }
-        navigateTo('step2');
-      }, 350);
-    }
-
-    // STEP 2 SUBMISSION: Optional Telegram, Phone, and Testing Mode
-    async function handleStep2Submit(event) {
-      event.preventDefault();
-
-      const tgInput = document.getElementById('step2-telegram');
-      const phoneInput = document.getElementById('step2-phone');
-      const selectedModeEl = document.querySelector('input[name="test-mode"]:checked');
-      const submitBtn = document.getElementById('btn-step2-submit');
-
-      const telegram = tgInput ? tgInput.value.trim() : '';
-      const phone = phoneInput ? phoneInput.value.trim() : '';
-      const mode = selectedModeEl ? selectedModeEl.value : 'active';
-      const modeLabel = mode === 'active' 
-        ? (currentLang === 'ua' ? 'Активне тестування (фідбек)' : 'Active Feedback') 
-        : (currentLang === 'ua' ? 'У власному темпі' : 'Casual Pace');
-
-      userSubmission.telegram = telegram;
-      userSubmission.phone = phone;
-      userSubmission.mode = modeLabel;
-
-      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        const savingText = currentLang === 'ua' ? 'Зберігаємо...' : 'Saving...';
-        submitBtn.innerHTML = `
-          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span>${savingText}</span>
-        `;
-      }
-
-      await sendLeadToGoogleSheet({
-        name: userSubmission.name,
-        email: userSubmission.email,
-        telegram: telegram,
-        phone: phone,
-        mode: modeLabel,
-        lang: currentLang,
-        source: userSubmission.source + ' + Step 2'
-      });
-
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerHTML = originalBtnHtml;
-      }
-
-      showStep2Success();
-    }
-
-    function skipStep2() {
-      // User just skips step 2, show confirmation
-      showStep2Success();
-    }
-
-    function showStep2Success() {
-      const formEl = document.getElementById('step2-form');
-      const successEl = document.getElementById('step2-success');
-      if (formEl) formEl.classList.add('hidden');
-      if (successEl) successEl.classList.remove('hidden');
-    }
-
-    // Network request to Google Apps Script Webhook
-    async function sendLeadToGoogleSheet(payload) {
-      const params = new URLSearchParams(payload);
-
-      try {
-        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
-          },
-          body: JSON.stringify(payload)
-        });
-      } catch (err) {
-        console.warn('Fallback beacon dispatch:', err);
-        try {
-          const img = new Image();
-          img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
-        } catch (e) {}
-      }
-    }
 
     function renderMockups(lang) {
       const profileEl = document.getElementById('mockup-profile-container');
@@ -1427,10 +1089,10 @@
       updateText('sec4-title', t.sec4Title);
       updateText('sec4-desc', t.sec4Desc);
       updateText('sec4-col1-title', t.sec4Col1Title);
-      updateText('sec4-c1-1', t.sec4C11);
-      updateText('sec4-c1-2', t.sec4C12);
-      updateText('sec4-c1-3', t.sec4C13);
-      updateText('sec4-c1-4', t.sec4C14);
+      updateText('sec4-c1-1', t.sec4C11, true);
+      updateText('sec4-c1-2', t.sec4C12, true);
+      updateText('sec4-c1-3', t.sec4C13, true);
+      updateText('sec4-c1-4', t.sec4C14, true);
       updateText('sec4-col2-title', t.sec4Col2Title);
       updateText('sec4-c2-1', t.sec4C21, true);
       updateText('sec4-c2-2', t.sec4C22, true);
@@ -1510,6 +1172,187 @@
       const footTimeEl = document.getElementById('footer-time');
       if (footTimeEl) {
         footTimeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+      }
+    }
+
+    function navigateTo(target) {
+      currentPage = target;
+      const mainEl = document.getElementById('main-content');
+      const step2El = document.getElementById('step2-container');
+
+      if (target === 'home') {
+        if (mainEl) mainEl.classList.remove('hidden');
+        if (step2El) step2El.classList.add('hidden');
+        try {
+          if (window.location.hash) history.pushState("", document.title, window.location.pathname + window.location.search);
+        } catch (e) {}
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else if (target === 'step2') {
+        if (mainEl) mainEl.classList.add('hidden');
+        if (step2El) step2El.classList.remove('hidden');
+        try {
+          window.location.hash = '/step-2';
+        } catch (e) {}
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }
+
+    function scrollToWaitlist() {
+      const el = document.getElementById('waitlist-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function handleHashChange() {
+      const hash = window.location.hash;
+      if (hash === '#/step-2') {
+        navigateTo('step2');
+      } else if (hash === '' || hash === '#') {
+        navigateTo('home');
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    // STEP 1 SUBMISSION
+    async function handleStep1Submit(event, sourceLocation) {
+      event.preventDefault();
+
+      const isHero = sourceLocation === 'hero';
+      const nameInput = document.getElementById(isHero ? 'hero-name' : 'bot-name');
+      const emailInput = document.getElementById(isHero ? 'hero-email' : 'bot-email');
+      const submitBtn = document.getElementById(isHero ? 'btn-hero-submit' : 'btn-bot-submit');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+
+      if (!name || !email) return;
+
+      userSubmission.name = name;
+      userSubmission.email = email;
+      userSubmission.source = isHero ? 'Hero Form' : 'Bottom Form';
+      userSubmission.subId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
+
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const loadingText = currentLang === 'ua' ? 'Секунду...' : 'Please wait...';
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>${loadingText}</span>
+        `;
+      }
+
+      sendLeadToGoogleSheet({
+        name: userSubmission.name,
+        email: userSubmission.email,
+        telegram: '',
+        phone: '',
+        mode: '',
+        lang: currentLang,
+        source: userSubmission.source
+      });
+
+      const step2Heading = document.getElementById('step2-heading');
+      if (step2Heading) {
+        step2Heading.textContent = currentLang === 'ua' 
+          ? `Майже все, ${name}! Ще пара деталей.` 
+          : `Almost there, ${name}! Just two quick details.`;
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+        navigateTo('step2');
+      }, 350);
+    }
+
+    // STEP 2 SUBMISSION
+    async function handleStep2Submit(event) {
+      event.preventDefault();
+
+      const tgInput = document.getElementById('step2-telegram');
+      const phoneInput = document.getElementById('step2-phone');
+      const selectedModeEl = document.querySelector('input[name="test-mode"]:checked');
+      const submitBtn = document.getElementById('btn-step2-submit');
+
+      const telegram = tgInput ? tgInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const mode = selectedModeEl ? selectedModeEl.value : 'active';
+      const modeLabel = mode === 'active' 
+        ? (currentLang === 'ua' ? 'Активне тестування (фідбек)' : 'Active Feedback') 
+        : (currentLang === 'ua' ? 'У власному темпі' : 'Casual Pace');
+
+      userSubmission.telegram = telegram;
+      userSubmission.phone = phone;
+      userSubmission.mode = modeLabel;
+
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        const savingText = currentLang === 'ua' ? 'Зберігаємо...' : 'Saving...';
+        submitBtn.innerHTML = `
+          <svg class="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span>${savingText}</span>
+        `;
+      }
+
+      await sendLeadToGoogleSheet({
+        name: userSubmission.name,
+        email: userSubmission.email,
+        telegram: telegram,
+        phone: phone,
+        mode: modeLabel,
+        lang: currentLang,
+        source: userSubmission.source + ' + Step 2'
+      });
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+
+      showStep2Success();
+    }
+
+    function skipStep2() {
+      showStep2Success();
+    }
+
+    function showStep2Success() {
+      const formEl = document.getElementById('step2-form');
+      const successEl = document.getElementById('step2-success');
+      if (formEl) formEl.classList.add('hidden');
+      if (successEl) successEl.classList.remove('hidden');
+    }
+
+    async function sendLeadToGoogleSheet(payload) {
+      const params = new URLSearchParams(payload);
+
+      try {
+        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: {
+            'Content-Type': 'text/plain;charset=utf-8'
+          },
+          body: JSON.stringify(payload)
+        });
+      } catch (err) {
+        console.warn('Fallback beacon dispatch:', err);
+        try {
+          const img = new Image();
+          img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
+        } catch (e) {}
       }
     }
 
