@@ -97,9 +97,9 @@
       </a>
 
       <!-- Navigation Actions -->
-      <div class="flex items-center gap-3 sm:gap-6">
+      <div class="flex items-center gap-3 sm:gap-5">
         
-        <div class="hidden md:flex items-center gap-2 text-xs text-app-brown">
+        <div class="hidden lg:flex items-center gap-2 text-xs text-app-brown">
           <span id="nav-countdown-label" class="text-app-muted">Наступне знайомство о 22:22:</span>
           <span id="countdown-timer" class="font-medium text-app-espresso tracking-tight">--:--:--</span>
         </div>
@@ -117,8 +117,13 @@
           Підтримка
         </a>
 
-        <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="nav-cta-btn" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
-          Список очікування
+        <!-- App Store CTA in Header -->
+        <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full bg-app-espresso text-white hover:bg-black text-xs font-medium transition-colors shadow-2xs">
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
+          </svg>
+          <span class="hidden md:inline" id="nav-btn-appstore">Завантажити</span>
+          <span class="md:hidden">App Store</span>
         </a>
       </div>
 
@@ -126,7 +131,7 @@
   </header>
 
   <main id="main-content">
-    <section class="pt-10 pb-16 sm:pt-16 sm:pb-24 lg:pt-24 lg:pb-32 overflow-hidden border-b border-app-border">
+    <section class="pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-app-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 min-[740px]:grid-cols-12 gap-8 lg:gap-14 items-center">
@@ -138,7 +143,7 @@
               Одне знайомство на день • Щовечора о 22:22
             </p>
 
-            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[60px] font-semibold text-app-espresso leading-[1.04] tracking-[-0.03em] max-w-[600px]">
+            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[58px] font-semibold text-app-espresso leading-[1.04] tracking-[-0.03em] max-w-[600px]">
               Щодня — одна нова людина, з якою варто познайомитися.
             </h1>
 
@@ -146,28 +151,53 @@
               Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.
             </p>
 
-            <!-- Hero Step 1 Form (Two Main Fields Only) -->
-            <div class="pt-2 max-w-[490px]">
-              <form id="hero-waitlist-form" onsubmit="handleStep1Submit(event, 'hero')" class="space-y-3">
-                <div class="grid sm:grid-cols-2 gap-3">
-                  <div>
-                    <label id="label-hero-name" for="hero-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
-                    <input type="text" id="hero-name" required placeholder="Оля" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            <!-- App Store primary download & Android waitlist switch -->
+            <div class="pt-2 max-w-[500px] space-y-4">
+              
+              <!-- App Store Official Download Button -->
+              <div>
+                <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3.5 px-6 py-3.5 rounded-2xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-all shadow-sm group">
+                  <svg class="w-6 h-6 fill-current flex-shrink-0" viewBox="0 0 24 24">
+                    <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
+                  </svg>
+                  <div class="text-left leading-tight">
+                    <div id="btn-hero-appstore-sub" class="text-[10px] text-white/70 font-normal uppercase tracking-wider">Доступно для iOS</div>
+                    <div id="btn-hero-appstore-main" class="text-sm sm:text-base font-semibold text-white">Завантажити в App Store</div>
                   </div>
-                  <div>
-                    <label id="label-hero-email" for="hero-email" class="block text-xs font-medium text-app-brown mb-1.5">Email <span class="text-app-rose">*</span></label>
-                    <input type="email" id="hero-email" required placeholder="olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-card border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+                  <span class="ml-1 text-white/70 group-hover:translate-x-0.5 transition-transform">→</span>
+                </a>
+              </div>
+
+              <!-- Dedicated Android Waitlist Card -->
+              <div class="p-4 rounded-2xl bg-app-card border border-app-border space-y-3">
+                <div class="flex items-center justify-between">
+                  <div class="flex items-center gap-2">
+                    <svg class="w-4 h-4 text-[#3DDC84]" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4116 13.8533 8.1 12 8.1s-3.5902.3116-5.1368.8497L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
+                    </svg>
+                    <span id="android-card-title" class="text-xs font-semibold text-app-espresso">Маєш Android?</span>
                   </div>
+                  <span id="android-badge" class="text-[10px] font-medium text-app-rose bg-app-roselight px-2 py-0.5 rounded-full">У розробці</span>
                 </div>
+                
+                <p id="android-card-desc" class="text-xs text-app-brown leading-relaxed">
+                  Версія для Android ще готується. Залиш контакти — надішлемо посилання, щойно відкриємо доступ у Google Play:
+                </p>
 
-                <button type="submit" id="btn-hero-submit" class="w-full py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-                  <span>Хочу спробувати</span>
-                  <span>→</span>
-                </button>
-              </form>
+                <form id="hero-waitlist-form" onsubmit="handleStep1Submit(event, 'hero')" class="space-y-2.5">
+                  <div class="grid sm:grid-cols-2 gap-2">
+                    <input type="text" id="hero-name" required placeholder="Як до тебе звертатися" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-xs focus:outline-none focus:border-app-espresso transition-colors">
+                    <input type="email" id="hero-email" required placeholder="Email *" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-xs focus:outline-none focus:border-app-espresso transition-colors">
+                  </div>
+                  <button type="submit" id="btn-hero-submit" class="w-full py-2.5 px-4 rounded-xl bg-app-espresso hover:bg-black text-white text-xs font-medium transition-colors flex items-center justify-center gap-1.5 cursor-pointer">
+                    <span id="btn-hero-submit-text">Повідомити про реліз на Android</span>
+                    <span>→</span>
+                  </button>
+                </form>
+              </div>
 
-              <div class="flex items-center gap-4 text-xs text-app-muted pt-3 font-normal">
-                <span id="hero-foot-1">Закрита beta</span>
+              <div class="flex items-center gap-4 text-xs text-app-muted pt-1 font-normal">
+                <span id="hero-foot-1">iOS вже доступний</span>
                 <span>•</span>
                 <span id="hero-foot-2">Тільки для жінок</span>
                 <span>•</span>
@@ -177,6 +207,7 @@
 
           </div>
 
+          <!-- Right Phone Mockup -->
           <div class="min-[740px]:col-span-5 flex justify-center min-[740px]:justify-end">
             <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500">
               <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
@@ -410,9 +441,15 @@
           Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.
         </p>
 
-        <div class="pt-2">
-          <a href="#waitlist-section" onclick="scrollToWaitlist(); return false;" id="sec5-btn" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-xs sm:text-sm font-medium transition-colors">
-            Хочу спробувати →
+        <div class="pt-3 flex flex-col sm:flex-row items-center justify-center gap-3">
+          <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-xs sm:text-sm font-semibold transition-colors">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
+            </svg>
+            <span id="sec5-btn">Завантажити для iPhone →</span>
+          </a>
+          <a href="#waitlist-section" onclick="scrollToWaitlist(); return false;" class="text-xs text-white/70 hover:text-white underline py-2 px-3 transition-colors">
+            Чекаєш на Android?
           </a>
         </div>
 
@@ -440,11 +477,27 @@
               Спробуй 22:22 однією з перших.
             </h2>
             <p id="sec6-desc" class="text-sm sm:text-base text-app-brown max-w-md mx-auto leading-relaxed">
-              Зараз збираємо перших учасниць у Києві. Залиш контакти — напишемо, коли відкриємо доступ.
+              Застосунок вже доступний для користувачок iOS. Якщо в тебе Android — залиш контакти, і ми повідомимо про реліз.
             </p>
           </div>
 
-          <!-- Bottom Step 1 Form (Name & Email) -->
+          <!-- Direct iOS button -->
+          <div class="max-w-md mx-auto">
+            <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="w-full py-3.5 px-6 rounded-2xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
+              </svg>
+              <span>Завантажити для iPhone в App Store</span>
+            </a>
+          </div>
+
+          <!-- Divider -->
+          <div class="relative max-w-md mx-auto my-4 flex items-center justify-center">
+            <div class="border-t border-app-border w-full"></div>
+            <span id="bot-or-label" class="bg-app-card px-3 text-xs text-app-muted uppercase tracking-wider absolute">або якщо у тебе Android</span>
+          </div>
+
+          <!-- Bottom Android Waitlist Form -->
           <form id="bot-waitlist-form" onsubmit="handleStep1Submit(event, 'bottom')" class="max-w-md mx-auto space-y-3 text-left">
             <div>
               <label id="label-bot-name" for="bot-name" class="block text-xs font-medium text-app-brown mb-1.5">Як до тебе звертатися</label>
@@ -456,8 +509,8 @@
               <input type="email" id="bot-email" required placeholder="olia@email.com" class="w-full px-4 py-3 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
             </div>
 
-            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-              <span>Хочу спробувати</span>
+            <button type="submit" id="btn-bot-submit" class="w-full mt-2 py-3 px-6 rounded-xl border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer">
+              <span id="btn-bot-submit-text">Повідомити мене про реліз на Android</span>
               <span>→</span>
             </button>
           </form>
@@ -491,7 +544,7 @@
             Майже все! Ще пара деталей.
           </h2>
           <p id="step2-subheading" class="text-sm text-app-brown leading-relaxed">
-            Email збережено. Щоб нам було простіше надіслати запрошення перед запуском у Києві, можеш додати ще кілька контактів:
+            Email збережено. Щоб нам було простіше надіслати запрошення до тестування Android-версії в Києві, можеш додати ще кілька контактів:
           </p>
         </div>
 
@@ -558,14 +611,14 @@
           </div>
         </form>
 
-        <!-- Final Confirmation inside Step 2 (hidden until submitted) -->
+        <!-- Final Confirmation inside Step 2 with Social Links -->
         <div id="step2-success" class="hidden p-6 rounded-2xl bg-app-bgsubtle/80 border border-app-border text-center space-y-3">
           <div class="w-10 h-10 mx-auto rounded-full bg-app-card flex items-center justify-center text-app-espresso font-semibold">
             ✓
           </div>
           <h3 id="step2-success-title" class="text-xl font-semibold text-app-espresso">Ти в списку очікування!</h3>
           <p id="step2-success-note" class="text-xs text-app-brown leading-relaxed max-w-sm mx-auto">
-            Ми надішлемо особисте запрошення та посилання на застосунок, щойно відкриємо доступ у Києві.
+            Ми надішлемо особисте запрошення та посилання на Android-версію, щойно відкриємо доступ у Києві.
           </p>
 
           <div class="pt-3 pb-1 border-t border-app-border/70 mt-3 space-y-2.5">
@@ -617,7 +670,7 @@
         <a href="privacy.html" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
         <a href="terms.html" id="btn-terms" class="hover:text-app-espresso transition-colors">Умови користування</a>
         <a href="support.html" id="btn-support-foot" class="hover:text-app-espresso transition-colors">Підтримка</a>
-        <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування</a>
+        <a href="#waitlist-section" onclick="navigateTo('home'); scrollToWaitlist(); return false;" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Список очікування Android</a>
       </div>
 
       <div class="text-[11px] sm:text-xs text-app-muted">
@@ -639,7 +692,7 @@
       telegram: '',
       phone: '',
       mode: 'active',
-      source: 'Hero Form',
+      source: 'Android Waitlist (Hero)',
       subId: ''
     };
 
@@ -878,14 +931,17 @@
       ua: {
         navMotto: "для тих, хто хоче знайти нових подруг",
         navCountdown: "Наступне знайомство о 22:22:",
-        navCta: "Список очікування",
+        navBtnAppstore: "Завантажити",
         heroBadge: "Одне знайомство на день • Щовечора о 22:22",
         heroTitle: "Щодня — одна нова людина, з якою варто познайомитися.",
         heroDesc: "Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.",
-        labelHeroName: "Як до тебе звертатися",
-        labelHeroEmail: "Email",
-        btnHeroSubmit: "<span>Хочу спробувати</span> <span>→</span>",
-        heroFoot1: "Закрита beta",
+        btnHeroAppstoreSub: "Доступно для iOS",
+        btnHeroAppstoreMain: "Завантажити в App Store",
+        androidCardTitle: "Маєш Android?",
+        androidBadge: "У розробці",
+        androidCardDesc: "Версія для Android ще готується. Залиш контакти — надішлемо посилання, щойно відкриємо доступ у Google Play:",
+        btnHeroSubmitText: "Повідомити про реліз на Android",
+        heroFoot1: "iOS вже доступний",
         heroFoot2: "Тільки для жінок",
         heroFoot3: "Київ",
         
@@ -924,20 +980,21 @@
         sec5Tag: "Чому лише одна людина",
         sec5Title: "Бо знайомитися з людьми — не те саме, що гортати каталог.",
         sec5Desc: "Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.",
-        sec5Btn: "Хочу спробувати →",
+        sec5Btn: "Завантажити для iPhone →",
 
         sec6Title: "Спробуй 22:22 однією з перших.",
-        sec6Desc: "Зараз збираємо перших учасниць у Києві. Залиш контакти — напишемо, коли відкриємо доступ.",
+        sec6Desc: "Застосунок вже доступний для користувачок iOS. Якщо в тебе Android — залиш контакти, і ми повідомимо про реліз.",
+        botOrLabel: "або якщо у тебе Android",
         labelBotName: "Як до тебе звертатися",
         labelBotEmail: "Email",
-        btnBotSubmit: "<span>Хочу спробувати</span> <span>→</span>",
+        btnBotSubmitText: "Повідомити мене про реліз на Android",
         botFoot1: "Без спаму",
         botFoot2: "Тільки для жінок",
         botFoot3: "Київ",
 
         // Step 2 translations
         step2Heading: "Майже все! Ще пара деталей.",
-        step2Subheading: "Email збережено. Щоб нам було простіше надіслати запрошення перед запуском у Києві, можеш додати ще кілька контактів:",
+        step2Subheading: "Email збережено. Щоб нам було простіше надіслати запрошення до тестування Android-версії в Києві, можеш додати ще кілька контактів:",
         step2LblTg: "Нік у Telegram",
         step2LblPhone: "Номер телефону",
         step2LblOpt: "необов'язково",
@@ -951,25 +1008,28 @@
         step2BtnSave: "Зберегти та завершити",
         step2BtnSkip: "Пропустити",
         step2SuccessTitle: "Ти в списку очікування!",
-        step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на застосунок, щойно відкриємо доступ у Києві.",
+        step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на Android-версію, щойно відкриємо доступ у Києві.",
         step2SocialHeading: "Підписуйся на нас у соцмережах, щоб не пропустити запуск:",
 
         footSlogan: "місце, де знаходять подруг.",
         btnPrivacy: "Конфіденційність",
         btnTerms: "Умови користування",
-        btnFootJoin: "Список очікування"
+        btnFootJoin: "Список очікування Android"
       },
       en: {
         navMotto: "for those who want to make new friends",
         navCountdown: "Next match at 22:22:",
-        navCta: "Waitlist",
+        navBtnAppstore: "Download",
         heroBadge: "One Match A Day • Every Evening at 22:22",
         heroTitle: "Every day — one new person worth meeting.",
         heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, see one woman in Kyiv with whom you could share a lot in common. If you both choose each other, the chat opens.",
-        labelHeroName: "What should we call you",
-        labelHeroEmail: "Email",
-        btnHeroSubmit: "<span>I want to try</span> <span>→</span>",
-        heroFoot1: "Private beta",
+        btnHeroAppstoreSub: "Available on iOS",
+        btnHeroAppstoreMain: "Download on App Store",
+        androidCardTitle: "Using Android?",
+        androidBadge: "In progress",
+        androidCardDesc: "Our Android release is currently in development. Leave your email to be notified the moment Google Play access opens:",
+        btnHeroSubmitText: "Notify me about Android release",
+        heroFoot1: "iOS is live",
         heroFoot2: "Women only",
         heroFoot3: "Kyiv",
 
@@ -1008,20 +1068,21 @@
         sec5Tag: "Why just one person",
         sec5Title: "Meeting people isn't the same as browsing a shopping catalog.",
         sec5Desc: "We show one person at a time so you can actually read her profile and decide whether you're genuinely interested in getting to know each other.",
-        sec5Btn: "I want to try →",
+        sec5Btn: "Download for iPhone →",
 
         sec6Title: "Try 22:22 among the first.",
-        sec6Desc: "We are currently gathering the first cohort of women in Kyiv. Leave your contacts — we'll message you as soon as access opens.",
+        sec6Desc: "The app is already available for iOS. If you use Android — leave your details and we will notify you upon launch.",
+        botOrLabel: "or if you are on Android",
         labelBotName: "What should we call you",
         labelBotEmail: "Email",
-        btnBotSubmit: "<span>I want to try</span> <span>→</span>",
+        btnBotSubmitText: "Notify me about Android release",
         botFoot1: "No spam",
         botFoot2: "Women only",
         botFoot3: "Kyiv",
 
         // Step 2 translations
         step2Heading: "Almost there! Just two quick details.",
-        step2Subheading: "Email saved. To make it easier for us to send an invitation before launch in Kyiv, feel free to add:",
+        step2Subheading: "Email saved. To make it easier for us to reach out once the Android release opens in Kyiv, feel free to add:",
         step2LblTg: "Telegram handle",
         step2LblPhone: "Phone number",
         step2LblOpt: "optional",
@@ -1035,13 +1096,13 @@
         step2BtnSave: "Save and finish",
         step2BtnSkip: "Skip",
         step2SuccessTitle: "You're on the waitlist!",
-        step2SuccessNote: "We'll send your personal invitation and app link as soon as access opens in Kyiv.",
+        step2SuccessNote: "We'll send your personal invitation and app link as soon as access opens on Android in Kyiv.",
         step2SocialHeading: "Follow our socials so you don't miss the launch:",
 
         footSlogan: "where women find friends.",
         btnPrivacy: "Privacy Policy",
         btnTerms: "Terms of Service",
-        btnFootJoin: "Waitlist"
+        btnFootJoin: "Android Waitlist"
       }
     };
 
@@ -1083,14 +1144,17 @@
 
       updateText('nav-motto', t.navMotto);
       updateText('nav-countdown-label', t.navCountdown);
-      updateText('nav-cta-btn', t.navCta);
+      updateText('nav-btn-appstore', t.navBtnAppstore);
 
       updateText('hero-badge', t.heroBadge);
       updateText('hero-title', t.heroTitle, true);
       updateText('hero-desc', t.heroDesc);
-      updateText('label-hero-name', t.labelHeroName);
-      updateText('label-hero-email', t.labelHeroEmail + ' <span class="text-app-rose">*</span>', true);
-      updateText('btn-hero-submit', t.btnHeroSubmit, true);
+      updateText('btn-hero-appstore-sub', t.btnHeroAppstoreSub);
+      updateText('btn-hero-appstore-main', t.btnHeroAppstoreMain);
+      updateText('android-card-title', t.androidCardTitle);
+      updateText('android-badge', t.androidBadge);
+      updateText('android-card-desc', t.androidCardDesc);
+      updateText('btn-hero-submit-text', t.btnHeroSubmitText);
       updateText('hero-foot-1', t.heroFoot1);
       updateText('hero-foot-2', t.heroFoot2);
       updateText('hero-foot-3', t.heroFoot3);
@@ -1134,9 +1198,10 @@
 
       updateText('sec6-title', t.sec6Title);
       updateText('sec6-desc', t.sec6Desc);
+      updateText('bot-or-label', t.botOrLabel);
       updateText('label-bot-name', t.labelBotName);
       updateText('label-bot-email', t.labelBotEmail + ' <span class="text-app-rose">*</span>', true);
-      updateText('btn-bot-submit', t.btnBotSubmit, true);
+      updateText('btn-bot-submit-text', t.btnBotSubmitText);
       updateText('bot-foot-1', t.botFoot1);
       updateText('bot-foot-2', t.botFoot2);
       updateText('bot-foot-3', t.botFoot3);
@@ -1244,7 +1309,7 @@
 
     window.addEventListener('hashchange', handleHashChange);
 
-    // STEP 1 SUBMISSION
+    // STEP 1 SUBMISSION (FOR ANDROID USERS)
     async function handleStep1Submit(event, sourceLocation) {
       event.preventDefault();
 
@@ -1260,7 +1325,7 @@
 
       userSubmission.name = name;
       userSubmission.email = email;
-      userSubmission.source = isHero ? 'Hero Form' : 'Bottom Form';
+      userSubmission.source = isHero ? 'Android Waitlist (Hero)' : 'Android Waitlist (Bottom)';
       userSubmission.subId = 'sub_' + Date.now() + '_' + Math.random().toString(36).substring(2, 7);
 
       const originalBtnHtml = submitBtn ? submitBtn.innerHTML : '';
