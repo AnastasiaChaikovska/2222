@@ -97,28 +97,41 @@
       </a>
 
       <!-- Navigation Actions -->
-      <div class="flex items-center gap-3 sm:gap-5">
+      <div class="flex items-center gap-2 sm:gap-4">
         
-        <div class="hidden lg:flex items-center gap-2 text-xs text-app-brown">
+        <div class="hidden xl:flex items-center gap-2 text-xs text-app-brown">
           <span id="nav-countdown-label" class="text-app-muted">Наступне знайомство о 22:22:</span>
           <span id="countdown-timer" class="font-medium text-app-espresso tracking-tight">--:--:--</span>
         </div>
 
+        <!-- Social Icons in Header -->
+        <div class="hidden sm:flex items-center gap-1.5 border-r border-app-border pr-3 mr-1">
+          <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-app-brown hover:text-app-espresso hover:bg-app-bgsubtle transition-colors" title="Instagram @22.22_app">
+            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+          </a>
+          <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="p-2 rounded-full text-app-brown hover:text-app-espresso hover:bg-app-bgsubtle transition-colors flex items-center justify-center" title="Threads @22.22_app">
+            <img src="Threads_logo.svg" alt="Threads" class="w-4 h-4 object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/AnastasiaChaikovska/2222/main/Threads_logo.svg';">
+          </a>
+        </div>
+
+        <!-- Language Switcher -->
         <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
-          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">
             UA
           </button>
-          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">
+          <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">
             EN
           </button>
         </div>
 
-        <a href="support.html" id="nav-support-btn" class="hidden sm:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
+        <a href="support.html" id="nav-support-btn" class="hidden md:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
           Підтримка
         </a>
 
         <!-- App Store CTA in Header -->
-        <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 rounded-full bg-app-espresso text-white hover:bg-black text-xs font-medium transition-colors shadow-2xs">
+        <a href="https://apps.apple.com/ua/app/22-22-friends/id6812477144" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 rounded-full bg-app-espresso text-white hover:bg-black text-xs font-medium transition-colors shadow-2xs">
           <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
             <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
           </svg>
@@ -242,7 +255,75 @@
       </div>
     </section>
 
-    <section class="py-16 sm:py-24 border-b border-app-border bg-app-bgsubtle/40">
+    <section class="py-12 sm:py-16 border-b border-app-border bg-app-bgsubtle/50">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="max-w-2xl mx-auto text-center space-y-2.5 mb-8 sm:mb-12">
+          <span id="social-sec-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium">Бути в курсі • Спільнота 22:22</span>
+          <h2 id="social-sec-title" class="text-2xl sm:text-3xl lg:text-[34px] font-semibold text-app-espresso tracking-tight">
+            Стеж за 22:22 у соцмережах
+          </h2>
+          <p id="social-sec-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed max-w-xl mx-auto">
+            Ми постійно додаємо новий функціонал, готуємо версію на Android та плануємо запуски в нових містах і країнах. Підписуйся, щоб першою дізнаватися про апдейти, тестувати фічі та впливати на продукт.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+          
+          <!-- Instagram Card -->
+          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso/40 transition-colors shadow-2xs group">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#FD1D1D]/10 via-[#E1306C]/15 to-[#405DE6]/15 flex items-center justify-center text-app-espresso">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <span class="text-xs font-mono font-medium text-app-muted">@22.22_app</span>
+              </div>
+              <div class="space-y-1.5">
+                <h3 class="text-base sm:text-lg font-semibold text-app-espresso">Instagram</h3>
+                <p id="social-card-ig-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+                  Анонси великих релізів, запуск нових міст і країн, голосування за наступні фічі, секретні бонуси для користувачок та залаштунки створення проєкту.
+                </p>
+              </div>
+            </div>
+            
+            <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-app-espresso hover:bg-black text-white text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span id="btn-follow-ig">Підписатися в Instagram</span>
+              <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
+            </a>
+          </div>
+
+          <!-- Threads Card -->
+          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso/40 transition-colors shadow-2xs group">
+            <div class="space-y-3.5">
+              <div class="flex items-center justify-between">
+                <div class="w-11 h-11 rounded-2xl bg-app-espresso/5 flex items-center justify-center text-app-espresso">
+                  <img src="Threads_logo.svg" alt="Threads" class="w-5 h-5 object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/AnastasiaChaikovska/2222/main/Threads_logo.svg';">
+                </div>
+                <span class="text-xs font-mono font-medium text-app-muted">@22.22_app</span>
+              </div>
+              <div class="space-y-1.5">
+                <h3 class="text-base sm:text-lg font-semibold text-app-espresso">Threads</h3>
+                <p id="social-card-th-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+                  Швидкі апдейти в реальному часі, новини про статус релізу на Android, відкриті обговорення ідей та прямий звʼязок із командою: пиши, що варто покращити.
+                </p>
+              </div>
+            </div>
+            
+            <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-app-espresso hover:bg-black text-white text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <span id="btn-follow-th">Читати в Threads</span>
+              <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-16 sm:py-24 border-b border-app-border bg-app-bg">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-baseline mb-12 sm:mb-16">
@@ -280,7 +361,7 @@
       </div>
     </section>
 
-    <section class="py-16 sm:py-24 border-b border-app-border">
+    <section class="py-16 sm:py-24 border-b border-app-border bg-app-bgsubtle/40">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="grid grid-cols-1 min-[740px]:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -611,8 +692,8 @@
           </div>
         </form>
 
-        <!-- Final Confirmation inside Step 2 with Social Links -->
-        <div id="step2-success" class="hidden p-6 rounded-2xl bg-app-bgsubtle/80 border border-app-border text-center space-y-3">
+        <!-- Final Confirmation inside Step 2 with Value-Driven Social Links -->
+        <div id="step2-success" class="hidden p-6 rounded-2xl bg-app-bgsubtle/80 border border-app-border text-center space-y-4">
           <div class="w-10 h-10 mx-auto rounded-full bg-app-card flex items-center justify-center text-app-espresso font-semibold">
             ✓
           </div>
@@ -621,27 +702,37 @@
             Ми надішлемо особисте запрошення та посилання на Android-версію, щойно відкриємо доступ у Києві.
           </p>
 
-          <div class="pt-3 pb-1 border-t border-app-border/70 mt-3 space-y-2.5">
-            <p id="step2-social-heading" class="text-xs font-medium text-app-brown">
-              Підписуйся на нас у соцмережах, щоб не пропустити запуск:
+          <div class="pt-3 pb-1 border-t border-app-border/70 mt-3 space-y-3">
+            <p id="step2-social-heading" class="text-xs font-semibold text-app-espresso">
+              Стеж за релізом на Android та новими фічами:
             </p>
-            <div class="flex items-center justify-center gap-2.5 flex-wrap">
-              <a href="https://www.instagram.com/22.22_app?stkn=ZjFmOGVieDV2cDMy&utm_source=qr" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-app-card border border-app-border text-xs font-medium text-app-espresso hover:border-app-espresso transition-colors shadow-2xs group">
-                <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                </svg>
-                <span>Instagram</span>
-                <span class="text-[11px] text-app-muted">@22.22_app</span>
-                <span class="text-app-muted group-hover:text-app-espresso text-xs transition-colors">↗</span>
+            <div class="grid sm:grid-cols-2 gap-2 text-left">
+              <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all shadow-2xs group flex items-start gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-[#E1306C]/10 flex items-center justify-center text-app-espresso flex-shrink-0 mt-0.5">
+                  <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-app-espresso flex items-center gap-1">
+                    <span>Instagram</span>
+                    <span class="text-app-muted text-[10px]">↗</span>
+                  </div>
+                  <div class="text-[10px] text-app-muted mt-0.5">Нові міста, фічі та бонуси</div>
+                </div>
               </a>
 
-              <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-app-card border border-app-border text-xs font-medium text-app-espresso hover:border-app-espresso transition-colors shadow-2xs group">
-                <svg class="w-3.5 h-3.5 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12.186 24C5.467 24 0 18.533 0 11.814 0 5.094 5.467 0 12.186 0c6.72 0 12.187 5.094 12.187 11.814 0 .74-.066 1.47-.197 2.18-.328 1.777-1.099 3.39-2.235 4.673-1.636 1.848-3.864 3.012-6.273 3.277-1.441.159-2.903-.049-4.22-.598-.445-.186-.867-.417-1.261-.69l1.455-2.072c.306.213.633.392.978.536.983.41 2.071.564 3.144.446 1.77-.195 3.407-1.05 4.607-2.407.828-.937 1.39-2.114 1.63-3.408.093-.5.143-1.01.149-1.527-1.127.352-2.316.536-3.535.546-4.526 0-8.209-3.683-8.209-8.209s3.683-8.209 8.209-8.209c4.526 0 8.209 3.683 8.209 8.209 0 .193-.008.385-.022.576h-2.583c.01-.19.015-.382.015-.576 0-3.102-2.524-5.626-5.626-5.626s-5.626 2.524-5.626 5.626 2.524 5.626 5.626 5.626c.997 0 1.954-.26 2.784-.734-.848-1.554-1.341-3.327-1.396-5.184h2.588c.058 1.488.468 2.91 1.182 4.167.653 1.15 1.559 2.127 2.646 2.85-.01.15-.024.3-.044.45-.195 1.482-.841 2.836-1.794 3.917-1.381 1.562-3.263 2.545-5.3 2.77-1.233.136-2.484-.041-3.614-.513-.429-.18-.836-.411-1.218-.686z"/>
-                </svg>
-                <span>Threads</span>
-                <span class="text-[11px] text-app-muted">@22.22_app</span>
-                <span class="text-app-muted group-hover:text-app-espresso text-xs transition-colors">↗</span>
+              <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all shadow-2xs group flex items-start gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-app-espresso/5 flex items-center justify-center text-app-espresso flex-shrink-0 mt-0.5">
+                  <img src="Threads_logo.svg" alt="Threads" class="w-4 h-4 object-contain" onerror="this.onerror=null; this.src='https://raw.githubusercontent.com/AnastasiaChaikovska/2222/main/Threads_logo.svg';">
+                </div>
+                <div>
+                  <div class="text-xs font-semibold text-app-espresso flex items-center gap-1">
+                    <span>Threads</span>
+                    <span class="text-app-muted text-[10px]">↗</span>
+                  </div>
+                  <div class="text-[10px] text-app-muted mt-0.5">Швидкі апдейти та статус Android</div>
+                </div>
               </a>
             </div>
           </div>
@@ -667,6 +758,8 @@
       </div>
 
       <div class="flex items-center gap-5 flex-wrap justify-center">
+        <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="hover:text-app-espresso transition-colors">Instagram</a>
+        <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="hover:text-app-espresso transition-colors">Threads</a>
         <a href="privacy.html" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
         <a href="terms.html" id="btn-terms" class="hover:text-app-espresso transition-colors">Умови користування</a>
         <a href="support.html" id="btn-support-foot" class="hover:text-app-espresso transition-colors">Підтримка</a>
@@ -945,6 +1038,14 @@
         heroFoot2: "Тільки для жінок",
         heroFoot3: "Київ",
         
+        socialSecTag: "Бути в курсі • Спільнота 22:22",
+        socialSecTitle: "Стеж за 22:22 у соцмережах",
+        socialSecDesc: "Ми постійно додаємо новий функціонал, готуємо версію на Android та плануємо запуски в нових містах і країнах. Підписуйся, щоб першою дізнаватися про апдейти, тестувати фічі та впливати на продукт.",
+        socialCardIgDesc: "Анонси великих релізів, запуск нових міст і країн, голосування за наступні фічі, секретні бонуси для користувачок та залаштунки створення проєкту.",
+        socialCardThDesc: "Швидкі апдейти в реальному часі, новини про статус релізу на Android, відкриті обговорення ідей та прямий звʼязок із командою: пиши, що варто покращити.",
+        btnFollowIg: "Підписатися в Instagram",
+        btnFollowTh: "Читати в Threads",
+
         sec2Tag: "Про дружбу в дорослому віці",
         sec2Title: "Чому в дорослому віці так складно знайти нових подруг?",
         sec2Desc: "Раніше знайомства якось траплялися самі: університет, гуртожиток, спільні компанії, друзі друзів. Потім усі розʼїжджаються, занурюються в роботу, стосунки й своє життя — і в якийсь момент знайти нову подругу стає напрочуд складно.",
@@ -1009,7 +1110,7 @@
         step2BtnSkip: "Пропустити",
         step2SuccessTitle: "Ти в списку очікування!",
         step2SuccessNote: "Ми надішлемо особисте запрошення та посилання на Android-версію, щойно відкриємо доступ у Києві.",
-        step2SocialHeading: "Підписуйся на нас у соцмережах, щоб не пропустити запуск:",
+        step2SocialHeading: "Стеж за релізом на Android та новими фічами:",
 
         footSlogan: "місце, де знаходять подруг.",
         btnPrivacy: "Конфіденційність",
@@ -1032,6 +1133,14 @@
         heroFoot1: "iOS is live",
         heroFoot2: "Women only",
         heroFoot3: "Kyiv",
+
+        socialSecTag: "Stay In The Loop • 22:22 Community",
+        socialSecTitle: "Follow 22:22 on Social Media",
+        socialSecDesc: "We continuously roll out new features, prepare the Android release, and plan expansion to new cities and countries. Follow along to get early updates, test new tools, and shape the app.",
+        socialCardIgDesc: "Major update announcements, city & country expansion roadmap, feature voting, community perks, and behind-the-scenes building 22:22.",
+        socialCardThDesc: "Real-time dev updates, Android status drops, open discussions on future ideas, and a direct line to the team: tell us what to build next.",
+        btnFollowIg: "Follow on Instagram",
+        btnFollowTh: "Read on Threads",
 
         sec2Tag: "On Adult Friendship",
         sec2Title: "Why is it so hard to find new friends in adult life?",
@@ -1097,7 +1206,7 @@
         step2BtnSkip: "Skip",
         step2SuccessTitle: "You're on the waitlist!",
         step2SuccessNote: "We'll send your personal invitation and app link as soon as access opens on Android in Kyiv.",
-        step2SocialHeading: "Follow our socials so you don't miss the launch:",
+        step2SocialHeading: "Follow for Android launch alerts & feature updates:",
 
         footSlogan: "where women find friends.",
         btnPrivacy: "Privacy Policy",
@@ -1125,12 +1234,12 @@
       const btnUa = document.getElementById('btn-lang-ua');
       const btnEn = document.getElementById('btn-lang-en');
       if (lang === 'ua') {
-        btnUa.className = "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
-        btnEn.className = "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+        btnUa.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
+        btnEn.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
         document.documentElement.lang = "uk";
       } else {
-        btnEn.className = "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
-        btnUa.className = "px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
+        btnEn.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
+        btnUa.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
         document.documentElement.lang = "en";
       }
 
@@ -1158,6 +1267,15 @@
       updateText('hero-foot-1', t.heroFoot1);
       updateText('hero-foot-2', t.heroFoot2);
       updateText('hero-foot-3', t.heroFoot3);
+
+      // Social Section (Now right after Hero)
+      updateText('social-sec-tag', t.socialSecTag);
+      updateText('social-sec-title', t.socialSecTitle);
+      updateText('social-sec-desc', t.socialSecDesc);
+      updateText('social-card-ig-desc', t.socialCardIgDesc);
+      updateText('social-card-th-desc', t.socialCardThDesc);
+      updateText('btn-follow-ig', t.btnFollowIg);
+      updateText('btn-follow-th', t.btnFollowTh);
 
       updateText('sec2-tag', t.sec2Tag);
       updateText('sec2-title', t.sec2Title);
