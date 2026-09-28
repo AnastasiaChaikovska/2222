@@ -74,6 +74,7 @@
 </head>
 <body class="bg-app-bg text-app-espresso antialiased overflow-x-hidden">
 
+  <!-- Header -->
   <header class="sticky top-0 z-40 bg-app-bg/95 backdrop-blur-md border-b border-app-border transition-colors">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between">
       
@@ -142,6 +143,7 @@
     </div>
   </header>
 
+  <!-- Main View -->
   <main id="main-content">
     <section class="pt-8 pb-14 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-app-border">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,6 +223,7 @@
       </div>
     </section>
 
+    <!-- Social Media Section (High up on the page) -->
     <section class="py-12 sm:py-16 border-b border-app-border bg-app-bgsubtle/50">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -291,6 +294,7 @@
       </div>
     </section>
 
+    <!-- Problem Section -->
     <section class="py-16 sm:py-24 border-b border-app-border bg-app-bg">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -329,6 +333,7 @@
       </div>
     </section>
 
+    <!-- How It Works Section -->
     <section class="py-16 sm:py-24 border-b border-app-border bg-app-bgsubtle/40">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -409,6 +414,7 @@
       </div>
     </section>
 
+    <!-- Not Just Photos Section -->
     <section class="py-16 sm:py-24 border-b border-app-border bg-app-bg">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -477,6 +483,7 @@
       </div>
     </section>
 
+    <!-- Why One Person Dark Section -->
     <section class="py-16 sm:py-24 bg-app-espresso text-app-bg">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         
@@ -500,6 +507,7 @@
       </div>
     </section>
 
+    <!-- Bottom Section with Join Trigger -->
     <section id="waitlist-section" class="py-16 sm:py-24 bg-app-bg">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
@@ -545,6 +553,7 @@
     </section>
   </main>
 
+  <!-- STEP 2 OPTIONAL ENRICHMENT SECTION (Accessible via hash or flow) -->
   <section id="step2-container" class="hidden min-h-[80vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
     <div class="max-w-xl mx-auto px-4 sm:px-6">
       
@@ -678,6 +687,7 @@
     </div>
   </section>
 
+  <!-- UNIFIED JOIN FLOW MODAL (SMART ROUTER) -->
   <div id="join-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
     <div class="bg-app-card rounded-3xl border border-app-border p-6 sm:p-8 max-w-lg w-full relative shadow-2xl space-y-6 my-8 transform transition-all text-left">
       
@@ -860,56 +870,7 @@
     </div>
   </div>
 
-  <!-- TRACKING MODAL: ANDROID -->
-  <div id="track-modal-android" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-app-card rounded-3xl border border-app-border p-7 sm:p-9 max-w-md w-full relative shadow-2xl text-center space-y-4">
-      <div class="w-12 h-12 mx-auto rounded-2xl bg-[#3DDC84]/15 flex items-center justify-center text-[#3DDC84]">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4116 13.8533 8.1 12 8.1s-3.5902.3116-5.1368.8497L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
-        </svg>
-      </div>
-      <h3 class="text-2xl font-semibold text-app-espresso tracking-tight">Записала 🤍</h3>
-      <p class="text-sm text-app-brown leading-relaxed">
-        Напишу тобі на пошту, щойно 22:22 зʼявиться на Android.
-      </p>
-      <div class="pt-2">
-        <button onclick="closeTrackingModals()" class="w-full py-3 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-semibold transition-colors cursor-pointer">
-          Зрозуміло
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- TRACKING MODAL: OUTSIDE KYIV -->
-  <div id="track-modal-outside-kyiv" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4">
-    <div class="bg-app-card rounded-3xl border border-app-border p-7 sm:p-9 max-w-md w-full relative shadow-2xl text-left space-y-4">
-      <div class="w-12 h-12 rounded-2xl bg-app-roselight flex items-center justify-center text-app-rose text-xl font-bold">
-        📍
-      </div>
-      <div class="space-y-1">
-        <h3 class="text-2xl font-semibold text-app-espresso tracking-tight">Записала 🤍</h3>
-        <p class="text-sm text-app-brown leading-relaxed">
-          Напишу, коли 22:22 зʼявиться у твоєму місті.
-        </p>
-      </div>
-
-      <form id="track-city-form" onsubmit="handleTrackCitySubmit(event)" class="space-y-3 pt-2">
-        <div>
-          <label for="track-city-input" class="block text-xs font-medium text-app-brown mb-1.5">У якому ти місті?</label>
-          <input type="text" id="track-city-input" required placeholder="Львів, Одеса, Варшава..." class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
-        </div>
-        <button type="submit" id="btn-track-city-submit" class="w-full py-3 px-5 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
-          <span>Зберегти місто</span>
-          <span>→</span>
-        </button>
-      </form>
-
-      <div id="track-city-saved-msg" class="hidden p-3 rounded-xl bg-[#3DDC84]/10 text-xs text-app-espresso font-medium text-center">
-        Місто збережено! Дякуємо 🤍
-      </div>
-    </div>
-  </div>
-
+  <!-- Footer -->
   <footer class="border-t border-app-border py-8 bg-app-bg">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
       <div class="flex items-center gap-3">
@@ -934,6 +895,7 @@
     </div>
   </footer>
 
+  <!-- Scripts -->
   <script>
     const avatarPhoto = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=260&h=260&q=80";
     const APP_STORE_URL = "https://apps.apple.com/ua/app/22-22-friends/id6812477144";
@@ -942,7 +904,6 @@
     let currentLang = 'ua';
     let currentPage = 'home';
     let joinSourceTrigger = 'hero';
-    let activeTrackingToken = '';
     let userSubmission = {
       name: '',
       email: '',
@@ -1513,6 +1474,7 @@
       const modal = document.getElementById('join-modal');
       if (!modal) return;
 
+      // Reset modal views to initial question
       showModalStep('location');
       modal.classList.remove('hidden');
       document.body.style.overflow = 'hidden';
@@ -1554,6 +1516,7 @@
 
     function handleKyivDeviceChoice(platform) {
       if (platform === 'ios') {
+        // Track iOS lead intent with indicator
         sendLeadToGoogleSheet({
           name: 'iOS User (Kyiv)',
           email: 'appstore_redirect@2222.app',
@@ -1564,13 +1527,16 @@
           source: `Київ та область — iOS (Прямий перехід в App Store з ${joinSourceTrigger})`
         });
 
+        // Open App Store directly in new tab
         window.open(APP_STORE_URL, '_blank');
         closeJoinFlow();
       } else {
+        // Open dedicated Android form
         showModalStep('kyiv-android');
       }
     }
 
+    // Modal forms submission handler
     async function handleModalSubmit(event, flowType) {
       event.preventDefault();
 
@@ -1626,6 +1592,7 @@
         `;
       }
 
+      // Send to Google Sheet
       sendLeadToGoogleSheet({
         name: userSubmission.name,
         email: userSubmission.email,
@@ -1636,6 +1603,7 @@
         source: userSubmission.source
       });
 
+      // Update Step 2 greeting
       const step2Heading = document.getElementById('step2-heading');
       if (step2Heading) {
         step2Heading.textContent = currentLang === 'ua' 
@@ -1653,6 +1621,7 @@
       }, 400);
     }
 
+    // STEP 2 SUBMISSION
     async function handleStep2Submit(event) {
       event.preventDefault();
 
@@ -1734,91 +1703,11 @@
       }
     }
 
-    // ==========================================
-    // SENDPULSE EMAIL TRACKING ROUTER
-    // ==========================================
-    function checkTrackingRoutes() {
-      const path = window.location.pathname;
-      const urlParams = new URLSearchParams(window.location.search);
-      
-      let token = urlParams.get('token') || urlParams.get('w') || '';
-      let action = urlParams.get('track') || urlParams.get('action') || '';
-
-      const pathMatch = path.match(/\/w\/([a-zA-Z0-9_\-]+)\/(app-store|android|outside-kyiv)/i);
-      if (pathMatch) {
-        token = pathMatch[1];
-        action = pathMatch[2];
-      }
-
-      if (!token || !action) return;
-
-      activeTrackingToken = token;
-      action = action.toLowerCase();
-
-      if (action === 'app-store' || action === 'appstore') {
-        sendLeadToGoogleSheet({
-          action: 'track_click',
-          token: token,
-          target: 'app_store'
-        });
-        window.location.replace(APP_STORE_URL);
-      } else if (action === 'android') {
-        sendLeadToGoogleSheet({
-          action: 'track_click',
-          token: token,
-          target: 'android'
-        });
-        const modal = document.getElementById('track-modal-android');
-        if (modal) modal.classList.remove('hidden');
-      } else if (action === 'outside-kyiv' || action === 'outside_kyiv') {
-        sendLeadToGoogleSheet({
-          action: 'track_click',
-          token: token,
-          target: 'outside_kyiv'
-        });
-        const modal = document.getElementById('track-modal-outside-kyiv');
-        if (modal) modal.classList.remove('hidden');
-      }
-    }
-
-    function closeTrackingModals() {
-      const m1 = document.getElementById('track-modal-android');
-      const m2 = document.getElementById('track-modal-outside-kyiv');
-      if (m1) m1.classList.add('hidden');
-      if (m2) m2.classList.add('hidden');
-    }
-
-    async function handleTrackCitySubmit(event) {
-      event.preventDefault();
-      const cityInput = document.getElementById('track-city-input');
-      const submitBtn = document.getElementById('btn-track-city-submit');
-      const savedMsg = document.getElementById('track-city-saved-msg');
-      const city = cityInput ? cityInput.value.trim() : '';
-
-      if (!city || !activeTrackingToken) return;
-
-      if (submitBtn) submitBtn.disabled = true;
-
-      await sendLeadToGoogleSheet({
-        action: 'save_city',
-        token: activeTrackingToken,
-        city: city
-      });
-
-      if (submitBtn) submitBtn.classList.add('hidden');
-      if (savedMsg) savedMsg.classList.remove('hidden');
-
-      setTimeout(() => {
-        closeTrackingModals();
-      }, 2000);
-    }
-
     window.addEventListener('DOMContentLoaded', () => {
       renderMockups('ua');
       updateCountdown();
       setInterval(updateCountdown, 1000);
       handleHashChange();
-      checkTrackingRoutes();
     });
   </script>
 </body>
