@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#F9F6F1">
   <title>22:22 — для тих, хто хоче знайти нових подруг</title>
   
   <link rel="icon" href="favicon">
@@ -11,7 +12,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400;500;600;700;800&family=Bad+Script&display=swap" rel="stylesheet">
 
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -20,40 +21,72 @@
         extend: {
           colors: {
             app: {
-              bg: '#FAF6F0',
-              bgsubtle: '#F3EDE4',
+              bg: '#F9F6F1',
+              bgsubtle: '#F3EDE6',
               card: '#FFFFFF',
-              cardsoft: '#FAF5EE',
-              border: '#E8DFD5',
-              borderstrong: '#D8CBC0',
-              rose: '#BD7573',
-              roselight: '#F7EFEB',
-              espresso: '#261613',
-              brown: '#5C4B46',
-              muted: '#94837E'
+              cardsoft: '#F9F6F1',
+              border: '#E6DFD6',
+              borderstrong: '#CFC5BC',
+              rose: '#B23A62',
+              roselight: '#FBE3E8',
+              marker: '#F2A7BB',
+              espresso: '#241714',
+              brown: '#594C47',
+              muted: '#7A6D68',
+              error: '#A13D2D'
             }
           },
           fontFamily: {
-            sans: ['Montserrat', 'system-ui', 'sans-serif'],
-            display: ['Montserrat', 'system-ui', 'sans-serif']
+            sans: ['Ysabeau Infant', 'system-ui', 'sans-serif'],
+            display: ['Ysabeau Infant', 'system-ui', 'sans-serif'],
+            hand: ['Bad Script', 'cursive']
           }
         }
       }
     };
   </script>
   <style>
-    * {
-      font-family: 'Montserrat', system-ui, -apple-system, sans-serif !important;
+    /* 22:22 design system: papir, chornylo, rozhevyi marker */
+    .hand { font-family: 'Bad Script', cursive !important; font-weight: 400; color: #B23A62; }
+    .mk {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 170 34' preserveAspectRatio='none'%3E%3Cpath d='M5 17 C 30 9, 78 12, 118 8 S 164 11, 166 15 C 167 23, 141 28, 101 27 S 22 31, 7 26 C 2 24, 2 20, 5 17 Z' fill='%23F2A7BB'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 100% 52%;
+      background-position: 0 96%;
+      padding: 0 .14em;
+      margin: 0 -.08em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
     }
+    .wavy {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8 C 15 3, 25 11, 38 6 S 60 3, 74 7 S 100 10, 118 5' stroke='%23F2A7BB' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-size: 100% .32em;
+      background-position: 0 100%;
+      padding-bottom: .22em;
+      -webkit-box-decoration-break: clone;
+      box-decoration-break: clone;
+    }
+    .circ { position: relative; display: inline-block; padding: 0 .35em; }
+    .circ::before {
+      content: ""; position: absolute; inset: -.45em -.3em -.4em -.35em; pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 140 60' preserveAspectRatio='none' fill='none'%3E%3Cpath d='M22 32 C 18 12, 74 6, 108 12 C 134 18, 132 46, 98 52 C 62 58, 14 52, 16 32 C 17 24, 28 16, 44 13' stroke='%23F2A7BB' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+    }
+    .polaroid { position: absolute; background: #fff; box-shadow: 0 10px 26px rgba(36,23,20,.11), 0 1px 2px rgba(36,23,20,.06); }
+    .tape { position: absolute; display: block; background: rgba(242,167,187,.75); }
+    ::selection { background-color: #F2A7BB; color: #241714; }
+
+    html { font-size: 100%; }
+    body { font-family: 'Ysabeau Infant', system-ui, -apple-system, sans-serif; }
     body {
-      background-color: #FAF6F0;
-      color: #261613;
+      background-color: #F9F6F1;
+      color: #241714;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
     ::selection {
-      background-color: #261613;
-      color: #FAF6F0;
+      background-color: #241714;
+      color: #F9F6F1;
     }
     .iphone-frame {
       width: 100%;
@@ -83,24 +116,24 @@
         <div class="w-8 h-8 flex-shrink-0 transition-opacity group-hover:opacity-80">
           <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
             <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
-              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#261613"/>
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#241714"/>
             </g>
             <g transform="translate(50, 39) rotate(14) scale(0.5) translate(-50, -50)">
-              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#BD7573" stroke="#FAF6F0" stroke-width="5" stroke-linejoin="round"/>
+              <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#F2A7BB" stroke="#F9F6F1" stroke-width="5" stroke-linejoin="round"/>
             </g>
           </svg>
         </div>
 
         <div class="flex flex-col">
-          <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
-          <span id="nav-motto" class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">для тих, хто хоче знайти нових подруг</span>
+          <span class="text-[22px] sm:text-[26px] font-extrabold tracking-tight text-app-espresso leading-none">22:22</span>
+          <span id="nav-motto" class="hidden sm:block text-[13px] sm:text-[14px] text-app-muted font-semibold mt-1">для тих, хто хоче знайти нових подруг</span>
         </div>
       </a>
 
       <!-- Navigation Actions -->
       <div class="flex items-center gap-2 sm:gap-4">
         
-        <div class="hidden xl:flex items-center gap-2 text-xs text-app-brown">
+        <div class="hidden xl:flex items-center gap-2 text-[15px] font-semibold text-app-brown">
           <span id="nav-countdown-label" class="text-app-muted">Наступне знайомство о 22:22:</span>
           <span id="countdown-timer" class="font-medium text-app-espresso tracking-tight">--:--:--</span>
         </div>
@@ -120,8 +153,8 @@
         </div>
 
         <!-- Language Switcher -->
-        <div class="inline-flex rounded-full border border-app-border p-0.5 bg-app-bgsubtle text-xs">
-          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">
+        <div class="inline-flex rounded-full border-[1.5px] border-app-border p-0.5 bg-app-card text-[13px] font-bold">
+          <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-app-bg">
             UA
           </button>
           <button id="btn-lang-en" onclick="setLanguage('en')" class="px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">
@@ -129,12 +162,12 @@
           </button>
         </div>
 
-        <a href="support.html" id="nav-support-btn" class="hidden md:inline-flex text-xs text-app-brown hover:text-app-espresso transition-colors">
+        <a href="support.html" id="nav-support-btn" class="hidden md:inline-flex text-[15px] font-bold text-app-espresso wavy transition-colors">
           Підтримка
         </a>
 
         <!-- Primary CTA in Header -->
-        <button onclick="openJoinFlow('header')" id="nav-btn-join" class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 rounded-full bg-app-espresso text-white hover:bg-black text-xs font-semibold transition-colors shadow-2xs cursor-pointer">
+        <button onclick="openJoinFlow('header')" id="nav-btn-join" class="inline-flex items-center gap-1.5 sm:gap-2 px-4 sm:px-5 py-2 rounded-full bg-app-espresso text-app-bg hover:bg-black text-[15px] font-bold transition-colors cursor-pointer">
           <span id="nav-btn-join-text">Доєднатися</span>
           <span>→</span>
         </button>
@@ -153,30 +186,30 @@
           <!-- Left Content -->
           <div class="min-[740px]:col-span-7 space-y-6">
             
-            <p id="hero-badge" class="text-xs uppercase tracking-wider text-app-muted font-medium">
+            <p id="hero-badge" class="text-[16px] font-bold text-app-muted">
               Одне знайомство на день • Щовечора о 22:22
             </p>
 
-            <h1 id="hero-title" class="text-4xl sm:text-5xl lg:text-[58px] font-semibold text-app-espresso leading-[1.04] tracking-[-0.03em] max-w-[600px]">
-              Щодня — одна нова людина, з якою варто познайомитися.
+            <h1 id="hero-title" class="text-[42px] sm:text-[56px] lg:text-[68px] font-extrabold text-app-espresso leading-[1.02] tracking-[-0.02em] max-w-[620px]">
+              Щодня — <span class="mk">одна</span> нова людина, з якою варто познайомитися.
             </h1>
 
-            <p id="hero-desc" class="text-base sm:text-[17px] text-app-brown max-w-[490px] leading-relaxed font-normal">
+            <p id="hero-desc" class="text-[18px] sm:text-[20px] text-app-brown max-w-[520px] leading-[1.45] font-medium">
               Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.
             </p>
 
             <!-- Single Clean Primary CTA -->
             <div class="pt-2 max-w-[500px] space-y-3.5">
               <div>
-                <button onclick="openJoinFlow('hero')" id="btn-hero-main-join" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-app-espresso hover:bg-black text-white text-base font-semibold transition-all shadow-md group cursor-pointer">
+                <button onclick="openJoinFlow('hero')" id="btn-hero-main-join" class="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[18px] font-bold transition-all group cursor-pointer">
                   <span id="btn-hero-main-text">Доєднатися до 22:22</span>
                   <span class="group-hover:translate-x-1 transition-transform">→</span>
                 </button>
               </div>
 
-              <div class="flex items-center gap-3 text-xs text-app-muted font-normal flex-wrap">
+              <div class="flex items-center gap-3 text-[15px] text-app-muted font-semibold flex-wrap">
                 <span id="hero-foot-1" class="flex items-center gap-1.5">
-                  <span class="w-1.5 h-1.5 rounded-full bg-[#3DDC84]"></span>
+                  <span class="w-1.5 h-1.5 rounded-full bg-app-marker"></span>
                   Бета в Києві та області
                 </span>
                 <span>•</span>
@@ -190,11 +223,11 @@
 
           <!-- Right Phone Mockup -->
           <div class="min-[740px]:col-span-5 flex justify-center min-[740px]:justify-end">
-            <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[-1.5deg] hover:rotate-0 transition-transform duration-500">
-              <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
+            <div class="iphone-frame relative rounded-[44px] p-3 bg-[#241714]">
+              <div class="relative rounded-[34px] overflow-hidden bg-[#F9F6F1] text-app-espresso select-none">
                 
                 <div class="pt-2.5 px-5 flex items-center justify-between text-[11px] font-semibold text-app-espresso">
-                  <span>16:16</span>
+                  <span>22:22</span>
                   <div class="w-18 h-4 bg-black rounded-full flex items-center justify-center">
                     <div class="w-2 h-2 rounded-full bg-[#1A1A1A] mr-6"></div>
                   </div>
@@ -206,11 +239,11 @@
                   </div>
                 </div>
 
-                <div id="mockup-profile-container" class="p-4 pt-2.5 min-h-[490px] flex flex-col justify-between">
+                <div id="mockup-profile-container" class="px-4 pt-4 pb-3 h-[540px] flex flex-col">
                   <!-- Injected via renderMockups() -->
                 </div>
 
-                <div class="py-2 flex justify-center bg-[#FAF6F0]">
+                <div class="py-2 flex justify-center bg-[#F9F6F1]">
                   <div class="w-28 h-1 bg-black/20 rounded-full"></div>
                 </div>
 
@@ -228,11 +261,11 @@
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div class="max-w-2xl mx-auto text-center space-y-2.5 mb-8 sm:mb-12">
-          <span id="social-sec-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium">Бути в курсі • Спільнота 22:22</span>
-          <h2 id="social-sec-title" class="text-2xl sm:text-3xl lg:text-[34px] font-semibold text-app-espresso tracking-tight">
+          <span id="social-sec-tag" class="text-[16px] font-bold text-app-muted">Бути в курсі • Спільнота 22:22</span>
+          <h2 id="social-sec-title" class="text-[30px] sm:text-[38px] lg:text-[44px] leading-[1.1] font-extrabold text-app-espresso tracking-tight">
             Стеж за 22:22 у соцмережах
           </h2>
-          <p id="social-sec-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed max-w-xl mx-auto">
+          <p id="social-sec-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5] max-w-xl mx-auto">
             Ми постійно додаємо новий функціонал, готуємо версію на Android та плануємо запуски в нових містах і країнах. Підписуйся, щоб першою дізнаватися про апдейти, тестувати фічі та впливати на продукт.
           </p>
         </div>
@@ -240,32 +273,32 @@
         <div class="grid sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
           
           <!-- Instagram Card -->
-          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso/40 transition-colors shadow-2xs group">
+          <div class="bg-app-card p-6 sm:p-7 rounded-[28px] border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso transition-colors group">
             <div class="space-y-3.5">
               <div class="flex items-center justify-between">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-[#FD1D1D]/10 via-[#E1306C]/15 to-[#405DE6]/15 flex items-center justify-center text-app-espresso">
+                <div class="w-11 h-11 rounded-2xl bg-app-roselight flex items-center justify-center text-app-espresso">
                   <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
                 </div>
-                <span class="text-xs font-mono font-medium text-app-muted">@22.22_app</span>
+                <span class="text-[15px] font-semibold text-app-muted">@22.22_app</span>
               </div>
               <div class="space-y-1.5">
-                <h3 class="text-base sm:text-lg font-semibold text-app-espresso">Instagram</h3>
-                <p id="social-card-ig-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+                <h3 class="text-[22px] font-extrabold text-app-espresso">Instagram</h3>
+                <p id="social-card-ig-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
                   Анонси великих релізів, запуск нових міст і країн, голосування за наступні фічі, секретні бонуси для користувачок та залаштунки створення проєкту.
                 </p>
               </div>
             </div>
             
-            <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-app-espresso hover:bg-black text-white text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[16px] font-bold transition-all flex items-center justify-center gap-2 cursor-pointer">
               <span id="btn-follow-ig">Підписатися в Instagram</span>
               <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
             </a>
           </div>
 
           <!-- Threads Card -->
-          <div class="bg-app-card p-6 sm:p-7 rounded-3xl border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso/40 transition-colors shadow-2xs group">
+          <div class="bg-app-card p-6 sm:p-7 rounded-[28px] border border-app-border flex flex-col justify-between space-y-5 hover:border-app-espresso transition-colors group">
             <div class="space-y-3.5">
               <div class="flex items-center justify-between">
                 <div class="w-11 h-11 rounded-2xl bg-app-espresso/5 flex items-center justify-center text-app-espresso">
@@ -273,17 +306,17 @@
                     <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
                   </svg>
                 </div>
-                <span class="text-xs font-mono font-medium text-app-muted">@22.22_app</span>
+                <span class="text-[15px] font-semibold text-app-muted">@22.22_app</span>
               </div>
               <div class="space-y-1.5">
-                <h3 class="text-base sm:text-lg font-semibold text-app-espresso">Threads</h3>
-                <p id="social-card-th-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+                <h3 class="text-[22px] font-extrabold text-app-espresso">Threads</h3>
+                <p id="social-card-th-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
                   Швидкі апдейти в реальному часі, новини про статус релізу на Android, відкриті обговорення ідей та прямий звʼязок із командою: пиши, що варто покращити.
                 </p>
               </div>
             </div>
             
-            <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl bg-app-espresso hover:bg-black text-white text-xs sm:text-sm font-medium transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[16px] font-bold transition-all flex items-center justify-center gap-2 cursor-pointer">
               <span id="btn-follow-th">Читати в Threads</span>
               <span class="group-hover:translate-x-0.5 transition-transform">↗</span>
             </a>
@@ -300,31 +333,31 @@
         
         <div class="grid lg:grid-cols-12 gap-6 lg:gap-12 items-baseline mb-12 sm:mb-16">
           <div class="lg:col-span-7">
-            <span id="sec2-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-3">Про дружбу в дорослому віці</span>
-            <h2 id="sec2-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
+            <span id="sec2-tag" class="text-[16px] font-bold text-app-muted block mb-3">Про дружбу в дорослому віці</span>
+            <h2 id="sec2-title" class="text-[34px] sm:text-[42px] lg:text-[52px] font-extrabold text-app-espresso leading-[1.08] tracking-[-0.02em]">
               Чому в дорослому віці так складно знайти нових подруг?
             </h2>
           </div>
           <div class="lg:col-span-5">
-            <p id="sec2-desc" class="text-base text-app-brown leading-relaxed font-normal">
+            <p id="sec2-desc" class="text-[18px] font-medium text-app-brown leading-[1.5] font-normal">
               Раніше знайомства якось траплялися самі: університет, гуртожиток, спільні компанії, друзі друзів. Потім усі розʼїжджаються, занурюються в роботу, стосунки й своє життя — і в якийсь момент знайти нову подругу стає напрочуд складно.
             </p>
           </div>
         </div>
 
         <div class="grid lg:grid-cols-12 gap-6 items-start">
-          <div class="lg:col-span-5 bg-app-card p-6 sm:p-8 rounded-2xl border border-app-border space-y-3">
-            <span class="text-xs font-mono text-app-muted">01</span>
-            <h3 id="sec2-col1-title" class="font-semibold text-lg text-app-espresso tracking-tight">Як було раніше</h3>
-            <p id="sec2-col1-text" class="text-sm text-app-brown leading-relaxed">
+          <div class="lg:col-span-5 bg-app-card p-6 sm:p-8 rounded-[26px] border border-app-border space-y-3">
+            <span class="text-[15px] font-bold text-app-muted">01</span>
+            <h3 id="sec2-col1-title" class="font-extrabold text-[22px] text-app-espresso tracking-tight">Як було раніше</h3>
+            <p id="sec2-col1-text" class="text-[17px] font-medium text-app-brown leading-[1.5]">
               Ви постійно десь перетиналися: на парах, вечірках, у спільних компаніях. Не треба було спеціально шукати нових друзів — знайомства просто ставали дружбою.
             </p>
           </div>
 
-          <div class="lg:col-span-7 bg-app-card p-6 sm:p-8 rounded-2xl border border-app-border space-y-3 lg:mt-6">
-            <span class="text-xs font-mono text-app-muted">02</span>
-            <h3 id="sec2-col2-title" class="font-semibold text-lg text-app-espresso tracking-tight">А зараз треба якось знайомитися спеціально</h3>
-            <p id="sec2-col2-text" class="text-sm text-app-brown leading-relaxed">
+          <div class="lg:col-span-7 bg-app-card p-6 sm:p-8 rounded-[26px] border border-app-border space-y-3 lg:mt-6">
+            <span class="text-[15px] font-bold text-app-muted">02</span>
+            <h3 id="sec2-col2-title" class="font-extrabold text-[22px] text-app-espresso tracking-tight">А зараз треба якось знайомитися спеціально</h3>
+            <p id="sec2-col2-text" class="text-[17px] font-medium text-app-brown leading-[1.5]">
               І тут стає складніше. Свайпати сотні профілів не хочеться, на нетворкінг за подругами теж не підеш, а випадкові переписки часто закінчуються після «привіт, як справи?».
             </p>
           </div>
@@ -341,39 +374,39 @@
           
           <div class="min-[740px]:col-span-7 space-y-8">
             <div class="space-y-3">
-              <span id="sec3-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Як це працює</span>
-              <h2 id="sec3-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
+              <span id="sec3-tag" class="text-[16px] font-bold text-app-muted block">Як це працює</span>
+              <h2 id="sec3-title" class="text-[34px] sm:text-[42px] lg:text-[52px] font-extrabold text-app-espresso leading-[1.08] tracking-[-0.02em]">
                 Щовечора о 22:22 — одне нове знайомство.
               </h2>
-              <p id="sec3-desc" class="text-base text-app-brown leading-relaxed max-w-lg">
+              <p id="sec3-desc" class="text-[18px] font-medium text-app-brown leading-[1.5] max-w-lg">
                 Без стрічки профілів і нескінченного свайпінгу.
               </p>
             </div>
 
             <div class="space-y-4">
-              <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
-                <span class="text-xs font-mono text-app-muted font-medium">Крок 1</span>
-                <h3 id="sec3-s1-title" class="text-lg font-semibold text-app-espresso tracking-tight">Розповідаєш трохи про себе</h3>
-                <p id="sec3-s1-desc" class="text-sm text-app-brown leading-relaxed">
+              <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
+                <span class="text-[15px] font-bold text-app-muted">Крок 1</span>
+                <h3 id="sec3-s1-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Розповідаєш трохи про себе</h3>
+                <p id="sec3-s1-desc" class="text-[17px] font-medium text-app-brown leading-[1.5]">
                   Кілька запитань про те, як ти спілкуєшся, як любиш проводити час, як часто хочеш бачитися з друзями і що для тебе важливо у близькому спілкуванні.
                 </p>
               </div>
 
-              <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
-                <span class="text-xs font-mono text-app-muted font-medium">Крок 2</span>
-                <h3 id="sec3-s2-title" class="text-lg font-semibold text-app-espresso tracking-tight">Щодня знайомишся з однією дівчиною</h3>
-                <p id="sec3-s2-desc" class="text-sm text-app-brown leading-relaxed">
+              <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
+                <span class="text-[15px] font-bold text-app-muted">Крок 2</span>
+                <h3 id="sec3-s2-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Щодня знайомишся з однією дівчиною</h3>
+                <p id="sec3-s2-desc" class="text-[17px] font-medium text-app-brown leading-[1.5]">
                   О 22:22 бачиш профіль однієї дівчини з Києва. Не просто фото — ще й її відповіді на ті самі запитання.
                 </p>
               </div>
 
-              <div class="p-6 rounded-2xl bg-app-card border border-app-border space-y-2">
+              <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-xs font-mono text-app-muted font-medium">Крок 3</span>
-                  <span class="text-xs font-medium text-app-espresso">22:22</span>
+                  <span class="text-[15px] font-bold text-app-muted">Крок 3</span>
+                  <span class="circ text-[17px] font-extrabold text-app-espresso">22:22</span>
                 </div>
-                <h3 id="sec3-s3-title" class="text-lg font-semibold text-app-espresso tracking-tight">Якщо ви обрали одна одну — відкривається чат</h3>
-                <p id="sec3-s3-desc" class="text-sm text-app-brown leading-relaxed">
+                <h3 id="sec3-s3-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Якщо ви обрали одна одну — відкривається чат</h3>
+                <p id="sec3-s3-desc" class="text-[17px] font-medium text-app-brown leading-[1.5]">
                   Якщо обидві натиснули «так» — можна писати. А щоб не починати з ніякового «привіт, як справи?», підкинемо кілька тем із ваших відповідей.
                 </p>
               </div>
@@ -381,11 +414,11 @@
           </div>
 
           <div class="min-[740px]:col-span-5 flex justify-center min-[740px]:justify-end">
-            <div class="iphone-frame relative rounded-[44px] p-3 bg-[#1C1615] shadow-xl ring-1 ring-black/20 transform rotate-[1deg] hover:rotate-0 transition-transform duration-500">
-              <div class="relative rounded-[34px] overflow-hidden bg-[#FAF6F0] border border-[#EADBCE] text-app-espresso select-none">
+            <div class="iphone-frame relative rounded-[44px] p-3 bg-[#241714]">
+              <div class="relative rounded-[34px] overflow-hidden bg-[#F9F6F1] text-app-espresso select-none">
                 
                 <div class="pt-2.5 px-5 flex items-center justify-between text-[11px] font-semibold text-app-espresso">
-                  <span>16:16</span>
+                  <span>22:22</span>
                   <div class="w-18 h-4 bg-black rounded-full flex items-center justify-center">
                     <div class="w-2 h-2 rounded-full bg-[#1A1A1A] mr-6"></div>
                   </div>
@@ -397,11 +430,11 @@
                   </div>
                 </div>
 
-                <div id="mockup-chat-container" class="p-4 pt-2 min-h-[490px] flex flex-col justify-between">
+                <div id="mockup-chat-container" class="px-4 pt-4 pb-3 h-[540px] flex flex-col">
                   <!-- Injected via renderMockups() -->
                 </div>
 
-                <div class="py-2 flex justify-center bg-[#FAF6F0]">
+                <div class="py-2 flex justify-center bg-[#F9F6F1]">
                   <div class="w-28 h-1 bg-black/20 rounded-full"></div>
                 </div>
 
@@ -420,13 +453,13 @@
         
         <div class="grid lg:grid-cols-12 gap-8 lg:gap-14 mb-12">
           <div class="lg:col-span-7">
-            <span id="sec4-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium block mb-2.5">Не тільки фото</span>
-            <h2 id="sec4-title" class="text-3xl sm:text-4xl lg:text-[42px] font-semibold text-app-espresso leading-[1.08] tracking-[-0.02em]">
+            <span id="sec4-tag" class="text-[16px] font-bold text-app-muted block mb-2.5">Не тільки фото</span>
+            <h2 id="sec4-title" class="text-[34px] sm:text-[42px] lg:text-[52px] font-extrabold text-app-espresso leading-[1.08] tracking-[-0.02em]">
               Важливо не лише як людина виглядає, а й чи вам буде комфортно разом.
             </h2>
           </div>
           <div class="lg:col-span-5 flex items-end">
-            <p id="sec4-desc" class="text-base text-app-brown leading-relaxed font-normal">
+            <p id="sec4-desc" class="text-[18px] font-medium text-app-brown leading-[1.5] font-normal">
               Хтось надсилає двадцять кружечків у Telegram за день. Хтось відповідає раз на кілька годин і любить довгі зустрічі за кавою. Хтось може написати «я поруч, виходь», а комусь краще домовитися за тиждень. Такі дрібниці багато вирішують.
             </p>
           </div>
@@ -434,9 +467,9 @@
 
         <div class="grid md:grid-cols-2 gap-6 sm:gap-8">
           
-          <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
-            <span id="sec4-col1-title" class="text-xs uppercase tracking-wider text-app-muted font-medium block">Чого тут точно не буде</span>
-            <ul class="space-y-3 text-sm text-app-brown">
+          <div class="p-6 sm:p-8 rounded-[26px] bg-app-card border border-app-border space-y-4">
+            <span id="sec4-col1-title" class="text-[16px] font-bold text-app-muted block">Чого тут точно не буде</span>
+            <ul class="space-y-3.5 text-[17px] font-medium text-app-brown leading-[1.45]">
               <li class="flex items-start gap-3">
                 <span class="text-app-espresso font-semibold">—</span>
                 <span id="sec4-c1-1"><strong>Нескінченного свайпінгу</strong> — не треба переглядати сотні профілів.</span>
@@ -456,9 +489,9 @@
             </ul>
           </div>
 
-          <div class="p-6 sm:p-8 rounded-2xl bg-app-card border border-app-border space-y-4">
-            <span id="sec4-col2-title" class="text-xs uppercase tracking-wider text-app-brown font-medium block">Про що ми запитуємо</span>
-            <ul class="space-y-3 text-sm text-app-espresso">
+          <div class="p-6 sm:p-8 rounded-[26px] bg-app-card border border-app-border space-y-4">
+            <span id="sec4-col2-title" class="text-[16px] font-bold text-app-muted block">Про що ми запитуємо</span>
+            <ul class="space-y-3.5 text-[17px] font-medium text-app-espresso leading-[1.45]">
               <li class="flex items-start gap-3">
                 <span class="text-app-rose font-medium">•</span>
                 <span id="sec4-c2-1"><strong>Як ти спілкуєшся:</strong> повідомлення, голосові, кружечки, меми чи довгі розмови наживо.</span>
@@ -484,21 +517,21 @@
     </section>
 
     <!-- Why One Person Dark Section -->
-    <section class="py-16 sm:py-24 bg-app-espresso text-app-bg">
+    <section class="py-16 sm:py-24 bg-app-card border-b border-app-border text-app-espresso">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         
-        <span id="sec5-tag" class="text-xs uppercase tracking-wider text-app-muted font-medium">Чому лише одна людина</span>
+        <span id="sec5-tag" class="text-[16px] font-bold text-app-muted">Чому лише одна людина</span>
         
-        <h2 id="sec5-title" class="text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.08] tracking-[-0.02em]">
-          Бо знайомитися з людьми — не те саме, що гортати каталог.
+        <h2 id="sec5-title" class="text-[34px] sm:text-[46px] lg:text-[56px] font-extrabold leading-[1.04] tracking-[-0.02em]">
+          Бо знайомитися з людьми — не те саме, що гортати <span class="mk">каталог</span>.
         </h2>
 
-        <p id="sec5-desc" class="text-sm sm:text-base text-app-bg/75 max-w-lg mx-auto leading-relaxed">
+        <p id="sec5-desc" class="text-[17px] sm:text-[19px] font-medium text-app-brown max-w-lg mx-auto leading-relaxed">
           Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.
         </p>
 
         <div class="pt-3">
-          <button onclick="openJoinFlow('philosophy_dark')" id="sec5-btn" class="inline-flex items-center gap-2.5 px-8 py-3.5 rounded-full bg-white text-app-espresso hover:bg-app-roselight text-sm font-semibold transition-colors cursor-pointer shadow-md">
+          <button onclick="openJoinFlow('philosophy_dark')" id="sec5-btn" class="inline-flex items-center gap-2.5 px-9 py-4 rounded-full bg-app-espresso text-app-bg hover:bg-black text-[18px] font-bold transition-colors cursor-pointer">
             <span>Доєднатися до 22:22</span>
             <span>→</span>
           </button>
@@ -511,36 +544,36 @@
     <section id="waitlist-section" class="py-16 sm:py-24 bg-app-bg">
       <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div class="bg-app-card rounded-3xl p-8 sm:p-12 border border-app-border text-center space-y-8 shadow-xs">
+        <div class="bg-app-card rounded-[28px] p-8 sm:p-12 border border-app-border text-center space-y-8">
           
           <div class="w-12 h-12 mx-auto flex items-center justify-center">
             <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
               <g transform="translate(28, 44) rotate(-12) scale(0.46) translate(-50, -50)">
-                <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#261613"/>
+                <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#241714"/>
               </g>
               <g transform="translate(50, 39) rotate(14) scale(0.5) translate(-50, -50)">
-                <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#BD7573" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
+                <path d="M50 82 C20 62 10 46 10 32 C10 18 22 10 34 10 C42 10 47 14 50 20 C53 14 58 10 66 10 C78 10 90 18 90 32 C90 46 80 62 50 82 Z" fill="#F2A7BB" stroke="#FFFFFF" stroke-width="5" stroke-linejoin="round"/>
               </g>
             </svg>
           </div>
 
           <div class="space-y-3">
-            <h2 id="sec6-title" class="text-3xl sm:text-4xl font-semibold text-app-espresso tracking-tight">
+            <h2 id="sec6-title" class="text-[34px] sm:text-[44px] font-extrabold text-app-espresso tracking-tight">
               Спробуй 22:22 однією з перших.
             </h2>
-            <p id="sec6-desc" class="text-sm sm:text-base text-app-brown max-w-md mx-auto leading-relaxed">
+            <p id="sec6-desc" class="text-[17px] sm:text-[18px] font-medium text-app-brown max-w-md mx-auto leading-relaxed">
               Застосунок уже працює для iOS у Києві та Київській області. Якщо ти з іншого міста або маєш Android — приєднуйся, і ми повідомимо тебе, щойно відкриємо доступ.
             </p>
           </div>
 
           <div class="max-w-md mx-auto pt-2">
-            <button onclick="openJoinFlow('bottom_card')" id="btn-bot-cta" class="w-full py-4 px-6 rounded-2xl bg-app-espresso hover:bg-black text-white text-base font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+            <button onclick="openJoinFlow('bottom_card')" id="btn-bot-cta" class="w-full py-4 px-6 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[18px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
               <span id="btn-bot-cta-text">Доєднатися</span>
               <span>→</span>
             </button>
           </div>
 
-          <div class="flex items-center justify-center gap-4 text-xs text-app-muted pt-2 font-normal">
+          <div class="flex items-center justify-center gap-4 text-[15px] text-app-muted pt-2 font-semibold flex-wrap">
             <span id="bot-foot-1">Без спаму</span>
             <span>•</span>
             <span id="bot-foot-2">Тільки для жінок</span>
@@ -557,7 +590,7 @@
   <section id="step2-container" class="hidden min-h-[80vh] py-12 sm:py-20 bg-app-bg border-b border-app-border">
     <div class="max-w-xl mx-auto px-4 sm:px-6">
       
-      <div class="bg-app-card rounded-3xl p-6 sm:p-10 border border-app-border space-y-6 shadow-md">
+      <div class="bg-app-card rounded-[28px] p-6 sm:p-10 border border-app-border space-y-6">
         
         <div class="space-y-2">
           <div class="flex items-center justify-between">
@@ -566,10 +599,10 @@
             </span>
             <span class="text-xs text-app-muted">Займає 30 секунд</span>
           </div>
-          <h2 id="step2-heading" class="text-2xl sm:text-3xl font-semibold text-app-espresso tracking-tight">
+          <h2 id="step2-heading" class="text-[28px] sm:text-[34px] font-extrabold text-app-espresso tracking-tight">
             Майже все! Ще пара деталей.
           </h2>
-          <p id="step2-subheading" class="text-sm text-app-brown leading-relaxed">
+          <p id="step2-subheading" class="text-[17px] font-medium text-app-brown leading-[1.5]">
             Контакти збережено. Щоб нам було простіше надіслати персональне запрошення або повідомити про реліз, можеш додати ще кілька деталей:
           </p>
         </div>
@@ -579,24 +612,24 @@
           <div class="grid sm:grid-cols-2 gap-3.5">
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label id="step2-lbl-tg" for="step2-telegram" class="text-xs font-medium text-app-brown">Нік у Telegram</label>
+                <label id="step2-lbl-tg" for="step2-telegram" class="text-[15px] font-semibold text-app-brown">Нік у Telegram</label>
                 <span id="step2-lbl-tg-opt" class="text-[11px] text-app-muted">необов'язково</span>
               </div>
-              <input type="text" id="step2-telegram" placeholder="@olia" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+              <input type="text" id="step2-telegram" placeholder="@olia" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
 
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label id="step2-lbl-phone" for="step2-phone" class="text-xs font-medium text-app-brown">Номер телефону</label>
+                <label id="step2-lbl-phone" for="step2-phone" class="text-[15px] font-semibold text-app-brown">Номер телефону</label>
                 <span id="step2-lbl-phone-opt" class="text-[11px] text-app-muted">необов'язково</span>
               </div>
-              <input type="tel" id="step2-phone" placeholder="+380..." class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+              <input type="tel" id="step2-phone" placeholder="+380..." class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
           </div>
 
           <div class="space-y-2.5 pt-1">
             <div class="flex items-center justify-between">
-              <span id="step2-lbl-mode" class="text-xs font-medium text-app-brown">Як тобі комфортно брати участь?</span>
+              <span id="step2-lbl-mode" class="text-[15px] font-semibold text-app-brown">Як тобі комфортно брати участь?</span>
             </div>
 
             <div class="space-y-2.5">
@@ -619,12 +652,12 @@
           </div>
 
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
-            <button type="submit" id="btn-step2-submit" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-medium transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <button type="submit" id="btn-step2-submit" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
               <span id="step2-btn-save-text">Зберегти та завершити</span>
               <span>→</span>
             </button>
-            <button type="button" onclick="skipStep2()" id="btn-step2-skip" class="w-full sm:w-auto px-5 py-3.5 text-xs text-app-muted hover:text-app-espresso font-medium transition-colors cursor-pointer text-center">
-              Пропустити
+            <button type="button" onclick="skipStep2()" id="btn-step2-skip" class="w-full sm:w-auto px-5 py-3.5 text-[17px] text-app-espresso font-bold cursor-pointer text-center">
+              <span class="wavy">Пропустити</span>
             </button>
           </div>
         </form>
@@ -633,8 +666,8 @@
           <div class="w-10 h-10 mx-auto rounded-full bg-app-card flex items-center justify-center text-app-espresso font-semibold">
             ✓
           </div>
-          <h3 id="step2-success-title" class="text-xl font-semibold text-app-espresso">Дякуємо! Ти у списку.</h3>
-          <p id="step2-success-note" class="text-xs text-app-brown leading-relaxed max-w-sm mx-auto">
+          <h3 id="step2-success-title" class="text-[24px] font-extrabold text-app-espresso">Дякуємо! Ти у списку.</h3>
+          <p id="step2-success-note" class="text-[15px] font-medium text-app-brown leading-[1.5] max-w-sm mx-auto">
             Ми надішлемо особисте сповіщення на твій email, щойно відкриємо доступ для твоєї групи.
           </p>
 
@@ -643,8 +676,8 @@
               Стеж за новинами релізу та новими містами:
             </p>
             <div class="grid sm:grid-cols-2 gap-2 text-left">
-              <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all shadow-2xs group flex items-start gap-2.5">
-                <div class="w-7 h-7 rounded-lg bg-[#E1306C]/10 flex items-center justify-center text-app-espresso flex-shrink-0 mt-0.5">
+              <a href="https://www.instagram.com/22.22_app?stkn=cTQxOGxreGs4enpv" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all group flex items-start gap-2.5">
+                <div class="w-7 h-7 rounded-lg bg-app-roselight flex items-center justify-center text-app-espresso flex-shrink-0 mt-0.5">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
                     <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                   </svg>
@@ -658,7 +691,7 @@
                 </div>
               </a>
 
-              <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all shadow-2xs group flex items-start gap-2.5">
+              <a href="https://www.threads.net/@22.22_app?igshid=NTc4MTIwNjQ2YQ==" target="_blank" rel="noopener noreferrer" class="p-3 rounded-xl bg-app-card border border-app-border hover:border-app-espresso transition-all group flex items-start gap-2.5">
                 <div class="w-7 h-7 rounded-lg bg-app-espresso/5 flex items-center justify-center text-app-espresso flex-shrink-0 mt-0.5">
                   <svg class="w-4 h-4 fill-current" viewBox="0 0 16 16">
                     <path d="M6.321 6.016c-.27-.18-1.166-.802-1.166-.802.756-1.081 1.753-1.502 3.132-1.502.975 0 1.803.327 2.394.948s.928 1.509 1.005 2.644q.492.207.905.484c1.109.745 1.719 1.86 1.719 3.137 0 2.716-2.226 5.075-6.256 5.075C4.594 16 1 13.987 1 7.994 1 2.034 4.482 0 8.044 0 9.69 0 13.55.243 15 5.036l-1.36.353C12.516 1.974 10.163 1.43 8.006 1.43c-3.565 0-5.582 2.171-5.582 6.79 0 4.143 2.254 6.343 5.63 6.343 2.777 0 4.847-1.443 4.847-3.556 0-1.438-1.208-2.127-1.27-2.127-.236 1.234-.868 3.31-3.644 3.31-1.618 0-3.013-1.118-3.013-2.582 0-2.09 1.984-2.847 3.55-2.847.586 0 1.294.04 1.663.114 0-.637-.54-1.728-1.9-1.728-1.25 0-1.566.405-1.967.868ZM8.716 8.19c-2.04 0-2.304.87-2.304 1.416 0 .878 1.043 1.168 1.6 1.168 1.02 0 2.067-.282 2.232-2.423a6.2 6.2 0 0 0-1.528-.161"/>
@@ -676,7 +709,7 @@
           </div>
 
           <div class="pt-2">
-            <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-white text-xs font-medium hover:bg-black transition-colors cursor-pointer">
+            <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-app-bg text-[15px] font-bold hover:bg-black transition-colors cursor-pointer">
               Повернутися на головну
             </button>
           </div>
@@ -688,8 +721,8 @@
   </section>
 
   <!-- UNIFIED JOIN FLOW MODAL (SMART ROUTER) -->
-  <div id="join-modal" class="fixed inset-0 z-50 hidden bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
-    <div class="bg-app-card rounded-3xl border border-app-border p-6 sm:p-8 max-w-lg w-full relative shadow-2xl space-y-6 my-8 transform transition-all text-left">
+  <div id="join-modal" class="fixed inset-0 z-50 hidden bg-[#241714]/45 backdrop-blur-xs flex items-center justify-center p-4 overflow-y-auto">
+    <div class="bg-app-card rounded-[28px] border border-app-border p-6 sm:p-8 max-w-lg w-full relative space-y-6 my-8 transform transition-all text-left">
       
       <!-- Close Button -->
       <button onclick="closeJoinFlow()" class="absolute top-5 right-5 text-app-muted hover:text-app-espresso p-1.5 rounded-full hover:bg-app-bgsubtle transition-colors cursor-pointer" aria-label="Закрити">
@@ -701,17 +734,17 @@
       <!-- MODAL STEP 1: Location Check -->
       <div id="modal-step-location" class="space-y-5">
         <div class="space-y-2 pr-6">
-          <span class="text-xs uppercase tracking-wider text-app-rose font-semibold block">Знайомство з тобою</span>
-          <h3 id="modal-loc-title" class="text-2xl sm:text-[26px] font-semibold text-app-espresso leading-snug tracking-tight">
+          <span class="text-[16px] font-bold text-app-rose block">Знайомство з тобою</span>
+          <h3 id="modal-loc-title" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
             Чи проживаєш ти у Києві або Київській області?
           </h3>
-          <p id="modal-loc-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+          <p id="modal-loc-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
             Зараз 22:22 стартує в Києві та області, щоб знайомства легко переростали у реальні зустрічі на каву.
           </p>
         </div>
 
         <div class="space-y-3 pt-1">
-          <button onclick="handleLocationChoice(true)" class="w-full p-4 rounded-2xl border-2 border-app-espresso bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
+          <button onclick="handleLocationChoice(true)" class="w-full p-4 rounded-[22px] border-[1.5px] border-app-espresso bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
             <div>
               <div class="font-semibold text-app-espresso text-sm sm:text-base">Так, живу в Києві або області</div>
               <div class="text-xs text-app-muted mt-0.5">Доступ до бети відкритий вже зараз</div>
@@ -719,7 +752,7 @@
             <span class="text-lg text-app-espresso group-hover:translate-x-1 transition-transform">→</span>
           </button>
 
-          <button onclick="handleLocationChoice(false)" class="w-full p-4 rounded-2xl border border-app-border bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
+          <button onclick="handleLocationChoice(false)" class="w-full p-4 rounded-[22px] border-[1.5px] border-app-border bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
             <div>
               <div class="font-medium text-app-espresso text-sm sm:text-base">Ні, інше місто України чи за кордоном</div>
               <div class="text-xs text-app-muted mt-0.5">Повідомимо, щойно запустимося в твоєму місті</div>
@@ -731,24 +764,24 @@
 
       <!-- MODAL STEP 2A: Device Selection (for Kyiv) -->
       <div id="modal-step-device" class="hidden space-y-5">
-        <button onclick="backToLocationStep()" class="text-xs text-app-muted hover:text-app-espresso inline-flex items-center gap-1 cursor-pointer">
+        <button onclick="backToLocationStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
           <span>Змінити відповідь</span>
         </button>
 
         <div class="space-y-2 pr-6">
-          <span class="text-xs uppercase tracking-wider text-app-rose font-semibold block">Твій пристрій</span>
-          <h3 id="modal-device-title" class="text-2xl sm:text-[26px] font-semibold text-app-espresso leading-snug tracking-tight">
+          <span class="text-[16px] font-bold text-app-rose block">Твій пристрій</span>
+          <h3 id="modal-device-title" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
             Який у тебе телефон?
           </h3>
-          <p id="modal-device-desc" class="text-xs sm:text-sm text-app-brown leading-relaxed">
+          <p id="modal-device-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
             Версія для iPhone вже доступна в App Store, а версію на Android ми зараз фіналізуємо.
           </p>
         </div>
 
         <div class="space-y-3 pt-1">
           <!-- iPhone Option -> Direct App Store -->
-          <button onclick="handleKyivDeviceChoice('ios')" class="w-full p-4 rounded-2xl border-2 border-app-espresso bg-app-espresso text-white hover:bg-black text-left transition-all flex items-center justify-between group cursor-pointer shadow-sm">
+          <button onclick="handleKyivDeviceChoice('ios')" class="w-full p-4 rounded-[22px] border-2 border-app-espresso bg-app-espresso text-app-bg hover:bg-black text-left transition-all flex items-center justify-between group cursor-pointer">
             <div class="flex items-center gap-3.5">
               <svg class="w-7 h-7 fill-current flex-shrink-0" viewBox="0 0 24 24">
                 <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M15.97 4.88c.61-.75 1.04-1.8 0.92-2.88-.93.04-2.02.63-2.66 1.38-.56.65-1.06 1.7-0.93 2.74 1.05.08 2.08-.54 2.67-1.24z"/>
@@ -762,7 +795,7 @@
           </button>
 
           <!-- Android Option -> Android Waitlist Form -->
-          <button onclick="handleKyivDeviceChoice('android')" class="w-full p-4 rounded-2xl border border-app-border bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
+          <button onclick="handleKyivDeviceChoice('android')" class="w-full p-4 rounded-[22px] border-[1.5px] border-app-border bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
             <div class="flex items-center gap-3.5">
               <svg class="w-7 h-7 text-[#3DDC84] flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M17.523 15.3414c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.551 0 .9993.4482.9993.9993.0001.5511-.4483.9997-.9993.9997m-11.046 0c-.5511 0-.9993-.4486-.9993-.9997s.4482-.9993.9993-.9993c.5511 0 .9993.4482.9993.9993 0 .5511-.4482.9997-.9993.9997m11.4045-6.02l1.9973-3.4592a.416.416 0 00-.1521-.5676.416.416 0 00-.5676.1521l-2.0223 3.503C15.5902 8.4116 13.8533 8.1 12 8.1s-3.5902.3116-5.1368.8497L4.8409 5.4467a.4161.4161 0 00-.5677-.1521.4157.4157 0 00-.1521.5676l1.9973 3.4592C2.6889 11.1867.3432 14.6589 0 18.761h24c-.3432-4.1021-2.6889-7.5743-6.1185-9.4396"/>
@@ -779,34 +812,34 @@
 
       <!-- MODAL STEP 2B: Android Form (for Kyiv) -->
       <div id="modal-step-kyiv-android" class="hidden space-y-4">
-        <button onclick="backToDeviceStep()" class="text-xs text-app-muted hover:text-app-espresso inline-flex items-center gap-1 cursor-pointer">
+        <button onclick="backToDeviceStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
           <span>Назад до вибору</span>
         </button>
 
         <div class="space-y-1.5 pr-6">
           <div class="flex items-center gap-2">
-            <span class="text-xs uppercase tracking-wider text-app-rose font-semibold">Київ та область</span>
+            <span class="text-[16px] font-bold text-app-rose">Київ та область</span>
             <span class="text-[10px] font-medium text-app-rose bg-app-roselight px-2 py-0.5 rounded-full">Android</span>
           </div>
-          <h3 class="text-xl sm:text-2xl font-semibold text-app-espresso tracking-tight">
+          <h3 class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
             Отримай посилання першою
           </h3>
-          <p class="text-xs text-app-brown leading-relaxed">
+          <p class="text-[15px] font-medium text-app-brown leading-[1.5]">
             Android-версія майже готова. Залиш контакти — надішлемо посилання на Google Play одразу після відкриття доступу в Києві.
           </p>
         </div>
 
         <form id="kyiv-android-form" onsubmit="handleModalSubmit(event, 'kyiv-android')" class="space-y-3 pt-1">
           <div>
-            <label for="kyiv-android-name" class="block text-xs font-medium text-app-brown mb-1">Як до тебе звертатися</label>
-            <input type="text" id="kyiv-android-name" required placeholder="Оля" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            <label for="kyiv-android-name" class="block text-[15px] font-semibold text-app-brown mb-1">Як до тебе звертатися</label>
+            <input type="text" id="kyiv-android-name" required placeholder="Оля" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
           <div>
-            <label for="kyiv-android-email" class="block text-xs font-medium text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
-            <input type="email" id="kyiv-android-email" required placeholder="olia@email.com" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            <label for="kyiv-android-email" class="block text-[15px] font-semibold text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
+            <input type="email" id="kyiv-android-email" required placeholder="olia@email.com" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
-          <button type="submit" id="btn-kyiv-android-submit" class="w-full py-3 px-5 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+          <button type="submit" id="btn-kyiv-android-submit" class="w-full py-3 px-5 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
             <span>Повідомити мене про реліз на Android</span>
             <span>→</span>
           </button>
@@ -815,39 +848,39 @@
 
       <!-- MODAL STEP 2C: Other City Waitlist Form -->
       <div id="modal-step-other-city" class="hidden space-y-4">
-        <button onclick="backToLocationStep()" class="text-xs text-app-muted hover:text-app-espresso inline-flex items-center gap-1 cursor-pointer">
+        <button onclick="backToLocationStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
           <span>Змінити локацію</span>
         </button>
 
         <div class="space-y-1.5 pr-6">
-          <span class="text-xs uppercase tracking-wider text-app-rose font-semibold block">Нові міста</span>
-          <h3 class="text-xl sm:text-2xl font-semibold text-app-espresso tracking-tight">
+          <span class="text-[16px] font-bold text-app-rose block">Нові міста</span>
+          <h3 class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
             22:22 у твоєму місті
           </h3>
-          <p class="text-xs text-app-brown leading-relaxed">
+          <p class="text-[15px] font-medium text-app-brown leading-[1.5]">
             Зараз закрита бета триває в Києві та області. Напиши, звідки ти — ми відкриємо запуск у твоєму місті за кількістю заявок та надішлемо тобі доступ:
           </p>
         </div>
 
         <form id="other-city-form" onsubmit="handleModalSubmit(event, 'other-city')" class="space-y-3 pt-1">
           <div>
-            <label for="other-city-name" class="block text-xs font-medium text-app-brown mb-1">Твоє місто / країна <span class="text-app-rose">*</span></label>
-            <input type="text" id="other-city-location" required placeholder="Львів / Варшава / Одеса" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+            <label for="other-city-name" class="block text-[15px] font-semibold text-app-brown mb-1">Твоє місто / країна <span class="text-app-rose">*</span></label>
+            <input type="text" id="other-city-location" required placeholder="Львів / Варшава / Одеса" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
           <div class="grid sm:grid-cols-2 gap-2.5">
             <div>
-              <label for="other-city-username" class="block text-xs font-medium text-app-brown mb-1">Як до тебе звертатися</label>
-              <input type="text" id="other-city-username" required placeholder="Оля" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+              <label for="other-city-username" class="block text-[15px] font-semibold text-app-brown mb-1">Як до тебе звертатися</label>
+              <input type="text" id="other-city-username" required placeholder="Оля" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
             <div>
-              <label for="other-city-email" class="block text-xs font-medium text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
-              <input type="email" id="other-city-email" required placeholder="olia@email.com" class="w-full px-3.5 py-2.5 rounded-xl bg-app-bgsubtle/60 border border-app-border text-app-espresso placeholder-app-muted/60 text-sm focus:outline-none focus:border-app-espresso transition-colors">
+              <label for="other-city-email" class="block text-[15px] font-semibold text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
+              <input type="email" id="other-city-email" required placeholder="olia@email.com" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
           </div>
 
           <div>
-            <label class="block text-xs font-medium text-app-brown mb-1.5">Твій телефон</label>
+            <label class="block text-[15px] font-semibold text-app-brown mb-1.5">Твій телефон</label>
             <div class="grid grid-cols-2 gap-2">
               <label class="flex items-center gap-2 p-2.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer text-xs">
                 <input type="radio" name="other-city-device" value="iOS" checked class="accent-app-espresso">
@@ -860,7 +893,7 @@
             </div>
           </div>
 
-          <button type="submit" id="btn-other-city-submit" class="w-full py-3 px-5 rounded-xl bg-app-espresso hover:bg-black text-white text-sm font-semibold transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-sm">
+          <button type="submit" id="btn-other-city-submit" class="w-full py-3 px-5 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
             <span>Повідомити, коли запустите моє місто</span>
             <span>→</span>
           </button>
@@ -872,7 +905,7 @@
 
   <!-- Footer -->
   <footer class="border-t border-app-border py-8 bg-app-bg">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-app-brown">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[15px] font-semibold text-app-brown">
       <div class="flex items-center gap-3">
         <span class="font-bold text-app-espresso tracking-tight">22:22</span>
         <span class="text-app-muted">•</span>
@@ -885,12 +918,12 @@
         <a href="privacy.html" id="btn-privacy" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
         <a href="terms.html" id="btn-terms" class="hover:text-app-espresso transition-colors">Умови користування</a>
         <a href="support.html" id="btn-support-foot" class="hover:text-app-espresso transition-colors">Підтримка</a>
-        <button onclick="openJoinFlow('footer')" id="btn-foot-join" class="text-app-espresso hover:underline font-medium cursor-pointer">Доєднатися</button>
+        <button onclick="openJoinFlow('footer')" id="btn-foot-join" class="text-app-espresso font-bold cursor-pointer wavy">Доєднатися</button>
       </div>
 
-      <div class="text-[11px] sm:text-xs text-app-muted">
+      <div class="text-[14px] text-app-muted font-semibold">
         <span>Київ: </span>
-        <span id="footer-time" class="font-mono text-app-espresso font-medium">16:16</span>
+        <span id="footer-time" class="text-app-espresso font-bold">16:16</span>
       </div>
     </div>
   </footer>
@@ -917,230 +950,138 @@
     const mockupsData = {
       ua: {
         profile: `
-          <div class="flex items-center justify-between mb-3 px-0.5">
-            <h2 class="text-base font-semibold text-app-espresso tracking-tight">Профіль</h2>
-            <span class="text-xs font-medium text-app-muted">На головну</span>
+        <div class="flex flex-col h-full gap-3.5">
+          <div class="flex justify-between items-baseline px-0.5">
+            <span class="text-[17px] font-extrabold tracking-tight">22:22</span>
+            <span class="mock-date text-[12px] font-semibold text-app-muted"></span>
           </div>
-
-          <div class="flex items-center gap-3 mb-3 px-0.5">
-            <div class="w-11 h-11 rounded-xl overflow-hidden bg-[#E8DDD4] border border-app-border flex-shrink-0">
-              <img src="${avatarPhoto}" alt="Оля Коваленко" class="w-full h-full object-cover object-center" onerror="this.src='https://placehold.co/120x120/E8DDD4/4A3B37?text=Оля'">
-            </div>
-            <div>
-              <div class="font-bold text-sm text-app-espresso leading-tight">Оля Коваленко</div>
-              <div class="text-[11px] text-app-muted">@olia.kovalenko</div>
-              <div class="text-[10px] text-app-muted mt-0.5">31 рік • Київ</div>
-              <div class="text-[9px] text-app-muted/80 mt-0.5">Фото можна змінювати раз на тиждень</div>
-            </div>
+          <div class="flex flex-col">
+            <span class="text-[14px] font-medium text-app-brown">Сьогодні з тобою знайомиться</span>
+            <span class="mk self-start text-[34px] leading-[1.1] font-extrabold tracking-[-0.015em]">Марта</span>
           </div>
-
-          <div class="space-y-2.5 text-xs">
-            <div>
-              <label class="block text-[10.5px] font-medium text-app-brown mb-1">Як до тебе звертатися</label>
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 text-app-espresso font-medium flex items-center justify-between">
-                <span>Оля</span>
-                <span class="text-app-muted text-xs">✎</span>
-              </div>
+          <div class="relative h-[212px]">
+            <div class="polaroid left-1 top-2 w-[152px]" style="padding:8px 8px 32px; transform:rotate(-3deg)">
+              <img src="${avatarPhoto}" alt="" class="block w-full h-[140px] object-cover bg-[#EBDDD5]" onerror="this.style.visibility='hidden'">
+              <span class="absolute left-2.5 bottom-1.5 text-[14px] text-app-espresso" style="font-family:'Bad Script',cursive">Марта, 29 · Поділ</span>
+              <span class="tape" style="left:46px;top:-10px;width:62px;height:19px;transform:rotate(6deg)"></span>
             </div>
-
-            <div>
-              <label class="block text-[10.5px] font-medium text-app-brown mb-1">Чим займаюся</label>
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 text-app-espresso font-medium flex items-center justify-between">
-                <span>Редагую книжки</span>
-                <span class="text-app-muted text-xs">✎</span>
-              </div>
-            </div>
-
-            <div class="pt-1 space-y-2">
-              <div class="flex items-center justify-between text-[11px] px-0.5">
-                <span class="font-semibold text-app-espresso">Про себе</span>
-                <span class="text-app-muted text-xs">♡</span>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
-                <div class="text-app-espresso font-semibold text-[10.5px]">
-                  Що важливо в подрузі
-                </div>
-                <p class="text-[10px] text-app-brown leading-snug">
-                  Щоб не зникала без пояснень і говорила прямо, якщо щось не так. Щоб можна було сміятися разом і було спокійно просто помовчати поруч.
-                </p>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
-                <div class="text-app-espresso font-semibold text-[10.5px]">
-                  Звична неділя
-                </div>
-                <p class="text-[10px] text-app-brown leading-snug">
-                  Прокинутися без будильника, взяти каву біля дому, купити квітів на ринку й заговоритися так, що не помічаєш часу.
-                </p>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 flex items-center justify-between text-[10px] text-app-espresso">
-                <span><strong>Точно не ок:</strong> пасивна агресія та маніпуляції</span>
-                <span class="text-app-muted">›</span>
-              </div>
+            <div class="absolute right-0 top-[58px] w-[88px] flex flex-col gap-1" style="transform:rotate(4deg)">
+              <span class="hand text-[14px] leading-[1.3]">ви обидві любите книжки</span>
+              <svg width="46" height="29" viewBox="0 0 64 40" fill="none" stroke="#B23A62" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M58 4 C 50 22, 34 32, 10 32"/><path d="M18 24 L 9 32 L 19 38"/></svg>
             </div>
           </div>
+          <div class="flex flex-col gap-1 px-4 py-3 rounded-[18px] bg-white border border-app-border">
+            <span class="text-[11.5px] font-semibold text-app-muted">Що важливо в подрузі</span>
+            <span class="text-[14px] leading-[1.35] font-semibold">Чесність. І вміння мовчати поруч, коли слова не потрібні.</span>
+          </div>
+          <div class="flex-grow"></div>
+          <div class="grid grid-cols-[1fr_1.4fr] gap-2">
+            <span class="h-[44px] rounded-full border-[1.5px] border-app-border flex items-center justify-center text-[13.5px] font-bold">Не зараз</span>
+            <span class="h-[44px] rounded-full bg-app-espresso text-app-bg flex items-center justify-center text-[13.5px] font-bold">Так, познайомитись</span>
+          </div>
+        </div>
         `,
         chat: `
-          <div class="flex items-center justify-between py-1.5 border-b border-app-border mb-2.5 px-0.5">
-            <div class="flex items-center gap-1.5 text-app-espresso font-medium text-xs cursor-pointer">
-              <span>←</span>
-              <span>Розмови</span>
-            </div>
-            <span class="text-[11px] text-app-muted cursor-pointer">Поскаржитися</span>
+        <div class="flex flex-col h-full gap-3">
+          <div class="flex justify-between items-baseline px-0.5">
+            <span class="text-[17px] font-extrabold tracking-tight">22:22</span>
+            <span class="mock-date text-[12px] font-semibold text-app-muted"></span>
           </div>
-
-          <div class="bg-white border border-app-border rounded-xl p-3 space-y-1.5 mb-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-app-espresso">Підказка для старту</span>
-              <span class="text-[9.5px] text-app-muted">сховати</span>
+          <div class="relative h-[206px]">
+            <div class="polaroid left-2 top-7 w-[112px]" style="padding:7px 7px 28px; transform:rotate(-6deg)">
+              <img src="${avatarPhoto}" alt="" class="block w-full h-[100px] object-cover bg-[#EBDDD5]" onerror="this.style.visibility='hidden'">
+              <span class="absolute left-2 bottom-1 text-[13px] text-app-espresso" style="font-family:'Bad Script',cursive">Марта</span>
+              <span class="tape" style="left:34px;top:-9px;width:56px;height:18px;transform:rotate(8deg)"></span>
             </div>
-            <ul class="text-[10.5px] text-app-brown space-y-1 leading-snug">
-              <li class="flex items-start gap-1.5">
-                <span class="text-app-espresso font-bold">•</span>
-                <span>У вас спільний ритм: спокійні розмови, без поспіху та тиску.</span>
-              </li>
-              <li class="flex items-start gap-1.5">
-                <span class="text-app-espresso font-bold">•</span>
-                <span>Обидві рідко пишуть першими — просте конкретне запитання допоможе почати діалог.</span>
-              </li>
-            </ul>
-            <div class="text-[9px] text-app-muted italic pt-0.5">Це бачиш тільки ти. Проста тема, щоб почати розмову.</div>
+            <div class="polaroid right-3 top-[44px] w-[112px]" style="padding:7px 7px 28px; transform:rotate(5deg)">
+              <div class="w-full h-[100px] bg-[#E3D3CA] flex items-center justify-center"><span class="text-[16px] text-app-brown" style="font-family:'Bad Script',cursive">це ти :)</span></div>
+              <span class="absolute left-2 bottom-1 text-[13px] text-app-espresso" style="font-family:'Bad Script',cursive">Оля</span>
+              <span class="tape" style="right:-8px;top:6px;width:42px;height:17px;transform:rotate(42deg)"></span>
+            </div>
+            <svg class="absolute left-1/2 -ml-[23px] top-0" width="46" height="43" viewBox="0 0 64 60" fill="none" stroke="#B23A62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 54 C 10 40, 4 26, 10 16 C 16 6, 28 8, 32 18 C 36 8, 50 6, 55 16 C 61 28, 50 42, 32 54 Z"/><path d="M30 50 C 14 38, 9 27, 13 19"/></svg>
           </div>
-
-          <div class="space-y-2 flex flex-col items-end">
-            <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              Привіт :) Побачила в тебе про каву та квіти в неділю — мені це дуже знайомо.
-            </div>
-
-            <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              Я зазвичай теж ніяковію писати першою, тому запитаю просто: де в Києві твоє улюблене місце для кави?
-            </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-[25px] leading-[1.1] font-extrabold tracking-[-0.015em]">Ви обидві сказали <span class="mk">«так»</span></span>
+            <span class="text-[14px] leading-[1.45] font-medium text-app-brown">Чат із Мартою вже відкрито. Ви обидві любите книжки і ринок по суботах.</span>
           </div>
-
-          <div class="mt-3 bg-white border border-app-border rounded-xl p-2.5 text-[10.5px] text-app-brown">
-            <div class="text-[9px] tracking-wider uppercase font-semibold text-app-muted mb-0.5">
-              З чого почати
-            </div>
-            <div class="text-app-espresso leading-snug">
-              Ви обидві обрали одна одну. Чат відкрито :) Найпростіший спосіб почати — запитати про улюблені місця в місті.
-            </div>
+          <div class="flex-grow"></div>
+          <div class="flex items-end justify-end gap-1 pr-4" style="transform:rotate(-3deg)">
+            <span class="hand text-[15px] leading-[1.3] text-right max-w-[170px]">написати першою це нормально</span>
+            <svg width="26" height="30" viewBox="0 0 56 50" fill="none" stroke="#B23A62" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 C 30 4, 46 18, 44 42"/><path d="M36 36 L 44 44 L 51 35"/></svg>
           </div>
+          <div class="flex flex-col items-stretch">
+            <span class="h-[44px] rounded-full bg-app-espresso text-app-bg flex items-center justify-center text-[14px] font-bold">Написати Марті</span>
+            <span class="self-center flex flex-col items-center pt-2"><span class="text-[13.5px] font-bold">Пізніше</span><svg width="58" height="8" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 8 C 15 3, 25 11, 38 6 S 60 3, 74 7 S 100 10, 118 5" stroke="#F2A7BB" stroke-width="4" fill="none" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
         `
       },
       en: {
         profile: `
-          <div class="flex items-center justify-between mb-3 px-0.5">
-            <h2 class="text-base font-semibold text-app-espresso tracking-tight">Profile</h2>
-            <span class="text-xs font-medium text-app-muted">Home</span>
+        <div class="flex flex-col h-full gap-3.5">
+          <div class="flex justify-between items-baseline px-0.5">
+            <span class="text-[17px] font-extrabold tracking-tight">22:22</span>
+            <span class="mock-date text-[12px] font-semibold text-app-muted"></span>
           </div>
-
-          <div class="flex items-center gap-3 mb-3 px-0.5">
-            <div class="w-11 h-11 rounded-xl overflow-hidden bg-[#E8DDD4] border border-app-border flex-shrink-0">
-              <img src="${avatarPhoto}" alt="Amy Parker" class="w-full h-full object-cover object-center" onerror="this.src='https://placehold.co/120x120/E8DDD4/4A3B37?text=Amy'">
-            </div>
-            <div>
-              <div class="font-bold text-sm text-app-espresso leading-tight">Amy Parker</div>
-              <div class="text-[11px] text-app-muted">@amy.parker</div>
-              <div class="text-[10px] text-app-muted mt-0.5">30 years old • Kyiv</div>
-              <div class="text-[9px] text-app-muted/80 mt-0.5">You can change your photo once a week</div>
-            </div>
+          <div class="flex flex-col">
+            <span class="text-[14px] font-medium text-app-brown">Today you're meeting</span>
+            <span class="mk self-start text-[34px] leading-[1.1] font-extrabold tracking-[-0.015em]">Marta</span>
           </div>
-
-          <div class="space-y-2.5 text-xs">
-            <div>
-              <label class="block text-[10.5px] font-medium text-app-brown mb-1">What should we call you</label>
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 text-app-espresso font-medium flex items-center justify-between">
-                <span>Amy</span>
-                <span class="text-app-muted text-xs">✎</span>
-              </div>
+          <div class="relative h-[212px]">
+            <div class="polaroid left-1 top-2 w-[152px]" style="padding:8px 8px 32px; transform:rotate(-3deg)">
+              <img src="${avatarPhoto}" alt="" class="block w-full h-[140px] object-cover bg-[#EBDDD5]" onerror="this.style.visibility='hidden'">
+              <span class="absolute left-2.5 bottom-1.5 text-[14px] text-app-espresso" style="font-family:'Bad Script',cursive">Marta, 29 · Podil</span>
+              <span class="tape" style="left:46px;top:-10px;width:62px;height:19px;transform:rotate(6deg)"></span>
             </div>
-
-            <div>
-              <label class="block text-[10.5px] font-medium text-app-brown mb-1">What I do</label>
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 text-app-espresso font-medium flex items-center justify-between">
-                <span>I edit books</span>
-                <span class="text-app-muted text-xs">✎</span>
-              </div>
-            </div>
-
-            <div class="pt-1 space-y-2">
-              <div class="flex items-center justify-between text-[11px] px-0.5">
-                <span class="font-semibold text-app-espresso">About me</span>
-                <span class="text-app-muted text-xs">♡</span>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
-                <div class="text-app-espresso font-semibold text-[10.5px]">
-                  What matters in a friend
-                </div>
-                <p class="text-[10px] text-app-brown leading-snug">
-                  Someone who doesn't disappear without a word, speaks plainly, and with whom it feels completely fine to just sit quietly together.
-                </p>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl p-2.5 space-y-1">
-                <div class="text-app-espresso font-semibold text-[10.5px]">
-                  My usual Sunday
-                </div>
-                <p class="text-[10px] text-app-brown leading-snug">
-                  No alarm, finding coffee and flowers in town, and ending up in a conversation where you lose track of time.
-                </p>
-              </div>
-
-              <div class="bg-white border border-app-border rounded-xl px-3 py-2 flex items-center justify-between text-[10px] text-app-espresso">
-                <span><strong>Deal-breakers:</strong> passive aggression & manipulation</span>
-                <span class="text-app-muted">›</span>
-              </div>
+            <div class="absolute right-0 top-[58px] w-[88px] flex flex-col gap-1" style="transform:rotate(4deg)">
+              <span class="hand text-[14px] leading-[1.3]">you both love books</span>
+              <svg width="46" height="29" viewBox="0 0 64 40" fill="none" stroke="#B23A62" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M58 4 C 50 22, 34 32, 10 32"/><path d="M18 24 L 9 32 L 19 38"/></svg>
             </div>
           </div>
+          <div class="flex flex-col gap-1 px-4 py-3 rounded-[18px] bg-white border border-app-border">
+            <span class="text-[11.5px] font-semibold text-app-muted">What matters in a friend</span>
+            <span class="text-[14px] leading-[1.35] font-semibold">Honesty. And being able to sit together in silence.</span>
+          </div>
+          <div class="flex-grow"></div>
+          <div class="grid grid-cols-[1fr_1.4fr] gap-2">
+            <span class="h-[44px] rounded-full border-[1.5px] border-app-border flex items-center justify-center text-[13.5px] font-bold">Not now</span>
+            <span class="h-[44px] rounded-full bg-app-espresso text-app-bg flex items-center justify-center text-[13.5px] font-bold">Yes, let's meet</span>
+          </div>
+        </div>
         `,
         chat: `
-          <div class="flex items-center justify-between py-1.5 border-b border-app-border mb-2.5 px-0.5">
-            <div class="flex items-center gap-1.5 text-app-espresso font-medium text-xs cursor-pointer">
-              <span>←</span>
-              <span>Chats</span>
-            </div>
-            <span class="text-[11px] text-app-muted cursor-pointer">Report</span>
+        <div class="flex flex-col h-full gap-3">
+          <div class="flex justify-between items-baseline px-0.5">
+            <span class="text-[17px] font-extrabold tracking-tight">22:22</span>
+            <span class="mock-date text-[12px] font-semibold text-app-muted"></span>
           </div>
-
-          <div class="bg-white border border-app-border rounded-xl p-3 space-y-1.5 mb-3">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-semibold text-app-espresso">A quick prompt for you</span>
-              <span class="text-[9.5px] text-app-muted">hide</span>
+          <div class="relative h-[206px]">
+            <div class="polaroid left-2 top-7 w-[112px]" style="padding:7px 7px 28px; transform:rotate(-6deg)">
+              <img src="${avatarPhoto}" alt="" class="block w-full h-[100px] object-cover bg-[#EBDDD5]" onerror="this.style.visibility='hidden'">
+              <span class="absolute left-2 bottom-1 text-[13px] text-app-espresso" style="font-family:'Bad Script',cursive">Marta</span>
+              <span class="tape" style="left:34px;top:-9px;width:56px;height:18px;transform:rotate(8deg)"></span>
             </div>
-            <ul class="text-[10.5px] text-app-brown space-y-1 leading-snug">
-              <li class="flex items-start gap-1.5">
-                <span class="text-app-espresso font-bold">•</span>
-                <span>You both share a relaxed pace: direct communication, warmth, no rush.</span>
-              </li>
-              <li class="flex items-start gap-1.5">
-                <span class="text-app-espresso font-bold">•</span>
-                <span>Neither of you usually texts first, so a simple concrete question helps break the ice.</span>
-              </li>
-            </ul>
-            <div class="text-[9px] text-app-muted italic pt-0.5">Only you see this. Just a simple topic to get started.</div>
+            <div class="polaroid right-3 top-[44px] w-[112px]" style="padding:7px 7px 28px; transform:rotate(5deg)">
+              <div class="w-full h-[100px] bg-[#E3D3CA] flex items-center justify-center"><span class="text-[16px] text-app-brown" style="font-family:'Bad Script',cursive">that's you :)</span></div>
+              <span class="absolute left-2 bottom-1 text-[13px] text-app-espresso" style="font-family:'Bad Script',cursive">Olia</span>
+              <span class="tape" style="right:-8px;top:6px;width:42px;height:17px;transform:rotate(42deg)"></span>
+            </div>
+            <svg class="absolute left-1/2 -ml-[23px] top-0" width="46" height="43" viewBox="0 0 64 60" fill="none" stroke="#B23A62" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M32 54 C 10 40, 4 26, 10 16 C 16 6, 28 8, 32 18 C 36 8, 50 6, 55 16 C 61 28, 50 42, 32 54 Z"/><path d="M30 50 C 14 38, 9 27, 13 19"/></svg>
           </div>
-
-          <div class="space-y-2 flex flex-col items-end">
-            <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              Hi :) Loved your note about lazy Sunday coffee and flowers — felt very relatable.
-            </div>
-
-            <div class="max-w-[90%] bg-app-espresso text-white text-[11px] p-2.5 rounded-xl rounded-tr-xs leading-snug">
-              I rarely reach out first either, so let me just ask: what’s your go-to coffee spot in Kyiv?
-            </div>
+          <div class="flex flex-col gap-2">
+            <span class="text-[25px] leading-[1.1] font-extrabold tracking-[-0.015em]">You both said <span class="mk">yes</span></span>
+            <span class="text-[14px] leading-[1.45] font-medium text-app-brown">Your chat with Marta is open. You both love books and Saturday markets.</span>
           </div>
-
-          <div class="mt-3 bg-white border border-app-border rounded-xl p-2.5 text-[10.5px] text-app-brown">
-            <div class="text-[9px] tracking-wider uppercase font-semibold text-app-muted mb-0.5">
-              Where to begin
-            </div>
-            <div class="text-app-espresso leading-snug">
-              You both picked each other. Chat is open :) An easy way to start is asking about your favorite spots in town.
-            </div>
+          <div class="flex-grow"></div>
+          <div class="flex items-end justify-end gap-1 pr-4" style="transform:rotate(-3deg)">
+            <span class="hand text-[15px] leading-[1.3] text-right max-w-[170px]">it's okay to text first</span>
+            <svg width="26" height="30" viewBox="0 0 56 50" fill="none" stroke="#B23A62" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 6 C 30 4, 46 18, 44 42"/><path d="M36 36 L 44 44 L 51 35"/></svg>
           </div>
+          <div class="flex flex-col items-stretch">
+            <span class="h-[44px] rounded-full bg-app-espresso text-app-bg flex items-center justify-center text-[14px] font-bold">Message Marta</span>
+            <span class="self-center flex flex-col items-center pt-2"><span class="text-[13.5px] font-bold">Later</span><svg width="58" height="8" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 8 C 15 3, 25 11, 38 6 S 60 3, 74 7 S 100 10, 118 5" stroke="#F2A7BB" stroke-width="4" fill="none" stroke-linecap="round"/></svg></span>
+          </div>
+        </div>
         `
       }
     };
@@ -1151,10 +1092,10 @@
         navCountdown: "Наступне знайомство о 22:22:",
         navBtnJoin: "Доєднатися",
         heroBadge: "Одне знайомство на день • Щовечора о 22:22",
-        heroTitle: "Щодня — одна нова людина, з якою варто познайомитися.",
+        heroTitle: "Щодня — <span class=\"mk\">одна</span> нова людина, з якою варто познайомитися.",
         heroDesc: "Відповідаєш на кілька запитань про себе, а щовечора о 22:22 бачиш одну дівчину з Києва, з якою у вас може бути багато спільного. Якщо ви обираєте одна одну — відкривається чат.",
         heroBtnJoin: "Доєднатися до 22:22",
-        heroFoot1: "<span class=\"w-1.5 h-1.5 rounded-full bg-[#3DDC84]\"></span> Бета в Києві та області",
+        heroFoot1: "<span class=\"w-1.5 h-1.5 rounded-full bg-app-marker\"></span> Бета в Києві та області",
         heroFoot2: "Тільки для жінок",
         heroFoot3: "iOS вже доступний",
         
@@ -1199,7 +1140,7 @@
         sec4C24: "<strong>Що для тебе не ок:</strong> речі, через які вам точно буде складно порозумітися.",
 
         sec5Tag: "Чому лише одна людина",
-        sec5Title: "Бо знайомитися з людьми — не те саме, що гортати каталог.",
+        sec5Title: "Бо знайомитися з людьми — не те саме, що гортати <span class=\"mk\">каталог</span>.",
         sec5Desc: "Ми показуємо одну людину за раз, щоб можна було нормально прочитати її профіль і вирішити, чи тобі справді цікаво познайомитися.",
         sec5Btn: "Доєднатися до 22:22",
 
@@ -1220,10 +1161,10 @@
         navCountdown: "Next match at 22:22:",
         navBtnJoin: "Join",
         heroBadge: "One Match A Day • Every Evening at 22:22",
-        heroTitle: "Every day — one new person worth meeting.",
+        heroTitle: "Every day — <span class=\"mk\">one</span> new person worth meeting.",
         heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, see one woman in Kyiv with whom you could share a lot in common. If you both choose each other, the chat opens.",
         heroBtnJoin: "Join 22:22",
-        heroFoot1: "<span class=\"w-1.5 h-1.5 rounded-full bg-[#3DDC84]\"></span> Kyiv & Oblast Beta",
+        heroFoot1: "<span class=\"w-1.5 h-1.5 rounded-full bg-app-marker\"></span> Kyiv & Oblast Beta",
         heroFoot2: "Women only",
         heroFoot3: "iOS already available",
 
@@ -1268,7 +1209,7 @@
         sec4C24: "<strong>Deal-breakers:</strong> things that definitely make it hard for you to connect.",
 
         sec5Tag: "Why just one person",
-        sec5Title: "Meeting people isn't the same as browsing a shopping catalog.",
+        sec5Title: "Meeting people isn't the same as browsing a <span class=\"mk\">catalog</span>.",
         sec5Desc: "We show one person at a time so you can actually read her profile and decide whether you're genuinely interested in getting to know each other.",
         sec5Btn: "Join 22:22",
 
@@ -1295,6 +1236,10 @@
       if (chatEl && mockupsData[lang]) {
         chatEl.innerHTML = mockupsData[lang].chat;
       }
+      try {
+        const dateText = new Intl.DateTimeFormat(lang === 'ua' ? 'uk-UA' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Kyiv' }).format(new Date());
+        document.querySelectorAll('.mock-date').forEach(el => { el.textContent = dateText; });
+      } catch (e) {}
     }
 
     function setLanguage(lang) {
@@ -1305,11 +1250,11 @@
       const btnUa = document.getElementById('btn-lang-ua');
       const btnEn = document.getElementById('btn-lang-en');
       if (lang === 'ua') {
-        btnUa.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
+        btnUa.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-app-bg";
         btnEn.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
         document.documentElement.lang = "uk";
       } else {
-        btnEn.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white";
+        btnEn.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-app-bg";
         btnUa.className = "px-2.5 sm:px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso";
         document.documentElement.lang = "en";
       }
