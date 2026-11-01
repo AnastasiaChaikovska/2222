@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>22:22 — компоненти</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@400;500;600;700;800&amp;family=Bad+Script&amp;display=swap">
+<style>
+body{margin:0}
+a{color:#241714}a:hover{color:#594C47}
+input,textarea,button{font-family:'Ysabeau Infant',system-ui,sans-serif}
+input::placeholder,textarea::placeholder{color:#A69A96}
+</style>
+</head>
+<body>
+<div style="width: 1200px; height: 1400px; box-sizing: border-box; padding: 64px 80px; background: #F9F6F1; color: #241714; font-family: 'Ysabeau Infant', system-ui, sans-serif; display: flex; flex-direction: column; gap: 40px">
+
+  <div style="display: flex; flex-direction: column; gap: 10px">
+    <h2 style="margin: 0; font-size: 52px; line-height: 1.05; font-weight: 800; letter-spacing: -0.02em">Компоненти</h2>
+    <span style="font-size: 18px; font-weight: 500; color: #594C47">Прості й спокійні — щоб штрихи від руки було помітно.</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 26px; flex-grow: 1">
+
+    <section style="display: flex; flex-direction: column; gap: 22px; padding: 32px; border-radius: 26px; background: #FFFFFF; border: 1px solid #E6DFD6">
+      <span style="font-size: 26px; font-weight: 800">Кнопки</span>
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <button type="button" style="height: 58px; border-radius: 999px; background: #241714; color: #F9F6F1; border: 0; font-size: 18px; font-weight: 700">Так, познайомитись</button>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">
+          <button type="button" style="height: 58px; border-radius: 999px; background: transparent; color: #241714; border: 1.5px solid #E6DFD6; font-size: 18px; font-weight: 700">Не зараз</button>
+          <button type="button" disabled style="height: 58px; border-radius: 999px; background: #EFE9E2; color: #A69A96; border: 0; font-size: 18px; font-weight: 700">Далі</button>
+        </div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 28px">
+        <a href="#" style="display: inline-flex; flex-direction: column; align-items: center; text-decoration: none; padding: 8px 2px"><span style="font-size: 18px; font-weight: 700">Пізніше</span><svg width="80" height="10" viewBox="0 0 120 12" aria-hidden="true"><path d="M2 8 C 15 3, 25 11, 38 6 S 60 3, 74 7 S 100 10, 118 5" stroke="#F2A7BB" stroke-width="4" fill="none" stroke-linecap="round"></path></svg></a>
+        <button type="button" aria-label="Редагувати" style="width: 48px; height: 48px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #E6DFD6; display: inline-flex; align-items: center; justify-content: center; padding: 0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#594C47" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+        </button>
+        <button type="button" aria-label="Назад" style="width: 48px; height: 48px; border-radius: 999px; background: #FFFFFF; border: 1.5px solid #E6DFD6; display: inline-flex; align-items: center; justify-content: center; padding: 0">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#241714" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg>
+        </button>
+      </div>
+      <span style="font-size: 15px; line-height: 1.5; font-weight: 500; color: #7A6D68">Головна дія — чорнилом, одна на екран. Друга — контуром. Текстові посилання підкреслені маркером від руки.</span>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 18px; padding: 32px; border-radius: 26px; background: #FFFFFF; border: 1px solid #E6DFD6">
+      <span style="font-size: 26px; font-weight: 800">Поля</span>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-name" style="font-size: 16px; font-weight: 600; color: #594C47">Як до тебе звертатися</label>
+        <div style="position: relative">
+          <input id="c-name" type="text" value="Оля" style="width: 100%; box-sizing: border-box; height: 58px; border-radius: 18px; border: 1.5px solid #E6DFD6; background: #F9F6F1; padding: 0 52px 0 20px; font-size: 18px; font-weight: 600; color: #241714; outline: none">
+          <svg style="position: absolute; right: 18px; top: 19px" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#7A6D68" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"></path><path d="M13.5 6.5l4 4"></path></svg>
+        </div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-job" style="font-size: 16px; font-weight: 600; color: #594C47">Чим займаюся</label>
+        <input id="c-job" type="text" value="Редагую книжки" style="width: 100%; box-sizing: border-box; height: 58px; border-radius: 18px; border: 1.5px solid #241714; background: #FFFFFF; padding: 0 20px; font-size: 18px; font-weight: 600; color: #241714; outline: none">
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <label for="c-ig" style="font-size: 16px; font-weight: 600; color: #594C47">Instagram</label>
+        <input id="c-ig" type="text" value="@olia" aria-invalid="true" aria-describedby="c-ig-err" style="width: 100%; box-sizing: border-box; height: 58px; border-radius: 18px; border: 1.5px solid #A13D2D; background: #FFFFFF; padding: 0 20px; font-size: 18px; font-weight: 600; color: #241714; outline: none">
+        <span id="c-ig-err" style="font-size: 15px; font-weight: 600; color: #A13D2D">Такого акаунта не знайшли — перевір написання</span>
+      </div>
+      <span style="font-size: 15px; line-height: 1.5; font-weight: 500; color: #7A6D68">У спокої поле на кольорі паперу, у фокусі — біле з чорнильною межею.</span>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 26px; background: #FFFFFF; border: 1px solid #E6DFD6">
+      <span style="font-size: 26px; font-weight: 800">Вибір</span>
+      <div style="display: flex; flex-direction: column; gap: 8px" role="radiogroup" aria-label="Як часто хочеш бачитися?">
+        <button type="button" role="radio" aria-checked="false" style="display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 18px 0 20px; border-radius: 18px; background: #F9F6F1; border: 1.5px solid #E6DFD6; color: #241714; font-size: 18px; font-weight: 600">Раз на тиждень<span style="width: 24px; height: 24px; border-radius: 999px; border: 1.5px solid #CFC5BC; box-sizing: border-box; display: block"></span></button>
+        <button type="button" role="radio" aria-checked="true" style="display: flex; align-items: center; justify-content: space-between; height: 60px; padding: 0 18px 0 20px; border-radius: 18px; background: #FFFFFF; border: 1.5px solid #241714; color: #241714; font-size: 18px; font-weight: 800">
+          <span style="position: relative"><svg style="position: absolute; left: -6px; bottom: 0; width: 108%; height: 60%" viewBox="0 0 170 34" preserveAspectRatio="none" aria-hidden="true"><path d="M5 17 C 30 9, 78 12, 118 8 S 164 11, 166 15 C 167 23, 141 28, 101 27 S 22 31, 7 26 C 2 24, 2 20, 5 17 Z" fill="#F2A7BB"></path></svg><span style="position: relative">Кілька разів на місяць</span></span>
+          <span style="width: 24px; height: 24px; border-radius: 999px; background: #241714; display: inline-flex; align-items: center; justify-content: center"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg></span>
+        </button>
+      </div>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px">
+        <button type="button" aria-pressed="true" style="height: 44px; padding: 0 18px; border-radius: 999px; background: #FBE3E8; color: #241714; border: 1.5px solid #F2A7BB; font-size: 16px; font-weight: 700">Кава</button>
+        <button type="button" aria-pressed="true" style="height: 44px; padding: 0 18px; border-radius: 999px; background: #FBE3E8; color: #241714; border: 1.5px solid #F2A7BB; font-size: 16px; font-weight: 700">Книжки</button>
+        <button type="button" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; background: #F9F6F1; color: #241714; border: 1.5px solid #E6DFD6; font-size: 16px; font-weight: 600">Виставки</button>
+        <button type="button" aria-pressed="false" style="height: 44px; padding: 0 18px; border-radius: 999px; background: #F9F6F1; color: #241714; border: 1.5px solid #E6DFD6; font-size: 16px; font-weight: 600">Прогулянки</button>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 0">
+        <span style="font-size: 18px; font-weight: 600">Нагадати о 22:22</span>
+        <button type="button" role="switch" aria-checked="true" aria-label="Нагадати о 22:22" style="width: 54px; height: 32px; border-radius: 999px; background: #241714; border: 0; padding: 4px; display: flex; justify-content: flex-end; box-sizing: border-box"><span style="width: 24px; height: 24px; border-radius: 999px; background: #F2A7BB; display: block"></span></button>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px">
+        <span style="font-size: 15px; font-weight: 600; color: #7A6D68">Питання 2 з 7</span>
+        <div style="height: 6px; border-radius: 999px; background: #EFE9E2" role="progressbar" aria-label="Анкета" aria-valuenow="2" aria-valuemin="0" aria-valuemax="7"><div style="width: 29%; height: 100%; border-radius: 999px; background: #241714"></div></div>
+      </div>
+    </section>
+
+    <section style="display: flex; flex-direction: column; gap: 16px; padding: 32px; border-radius: 26px; background: #FFFFFF; border: 1px solid #E6DFD6">
+      <span style="font-size: 26px; font-weight: 800">Картки</span>
+      <div style="display: flex; flex-direction: column; gap: 6px; padding: 18px 20px; border-radius: 22px; background: #F9F6F1; border: 1px solid #E6DFD6">
+        <span style="font-size: 15px; font-weight: 600; color: #7A6D68">Звична неділя</span>
+        <span style="font-size: 19px; line-height: 1.35; font-weight: 600">Прокинутися без будильника, взяти каву біля дому й заговоритися.</span>
+      </div>
+      <a href="#" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 16px 20px; border-radius: 22px; background: #F9F6F1; border: 1px solid #E6DFD6; color: #241714; text-decoration: none">
+        <span style="font-size: 17px; line-height: 1.4; font-weight: 500; color: #594C47"><strong style="font-weight: 800; color: #241714">Точно не ок:</strong> пасивна агресія та маніпуляції</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#7A6D68" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"></path></svg>
+      </a>
+      <div style="display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 22px; border: 1.5px dashed #E6DFD6">
+        <div style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><span style="font-size: 18px; font-weight: 800">Поки тихо</span><span style="font-size: 15px; font-weight: 500; color: #7A6D68">Нове знайомство з’явиться о 22:22</span></div>
+        <span style="font-family: 'Bad Script', cursive; font-size: 18px; color: #B23A62; transform: rotate(-4deg)">до вечора!</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap">
+        <span style="display: inline-flex; align-items: center; gap: 10px; padding: 12px 18px; border-radius: 999px; background: #241714; color: #F9F6F1; font-size: 16px; font-weight: 700"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#F2A7BB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"></path></svg>Профіль збережено</span>
+        <span style="padding: 9px 14px; border-radius: 999px; border: 1.5px solid #E6DFD6; font-size: 15px; font-weight: 600; color: #594C47">Київ</span>
+        <span style="padding: 9px 14px; border-radius: 999px; border: 1.5px solid #E6DFD6; font-size: 15px; font-weight: 600; color: #594C47">31 рік</span>
+      </div>
+    </section>
+  </div>
+</div>
+</body>
+</html>
