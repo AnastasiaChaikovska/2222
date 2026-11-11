@@ -385,7 +385,7 @@
 
             <div class="space-y-4">
               <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
-                <span class="text-[15px] font-bold text-app-muted">Крок 1</span>
+                <span data-i18n="step1" class="text-[15px] font-bold text-app-muted">Крок 1</span>
                 <h3 id="sec3-s1-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Розповідаєш трохи про себе</h3>
                 <p id="sec3-s1-desc" class="text-[17px] font-medium text-app-brown leading-[1.5]">
                   Кілька запитань про те, як ти спілкуєшся, як любиш проводити час, як часто хочеш бачитися з друзями і що для тебе важливо у близькому спілкуванні.
@@ -393,7 +393,7 @@
               </div>
 
               <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
-                <span class="text-[15px] font-bold text-app-muted">Крок 2</span>
+                <span data-i18n="step2" class="text-[15px] font-bold text-app-muted">Крок 2</span>
                 <h3 id="sec3-s2-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Щодня знайомишся з однією дівчиною</h3>
                 <p id="sec3-s2-desc" class="text-[17px] font-medium text-app-brown leading-[1.5]">
                   О 22:22 бачиш профіль однієї дівчини з Києва. Не просто фото — ще й її відповіді на ті самі запитання.
@@ -402,7 +402,7 @@
 
               <div class="p-6 rounded-[26px] bg-app-card border border-app-border space-y-2">
                 <div class="flex items-center justify-between">
-                  <span class="text-[15px] font-bold text-app-muted">Крок 3</span>
+                  <span data-i18n="step3" class="text-[15px] font-bold text-app-muted">Крок 3</span>
                   <span class="circ text-[17px] font-extrabold text-app-espresso">22:22</span>
                 </div>
                 <h3 id="sec3-s3-title" class="text-[22px] font-extrabold text-app-espresso tracking-tight">Якщо ви обрали одна одну — відкривається чат</h3>
@@ -594,15 +594,15 @@
         
         <div class="space-y-2">
           <div class="flex items-center justify-between">
-            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-app-rose bg-app-roselight/60 px-3 py-1 rounded-full">
+            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-app-rose bg-app-roselight/60 px-3 py-1 rounded-full" data-i18n="s2StepOf">
               Крок 2 з 2
             </span>
-            <span class="text-xs text-app-muted">Займає 30 секунд</span>
+            <span data-i18n="s2Takes" class="text-xs text-app-muted">Займає 30 секунд</span>
           </div>
           <h2 id="step2-heading" class="text-[28px] sm:text-[34px] font-extrabold text-app-espresso tracking-tight">
             Майже все! Ще пара деталей.
           </h2>
-          <p id="step2-subheading" class="text-[17px] font-medium text-app-brown leading-[1.5]">
+          <p id="step2-subheading" data-i18n="s2Sub" class="text-[17px] font-medium text-app-brown leading-[1.5]">
             Контакти збережено. Щоб нам було простіше надіслати персональне запрошення або повідомити про реліз, можеш додати ще кілька деталей:
           </p>
         </div>
@@ -612,16 +612,16 @@
           <div class="grid sm:grid-cols-2 gap-3.5">
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label id="step2-lbl-tg" for="step2-telegram" class="text-[15px] font-semibold text-app-brown">Нік у Telegram</label>
-                <span id="step2-lbl-tg-opt" class="text-[11px] text-app-muted">необов'язково</span>
+                <label id="step2-lbl-tg" data-i18n="s2Tg" for="step2-telegram" class="text-[15px] font-semibold text-app-brown">Нік у Telegram</label>
+                <span id="step2-lbl-tg-opt" data-i18n="s2Opt" class="text-[11px] text-app-muted">необов'язково</span>
               </div>
               <input type="text" id="step2-telegram" placeholder="@olia" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
 
             <div>
               <div class="flex items-center justify-between mb-1.5">
-                <label id="step2-lbl-phone" for="step2-phone" class="text-[15px] font-semibold text-app-brown">Номер телефону</label>
-                <span id="step2-lbl-phone-opt" class="text-[11px] text-app-muted">необов'язково</span>
+                <label id="step2-lbl-phone" data-i18n="s2Phone" for="step2-phone" class="text-[15px] font-semibold text-app-brown">Номер телефону</label>
+                <span id="step2-lbl-phone-opt" data-i18n="s2Opt" class="text-[11px] text-app-muted">необов'язково</span>
               </div>
               <input type="tel" id="step2-phone" placeholder="+380..." class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
@@ -629,23 +629,23 @@
 
           <div class="space-y-2.5 pt-1">
             <div class="flex items-center justify-between">
-              <span id="step2-lbl-mode" class="text-[15px] font-semibold text-app-brown">Як тобі комфортно брати участь?</span>
+              <span id="step2-lbl-mode" data-i18n="s2Mode" class="text-[15px] font-semibold text-app-brown">Як тобі комфортно брати участь?</span>
             </div>
 
             <div class="space-y-2.5">
               <label class="flex items-start gap-3 p-3.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer transition-colors">
                 <input type="radio" name="test-mode" value="active" checked class="mt-0.5 accent-app-espresso">
                 <div class="text-xs space-y-0.5">
-                  <strong id="step2-opt1-strong" class="block font-medium text-app-espresso">Готова активно ділитися враженнями</strong>
-                  <span id="step2-opt1-sub" class="text-app-muted block leading-snug">Ділитися відгуками, розповідати про свій досвід і допомагати покращувати застосунок.</span>
+                  <strong id="step2-opt1-strong" data-i18n="s2Opt1" class="block font-medium text-app-espresso">Готова активно ділитися враженнями</strong>
+                  <span id="step2-opt1-sub" data-i18n="s2Opt1Sub" class="text-app-muted block leading-snug">Ділитися відгуками, розповідати про свій досвід і допомагати покращувати застосунок.</span>
                 </div>
               </label>
 
               <label class="flex items-start gap-3 p-3.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer transition-colors">
                 <input type="radio" name="test-mode" value="casual" class="mt-0.5 accent-app-espresso">
                 <div class="text-xs space-y-0.5">
-                  <strong id="step2-opt2-strong" class="block font-medium text-app-espresso">Хочу тестувати у власному темпі</strong>
-                  <span id="step2-opt2-sub" class="text-app-muted block leading-snug">Без обов'язкових відгуків, просто дивитися одне нове знайомство щовечора.</span>
+                  <strong id="step2-opt2-strong" data-i18n="s2Opt2" class="block font-medium text-app-espresso">Хочу тестувати у власному темпі</strong>
+                  <span id="step2-opt2-sub" data-i18n="s2Opt2Sub" class="text-app-muted block leading-snug">Без обов'язкових відгуків, просто дивитися одне нове знайомство щовечора.</span>
                 </div>
               </label>
             </div>
@@ -653,11 +653,11 @@
 
           <div class="pt-2 flex flex-col sm:flex-row items-center gap-3">
             <button type="submit" id="btn-step2-submit" class="w-full sm:w-auto flex-1 py-3.5 px-6 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
-              <span id="step2-btn-save-text">Зберегти та завершити</span>
+              <span id="step2-btn-save-text" data-i18n="s2Save">Зберегти та завершити</span>
               <span>→</span>
             </button>
             <button type="button" onclick="skipStep2()" id="btn-step2-skip" class="w-full sm:w-auto px-5 py-3.5 text-[17px] text-app-espresso font-bold cursor-pointer text-center">
-              <span class="wavy">Пропустити</span>
+              <span class="wavy" data-i18n="s2Skip">Пропустити</span>
             </button>
           </div>
         </form>
@@ -666,13 +666,13 @@
           <div class="w-10 h-10 mx-auto rounded-full bg-app-card flex items-center justify-center text-app-espresso font-semibold">
             ✓
           </div>
-          <h3 id="step2-success-title" class="text-[24px] font-extrabold text-app-espresso">Дякуємо! Ти у списку.</h3>
-          <p id="step2-success-note" class="text-[15px] font-medium text-app-brown leading-[1.5] max-w-sm mx-auto">
+          <h3 id="step2-success-title" data-i18n="s2DoneTitle" class="text-[24px] font-extrabold text-app-espresso">Дякуємо! Ти у списку.</h3>
+          <p id="step2-success-note" data-i18n="s2DoneNote" class="text-[15px] font-medium text-app-brown leading-[1.5] max-w-sm mx-auto">
             Ми надішлемо особисте сповіщення на твій email, щойно відкриємо доступ для твоєї групи.
           </p>
 
           <div class="pt-3 pb-1 border-t border-app-border/70 mt-3 space-y-3">
-            <p id="step2-social-heading" class="text-xs font-semibold text-app-espresso">
+            <p id="step2-social-heading" data-i18n="s2Social" class="text-xs font-semibold text-app-espresso">
               Стеж за новинами релізу та новими містами:
             </p>
             <div class="grid sm:grid-cols-2 gap-2 text-left">
@@ -687,7 +687,7 @@
                     <span>Instagram</span>
                     <span class="text-app-muted text-[10px]">↗</span>
                   </div>
-                  <div class="text-[10px] text-app-muted mt-0.5">Нові міста, фічі та бонуси</div>
+                  <div data-i18n="s2Ig" class="text-[10px] text-app-muted mt-0.5">Нові міста, фічі та бонуси</div>
                 </div>
               </a>
 
@@ -702,14 +702,14 @@
                     <span>Threads</span>
                     <span class="text-app-muted text-[10px]">↗</span>
                   </div>
-                  <div class="text-[10px] text-app-muted mt-0.5">Швидкі апдейти та статус Android</div>
+                  <div data-i18n="s2Th" class="text-[10px] text-app-muted mt-0.5">Швидкі апдейти та статус Android</div>
                 </div>
               </a>
             </div>
           </div>
 
           <div class="pt-2">
-            <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-app-bg text-[15px] font-bold hover:bg-black transition-colors cursor-pointer">
+            <button onclick="navigateTo('home')" class="px-5 py-2.5 rounded-full bg-app-espresso text-app-bg text-[15px] font-bold hover:bg-black transition-colors cursor-pointer" data-i18n="s2Home">
               Повернутися на головну
             </button>
           </div>
@@ -725,7 +725,7 @@
     <div class="bg-app-card rounded-[28px] border border-app-border p-6 sm:p-8 max-w-lg w-full relative space-y-6 my-8 transform transition-all text-left">
       
       <!-- Close Button -->
-      <button onclick="closeJoinFlow()" class="absolute top-5 right-5 text-app-muted hover:text-app-espresso p-1.5 rounded-full hover:bg-app-bgsubtle transition-colors cursor-pointer" aria-label="Закрити">
+      <button onclick="closeJoinFlow()" class="absolute top-5 right-5 text-app-muted hover:text-app-espresso p-1.5 rounded-full hover:bg-app-bgsubtle transition-colors cursor-pointer" aria-label="Закрити" data-i18n-aria="mClose">
         <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
         </svg>
@@ -734,11 +734,11 @@
       <!-- MODAL STEP 1: Location Check -->
       <div id="modal-step-location" class="space-y-5">
         <div class="space-y-2 pr-6">
-          <span class="text-[16px] font-bold text-app-rose block">Знайомство з тобою</span>
-          <h3 id="modal-loc-title" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
+          <span data-i18n="mLocTag" class="text-[16px] font-bold text-app-rose block">Знайомство з тобою</span>
+          <h3 id="modal-loc-title" data-i18n="mLocTitle" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
             Чи проживаєш ти у Києві або Київській області?
           </h3>
-          <p id="modal-loc-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
+          <p id="modal-loc-desc" data-i18n="mLocDesc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
             Зараз 22:22 стартує в Києві та області, щоб знайомства легко переростали у реальні зустрічі на каву.
           </p>
         </div>
@@ -746,16 +746,16 @@
         <div class="space-y-3 pt-1">
           <button onclick="handleLocationChoice(true)" class="w-full p-4 rounded-[22px] border-[1.5px] border-app-espresso bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
             <div>
-              <div class="font-semibold text-app-espresso text-sm sm:text-base">Так, живу в Києві або області</div>
-              <div class="text-xs text-app-muted mt-0.5">Доступ до бети відкритий вже зараз</div>
+              <div data-i18n="mLocYes" class="font-semibold text-app-espresso text-sm sm:text-base">Так, живу в Києві або області</div>
+              <div data-i18n="mLocYesSub" class="text-xs text-app-muted mt-0.5">Доступ до бети відкритий вже зараз</div>
             </div>
             <span class="text-lg text-app-espresso group-hover:translate-x-1 transition-transform">→</span>
           </button>
 
           <button onclick="handleLocationChoice(false)" class="w-full p-4 rounded-[22px] border-[1.5px] border-app-border bg-app-card hover:bg-app-bgsubtle/60 text-left transition-all flex items-center justify-between group cursor-pointer">
             <div>
-              <div class="font-medium text-app-espresso text-sm sm:text-base">Ні, інше місто України чи за кордоном</div>
-              <div class="text-xs text-app-muted mt-0.5">Повідомимо, щойно запустимося в твоєму місті</div>
+              <div data-i18n="mLocNo" class="font-medium text-app-espresso text-sm sm:text-base">Ні, інше місто України чи за кордоном</div>
+              <div data-i18n="mLocNoSub" class="text-xs text-app-muted mt-0.5">Повідомимо, щойно запустимося в твоєму місті</div>
             </div>
             <span class="text-lg text-app-muted group-hover:translate-x-1 transition-transform">→</span>
           </button>
@@ -766,15 +766,15 @@
       <div id="modal-step-device" class="hidden space-y-5">
         <button onclick="backToLocationStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
-          <span>Змінити відповідь</span>
+          <span data-i18n="mChange">Змінити відповідь</span>
         </button>
 
         <div class="space-y-2 pr-6">
-          <span class="text-[16px] font-bold text-app-rose block">Твій пристрій</span>
-          <h3 id="modal-device-title" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
+          <span data-i18n="mDevTag" class="text-[16px] font-bold text-app-rose block">Твій пристрій</span>
+          <h3 id="modal-device-title" data-i18n="mDevTitle" class="text-[26px] sm:text-[30px] font-extrabold text-app-espresso leading-snug tracking-tight">
             Який у тебе телефон?
           </h3>
-          <p id="modal-device-desc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
+          <p id="modal-device-desc" data-i18n="mDevDesc" class="text-[15px] sm:text-[17px] font-medium text-app-brown leading-[1.5]">
             Версія для iPhone вже доступна в App Store, а версію на Android ми зараз фіналізуємо.
           </p>
         </div>
@@ -788,10 +788,10 @@
               </svg>
               <div>
                 <div class="font-semibold text-sm sm:text-base leading-tight">iPhone (iOS)</div>
-                <div class="text-xs text-white/75 mt-0.5">Вже доступний для завантаження в Києві</div>
+                <div data-i18n="mIosSub" class="text-xs text-white/75 mt-0.5">Вже доступний для завантаження в Києві</div>
               </div>
             </div>
-            <span class="text-sm font-semibold bg-white/20 px-3 py-1.5 rounded-full group-hover:translate-x-0.5 transition-transform">Відкрити ↗</span>
+            <span class="text-sm font-semibold bg-white/20 px-3 py-1.5 rounded-full group-hover:translate-x-0.5 transition-transform" data-i18n="mOpen">Відкрити ↗</span>
           </button>
 
           <!-- Android Option -> Android Waitlist Form -->
@@ -802,7 +802,7 @@
               </svg>
               <div>
                 <div class="font-semibold text-app-espresso text-sm sm:text-base leading-tight">Android</div>
-                <div class="text-xs text-app-muted mt-0.5">У розробці • Залиш контакти для релізу</div>
+                <div data-i18n="mAndSub" class="text-xs text-app-muted mt-0.5">У розробці • Залиш контакти для релізу</div>
               </div>
             </div>
             <span class="text-lg text-app-muted group-hover:translate-x-1 transition-transform">→</span>
@@ -814,33 +814,33 @@
       <div id="modal-step-kyiv-android" class="hidden space-y-4">
         <button onclick="backToDeviceStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
-          <span>Назад до вибору</span>
+          <span data-i18n="mBack">Назад до вибору</span>
         </button>
 
         <div class="space-y-1.5 pr-6">
           <div class="flex items-center gap-2">
-            <span class="text-[16px] font-bold text-app-rose">Київ та область</span>
+            <span data-i18n="mKyiv" class="text-[16px] font-bold text-app-rose">Київ та область</span>
             <span class="text-[10px] font-medium text-app-rose bg-app-roselight px-2 py-0.5 rounded-full">Android</span>
           </div>
-          <h3 class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
+          <h3 data-i18n="mAndTitle" class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
             Отримай посилання першою
           </h3>
-          <p class="text-[15px] font-medium text-app-brown leading-[1.5]">
+          <p data-i18n="mAndDesc" class="text-[15px] font-medium text-app-brown leading-[1.5]">
             Android-версія майже готова. Залиш контакти — надішлемо посилання на Google Play одразу після відкриття доступу в Києві.
           </p>
         </div>
 
         <form id="kyiv-android-form" onsubmit="handleModalSubmit(event, 'kyiv-android')" class="space-y-3 pt-1">
           <div>
-            <label for="kyiv-android-name" class="block text-[15px] font-semibold text-app-brown mb-1">Як до тебе звертатися</label>
-            <input type="text" id="kyiv-android-name" required placeholder="Оля" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
+            <label for="kyiv-android-name" class="block text-[15px] font-semibold text-app-brown mb-1" data-i18n="mName">Як до тебе звертатися</label>
+            <input type="text" id="kyiv-android-name" required placeholder="Оля" data-i18n-ph="phName" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
           <div>
             <label for="kyiv-android-email" class="block text-[15px] font-semibold text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
             <input type="email" id="kyiv-android-email" required placeholder="olia@email.com" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
           <button type="submit" id="btn-kyiv-android-submit" class="w-full py-3 px-5 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
-            <span>Повідомити мене про реліз на Android</span>
+            <span data-i18n="mAndBtn">Повідомити мене про реліз на Android</span>
             <span>→</span>
           </button>
         </form>
@@ -850,28 +850,28 @@
       <div id="modal-step-other-city" class="hidden space-y-4">
         <button onclick="backToLocationStep()" class="text-[15px] font-bold text-app-brown hover:text-app-espresso inline-flex items-center gap-1.5 cursor-pointer">
           <span>←</span>
-          <span>Змінити локацію</span>
+          <span data-i18n="mChangeLoc">Змінити локацію</span>
         </button>
 
         <div class="space-y-1.5 pr-6">
-          <span class="text-[16px] font-bold text-app-rose block">Нові міста</span>
-          <h3 class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
+          <span data-i18n="mCityTag" class="text-[16px] font-bold text-app-rose block">Нові міста</span>
+          <h3 data-i18n="mCityTitle" class="text-[24px] sm:text-[28px] font-extrabold text-app-espresso tracking-tight">
             22:22 у твоєму місті
           </h3>
-          <p class="text-[15px] font-medium text-app-brown leading-[1.5]">
+          <p data-i18n="mCityDesc" class="text-[15px] font-medium text-app-brown leading-[1.5]">
             Зараз закрита бета триває в Києві та області. Напиши, звідки ти — ми відкриємо запуск у твоєму місті за кількістю заявок та надішлемо тобі доступ:
           </p>
         </div>
 
         <form id="other-city-form" onsubmit="handleModalSubmit(event, 'other-city')" class="space-y-3 pt-1">
           <div>
-            <label for="other-city-name" class="block text-[15px] font-semibold text-app-brown mb-1">Твоє місто / країна <span class="text-app-rose">*</span></label>
-            <input type="text" id="other-city-location" required placeholder="Львів / Варшава / Одеса" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
+            <label for="other-city-location" class="block text-[15px] font-semibold text-app-brown mb-1" data-i18n="mCity">Твоє місто / країна <span class="text-app-rose">*</span></label>
+            <input type="text" id="other-city-location" required placeholder="Львів / Варшава / Одеса" data-i18n-ph="phCity" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
           </div>
           <div class="grid sm:grid-cols-2 gap-2.5">
             <div>
-              <label for="other-city-username" class="block text-[15px] font-semibold text-app-brown mb-1">Як до тебе звертатися</label>
-              <input type="text" id="other-city-username" required placeholder="Оля" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
+              <label for="other-city-username" class="block text-[15px] font-semibold text-app-brown mb-1" data-i18n="mName">Як до тебе звертатися</label>
+              <input type="text" id="other-city-username" required placeholder="Оля" data-i18n-ph="phName" class="w-full h-[54px] px-5 rounded-[18px] bg-app-bg border-[1.5px] border-app-border text-app-espresso placeholder-[#A69A96] text-[17px] font-semibold focus:outline-none focus:bg-white focus:border-app-espresso transition-colors">
             </div>
             <div>
               <label for="other-city-email" class="block text-[15px] font-semibold text-app-brown mb-1">Email <span class="text-app-rose">*</span></label>
@@ -880,7 +880,7 @@
           </div>
 
           <div>
-            <label class="block text-[15px] font-semibold text-app-brown mb-1.5">Твій телефон</label>
+            <label class="block text-[15px] font-semibold text-app-brown mb-1.5" data-i18n="mPhone">Твій телефон</label>
             <div class="grid grid-cols-2 gap-2">
               <label class="flex items-center gap-2 p-2.5 rounded-xl border border-app-border bg-app-card hover:bg-app-bgsubtle/40 cursor-pointer text-xs">
                 <input type="radio" name="other-city-device" value="iOS" checked class="accent-app-espresso">
@@ -894,7 +894,7 @@
           </div>
 
           <button type="submit" id="btn-other-city-submit" class="w-full py-3 px-5 rounded-full bg-app-espresso hover:bg-black text-app-bg text-[17px] font-bold transition-colors flex items-center justify-center gap-2 cursor-pointer">
-            <span>Повідомити, коли запустите моє місто</span>
+            <span data-i18n="mCityBtn">Повідомити, коли запустите моє місто</span>
             <span>→</span>
           </button>
         </form>
@@ -922,7 +922,7 @@
       </div>
 
       <div class="text-[14px] text-app-muted font-semibold">
-        <span>Київ: </span>
+        <span data-i18n="footKyiv">Київ: </span>
         <span id="footer-time" class="text-app-espresso font-bold">16:16</span>
       </div>
     </div>
@@ -1158,50 +1158,50 @@
       },
       en: {
         navMotto: "for those who want to make new friends",
-        navCountdown: "Next match at 22:22:",
+        navCountdown: "Next intro at 22:22:",
         navBtnJoin: "Join",
-        heroBadge: "One Match A Day • Every Evening at 22:22",
-        heroTitle: "Every day — <span class=\"mk\">one</span> new person worth meeting.",
+        heroBadge: "One introduction a day • Every evening at 22:22",
+        heroTitle: "Every day, <span class=\"mk\">one</span> new person worth meeting.",
         heroDesc: "Answer a few straightforward questions about yourself. Every evening at 22:22, see one woman in Kyiv with whom you could share a lot in common. If you both choose each other, the chat opens.",
         heroBtnJoin: "Join 22:22",
         heroFoot1: "<span class=\"w-1.5 h-1.5 rounded-full bg-app-marker\"></span> Kyiv & Oblast Beta",
         heroFoot2: "Women only",
         heroFoot3: "iOS already available",
 
-        socialSecTag: "Stay In The Loop • 22:22 Community",
-        socialSecTitle: "Follow 22:22 on Social Media",
+        socialSecTag: "Stay in the loop • 22:22 community",
+        socialSecTitle: "Follow 22:22 on social media",
         socialSecDesc: "We continuously roll out new features, prepare the Android release, and plan expansion to new cities and countries. Follow along to get early updates, test new tools, and shape the app.",
         socialCardIgDesc: "Major update announcements, city & country expansion roadmap, feature voting, community perks, and behind-the-scenes building 22:22.",
         socialCardThDesc: "Real-time dev updates, Android status drops, open discussions on future ideas, and a direct line to the team: tell us what to build next.",
         btnFollowIg: "Follow on Instagram",
         btnFollowTh: "Read on Threads",
 
-        sec2Tag: "On Adult Friendship",
+        sec2Tag: "On adult friendship",
         sec2Title: "Why is it so hard to find new friends in adult life?",
-        sec2Desc: "Friendships used to happen naturally: university, dorms, shared groups, mutual friends. Later on, everyone moves away, gets consumed by work, relationships, and routines — and at some point, finding a new friend becomes surprisingly difficult.",
+        sec2Desc: "Friendships used to happen naturally: university, dorms, shared groups, mutual friends. Later on, everyone moves away, gets consumed by work, relationships, and routines, and at some point, finding a new friend becomes surprisingly difficult.",
         sec2Col1Title: "How it used to be",
         sec2Col1Text: "You crossed paths constantly: lectures, parties, casual gatherings. You didn't have to look for new friends — casual encounters just turned into friendships.",
         sec2Col2Title: "Now you have to make an intentional effort",
         sec2Col2Text: "And that's where it gets tricky. Swiping hundreds of profiles feels exhausting, you wouldn't go networking for friendships, and random chats often fizzle out after 'hey, how are you?'.",
 
-        sec3Tag: "How It Works",
-        sec3Title: "Every evening at 22:22 — one new match.",
+        sec3Tag: "How it works",
+        sec3Title: "Every evening at 22:22, one new introduction.",
         sec3Desc: "No infinite scroll and no endless swiping.",
         sec3S1Title: "Tell us a bit about yourself",
         sec3S1Desc: "A few simple questions about your communication style, how you spend free time, how often you like seeing friends, and what matters to you in close relationships.",
         sec3S2Title: "Meet one woman every day",
-        sec3S2Desc: "At 22:22 you see the profile of one woman in Kyiv. Not just a photo — but her answers to those exact same questions.",
-        sec3S3Title: "If you both choose each other — chat opens",
+        sec3S2Desc: "At 22:22 you see the profile of one woman in Kyiv. Not just a photo, but also her answers to those exact same questions.",
+        sec3S3Title: "If you both choose each other, the chat opens",
         sec3S3Desc: "If both press yes, you can start talking. And so you don't have to start with an awkward 'hey, how are you?', we suggest a few starter topics based on your answers.",
 
         sec4Tag: "Not just photos",
         sec4Title: "It matters not just what a person looks like, but whether you'll genuinely feel comfortable together.",
         sec4Desc: "Someone sends twenty Telegram video circles a day on the go. Someone replies every few hours and loves long catch-ups over coffee. Someone texts 'I'm outside, come down', while someone else plans a week ahead. These details make all the difference.",
         sec4Col1Title: "What you definitely won't find here",
-        sec4C11: "<strong>Endless swiping</strong> — no need to browse hundreds of profiles.",
-        sec4C12: "<strong>Dozens of chats at once</strong> — one new match appears once a day.",
-        sec4C13: "<strong>Networking disguised as friendship</strong> — no sales pitches, client hunting, or 'let's collab'.",
-        sec4C14: "<strong>Dating</strong> — this is strictly for friendship.",
+        sec4C11: "<strong>Endless swiping.</strong> No need to browse hundreds of profiles.",
+        sec4C12: "<strong>Dozens of chats at once.</strong> A new introduction appears once a day.",
+        sec4C13: "<strong>Networking disguised as friendship.</strong> No sales pitches, client hunting, or 'let's collab'.",
+        sec4C14: "<strong>Dating.</strong> This is strictly for friendship.",
         sec4Col2Title: "What we ask about",
         sec4C21: "<strong>How you communicate:</strong> quick texts, voice notes, video circles, memes, or long in-person chats.",
         sec4C22: "<strong>How often you want to see each other:</strong> spontaneously a few times a week or a long coffee catch-up once a month.",
@@ -1214,7 +1214,7 @@
         sec5Btn: "Join 22:22",
 
         sec6Title: "Try 22:22 among the first.",
-        sec6Desc: "The app is live on iOS in Kyiv & Kyiv Oblast. If you live in another city or have Android — join us and we will notify you upon launch.",
+        sec6Desc: "The app is live on iOS in Kyiv & Kyiv Oblast. If you live in another city or have Android, join anyway and we will let you know as soon as it opens for you.",
         botBtnJoin: "Join",
         botFoot1: "No spam",
         botFoot2: "Women only",
@@ -1240,6 +1240,105 @@
         const dateText = new Intl.DateTimeFormat(lang === 'ua' ? 'uk-UA' : 'en-GB', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Kyiv' }).format(new Date());
         document.querySelectorAll('.mock-date').forEach(el => { el.textContent = dateText; });
       } catch (e) {}
+    }
+
+    // Strings for parts of the page that are not wired by id (join modal, step 2, small labels).
+    // UA text stays in the HTML; EN lives here.
+    const extraEn = {
+      pageTitle: "22:22 · for those who want to make new friends",
+      step1: "Step 1",
+      step2: "Step 2",
+      step3: "Step 3",
+      s2StepOf: "Step 2 of 2",
+      s2Takes: "Takes 30 seconds",
+      s2Sub: "Your contacts are saved. To make it easier for us to send you a personal invite or tell you about the release, you can add a couple more details:",
+      s2Tg: "Telegram username",
+      s2Opt: "optional",
+      s2Phone: "Phone number",
+      s2Mode: "How would you like to take part?",
+      s2Opt1: "Happy to actively share my impressions",
+      s2Opt1Sub: "Give feedback, tell us about your experience and help make the app better.",
+      s2Opt2: "I'd rather test at my own pace",
+      s2Opt2Sub: "No feedback required, just one new introduction every evening.",
+      s2Save: "Save and finish",
+      s2Skip: "Skip",
+      s2DoneTitle: "Thank you! You're on the list.",
+      s2DoneNote: "We'll send a personal notification to your email as soon as we open access for your group.",
+      s2Social: "Follow release news and new cities:",
+      s2Ig: "New cities, features and perks",
+      s2Th: "Quick updates and Android status",
+      s2Home: "Back to home page",
+      mClose: "Close",
+      mLocTag: "Getting to know you",
+      mLocTitle: "Do you live in Kyiv or Kyiv Oblast?",
+      mLocDesc: "22:22 is starting in Kyiv and the region first, so new acquaintances can easily turn into real coffee meetups.",
+      mLocYes: "Yes, I live in Kyiv or the region",
+      mLocYesSub: "Beta access is open now",
+      mLocNo: "No, another city in Ukraine or abroad",
+      mLocNoSub: "We'll let you know when we launch in your city",
+      mChange: "Change answer",
+      mDevTag: "Your device",
+      mDevTitle: "What phone do you use?",
+      mDevDesc: "The iPhone version is already in the App Store, and we're finishing the Android version now.",
+      mIosSub: "Available to download in Kyiv",
+      mOpen: "Open ↗",
+      mAndSub: "In development • Leave your contacts for the release",
+      mBack: "Back",
+      mKyiv: "Kyiv & Oblast",
+      mAndTitle: "Be the first to get the link",
+      mAndDesc: "The Android version is almost ready. Leave your contacts and we'll send you the Google Play link as soon as access opens in Kyiv.",
+      mName: "What should we call you?",
+      phName: "Olia",
+      mAndBtn: "Notify me about the Android release",
+      mChangeLoc: "Change location",
+      mCityTag: "New cities",
+      mCityTitle: "22:22 in your city",
+      mCityDesc: "Right now the closed beta is running in Kyiv and the region. Tell us where you are. We'll open new cities based on the number of requests and send you access:",
+      mCity: 'Your city / country <span class="text-app-rose">*</span>',
+      phCity: "Lviv / Warsaw / Odesa",
+      mPhone: "Your phone",
+      mCityBtn: "Notify me when you launch in my city",
+      footKyiv: "Kyiv: "
+    };
+    const pageTitleUa = document.title;
+
+    function applyExtraTranslations(lang) {
+      const en = lang === 'en';
+      document.title = en ? extraEn.pageTitle : pageTitleUa;
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.dataset.i18nUa === undefined) el.dataset.i18nUa = el.innerHTML;
+        const val = extraEn[el.dataset.i18n];
+        el.innerHTML = (en && val !== undefined) ? val : el.dataset.i18nUa;
+      });
+      document.querySelectorAll('[data-i18n-ph]').forEach(el => {
+        if (el.dataset.i18nPhUa === undefined) el.dataset.i18nPhUa = el.getAttribute('placeholder') || '';
+        const val = extraEn[el.dataset.i18nPh];
+        el.setAttribute('placeholder', (en && val !== undefined) ? val : el.dataset.i18nPhUa);
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        if (el.dataset.i18nAriaUa === undefined) el.dataset.i18nAriaUa = el.getAttribute('aria-label') || '';
+        const val = extraEn[el.dataset.i18nAria];
+        el.setAttribute('aria-label', (en && val !== undefined) ? val : el.dataset.i18nAriaUa);
+      });
+    }
+
+    function step2HeadingText(lang, name) {
+      if (lang === 'en') return name ? `Almost there, ${name}! Just a couple more details.` : 'Almost there! Just a couple more details.';
+      return name ? `Майже все, ${name}! Ще пара деталей.` : 'Майже все! Ще пара деталей.';
+    }
+
+    // Language choice is shared with support/privacy/terms pages via localStorage.
+    // ?lang=en or ?lang=ua in the URL overrides it (handy for sharing an English link).
+    function getInitialLang() {
+      try {
+        const q = new URLSearchParams(window.location.search).get('lang');
+        if (q === 'en' || q === 'ua') return q;
+      } catch (e) {}
+      try {
+        const saved = localStorage.getItem('lang2222');
+        if (saved === 'en' || saved === 'ua') return saved;
+      } catch (e) {}
+      return 'ua';
     }
 
     function setLanguage(lang) {
@@ -1350,6 +1449,12 @@
       }
 
       renderMockups(lang);
+      applyExtraTranslations(lang);
+
+      const step2Heading = document.getElementById('step2-heading');
+      if (step2Heading) step2Heading.textContent = step2HeadingText(lang, userSubmission.name);
+
+      try { localStorage.setItem('lang2222', lang); } catch (e) {}
     }
 
     function updateCountdown() {
@@ -1551,9 +1656,7 @@
       // Update Step 2 greeting
       const step2Heading = document.getElementById('step2-heading');
       if (step2Heading) {
-        step2Heading.textContent = currentLang === 'ua' 
-          ? `Майже все, ${name}! Ще пара деталей.` 
-          : `Almost there, ${name}! Just two quick details.`;
+        step2Heading.textContent = step2HeadingText(currentLang, name);
       }
 
       setTimeout(() => {
@@ -1649,7 +1752,8 @@
     }
 
     window.addEventListener('DOMContentLoaded', () => {
-      renderMockups('ua');
+      const initialLang = getInitialLang();
+      if (initialLang === 'en') setLanguage('en'); else renderMockups('ua');
       updateCountdown();
       setInterval(updateCountdown, 1000);
       handleHashChange();

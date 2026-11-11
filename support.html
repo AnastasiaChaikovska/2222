@@ -104,7 +104,7 @@
         </div>
         <div class="flex flex-col">
           <span class="text-xl sm:text-2xl font-bold tracking-tight text-app-espresso leading-none">22:22</span>
-          <span class="text-[11px] sm:text-xs text-app-muted font-normal mt-1">знайомства, з яких може вийти дружба</span>
+          <span class="text-[11px] sm:text-xs text-app-muted font-normal mt-1" data-i18n="motto">знайомства, з яких може вийти дружба</span>
         </div>
       </a>
 
@@ -113,8 +113,8 @@
           <button id="btn-lang-ua" onclick="setLanguage('ua')" class="px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white">UA</button>
           <button id="btn-lang-en" onclick="setLanguage('en')" class="px-3 py-1 rounded-full font-medium transition-all text-app-muted hover:text-app-espresso">EN</button>
         </div>
-        <a href="support.html" class="text-xs text-app-espresso font-semibold">Підтримка</a>
-        <a href="index.html#waitlist-section" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors">
+        <a href="support.html" class="text-xs text-app-espresso font-semibold" data-i18n="support">Підтримка</a>
+        <a href="index.html#waitlist-section" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-full border border-app-espresso text-app-espresso hover:bg-app-espresso hover:text-white text-xs font-medium transition-colors" data-i18n="join">
           Список очікування
         </a>
       </div>
@@ -185,17 +185,17 @@
       <div class="flex items-center gap-3">
         <span class="font-bold text-app-espresso tracking-tight">22:22</span>
         <span class="text-app-muted">•</span>
-        <span>знайомства, з яких може вийти дружба.</span>
+        <span data-i18n="footMotto">знайомства, з яких може вийти дружба.</span>
       </div>
 
       <div class="flex items-center gap-5 flex-wrap justify-center">
-        <a href="privacy.html" class="hover:text-app-espresso transition-colors">Конфіденційність</a>
-        <a href="terms.html" class="hover:text-app-espresso transition-colors">Умови користування</a>
-        <a href="support.html" class="text-app-espresso font-semibold">Підтримка</a>
-        <a href="index.html#waitlist-section" class="text-app-espresso hover:underline font-medium">Список очікування</a>
+        <a href="privacy.html" class="hover:text-app-espresso transition-colors" data-i18n="privacy">Конфіденційність</a>
+        <a href="terms.html" class="hover:text-app-espresso transition-colors" data-i18n="terms">Умови користування</a>
+        <a href="support.html" class="text-app-espresso font-semibold" data-i18n="support">Підтримка</a>
+        <a href="index.html#waitlist-section" class="text-app-espresso hover:underline font-medium" data-i18n="join">Список очікування</a>
       </div>
 
-      <div class="text-[11px] sm:text-xs text-app-muted">
+      <div class="text-[11px] sm:text-xs text-app-muted" data-i18n="footKyiv">
         Київ • 22:22
       </div>
     </div>
@@ -237,7 +237,37 @@
       }
     };
 
+    const chromeEn = {
+      motto: "intros that can turn into friendship",
+      footMotto: "intros that can turn into friendship.",
+      support: "Support",
+      privacy: "Privacy Policy",
+      terms: "Terms of Service",
+      join: "Join",
+      footKyiv: "Kyiv • 22:22"
+    };
+    function applyChrome(lang) {
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.dataset.i18nUa === undefined) el.dataset.i18nUa = el.innerHTML;
+        const val = chromeEn[el.dataset.i18n];
+        el.innerHTML = (lang === 'en' && val !== undefined) ? val : el.dataset.i18nUa;
+      });
+    }
+    function getInitialLang() {
+      try {
+        const q = new URLSearchParams(window.location.search).get('lang');
+        if (q === 'en' || q === 'ua') return q;
+      } catch (e) {}
+      try {
+        const saved = localStorage.getItem('lang2222');
+        if (saved === 'en' || saved === 'ua') return saved;
+      } catch (e) {}
+      return 'ua';
+    }
+
     function setLanguage(lang) {
+      applyChrome(lang);
+      try { localStorage.setItem('lang2222', lang); } catch (e) {}
       document.documentElement.lang = lang === 'ua' ? 'uk' : 'en';
       document.getElementById('btn-lang-ua').className = lang === 'ua' 
         ? "px-3 py-1 rounded-full font-medium transition-all bg-app-espresso text-white" 
@@ -262,6 +292,7 @@
       document.getElementById('faq-q3').textContent = data.q3;
       document.getElementById('faq-a3').textContent = data.a3;
     }
+    if (getInitialLang() === 'en') setLanguage('en');
   </script>
 </body>
 </html>
