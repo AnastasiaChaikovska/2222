@@ -1627,23 +1627,25 @@
       if (successEl) successEl.classList.remove('hidden');
     }
 
+    // Дані заявки йдуть лише в тілі запиту, не в адресі: адреси осідають у
+    // журналах і історії. Скрипт таблиці читає тіло формату форми
+    // (перевірено тестовою заявкою 17.11.2026).
     async function sendLeadToGoogleSheet(payload) {
       const params = new URLSearchParams(payload);
 
       try {
-        await fetch(GOOGLE_SCRIPT_URL + '?' + params.toString(), {
+        await fetch(GOOGLE_SCRIPT_URL, {
           method: 'POST',
           mode: 'no-cors',
           headers: {
-            'Content-Type': 'text/plain;charset=utf-8'
+            'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
           },
-          body: JSON.stringify(payload)
+          body: params.toString()
         });
       } catch (err) {
         console.warn('Fallback beacon dispatch:', err);
         try {
-          const img = new Image();
-          img.src = GOOGLE_SCRIPT_URL + '?' + params.toString();
+          navigator.sendBeacon(GOOGLE_SCRIPT_URL, params);
         } catch (e) {}
       }
     }
